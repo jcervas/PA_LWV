@@ -8,7 +8,7 @@ title: Tools for Identifying Partisan Gerrymandering
 Introduction
 ============
 
-[I]{.lettrine}n *League of Women Voters v. Pennsylvania*, decided
+In *League of Women Voters v. Pennsylvania*, decided
 January 22, 2018 (henceforth abbreviated *LWV*), the Pennsylvania
 Supreme Court offered a new and distinctive test for unconstitutional
 partisan gerrymandering under which it found the state's congressional
