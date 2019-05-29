@@ -1,8 +1,8 @@
-Tools for Identifying Partisan Gerrymandering
+# Tools for Identifying Partisan Gerrymandering
 
-With an Application to Congressional Districting in Pennsylvania
+## With an Application to Congressional Districting in Pennsylvania
 
-Key Words: gerrymandering, Pennsylvania Supreme Court, redistricting,
+**Key Words**: gerrymandering, Pennsylvania Supreme Court, redistricting,
 League of Women Voters, good government
 
 *In League of Women Voters v. Commonwealth of Pennsylvania (2018) the
