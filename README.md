@@ -4,9 +4,7 @@
 
 **Key Words**: gerrymandering, Pennsylvania Supreme Court, redistricting,
 League of Women Voters, good government
-\[
-SE = \frac{\sigma}{\sqrt{n}}
-\]
+
 *In League of Women Voters v. Commonwealth of Pennsylvania (2018) the
 Pennsylvania Supreme Court struck down as a "severe and durable"
 partisan gerrymander the congressional map drawn by Republicans in 2011
