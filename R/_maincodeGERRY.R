@@ -1,0 +1,124 @@
+##########################################################################################################
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ──╔╦═══╦═╗─╔╦═══╦════╦╗─╔╦═══╦═╗─╔╗
+# ──║║╔═╗║║╚╗║║╔═╗║╔╗╔╗║║─║║╔═╗║║╚╗║║
+# ──║║║─║║╔╗╚╝║║─║╠╝║║╚╣╚═╝║║─║║╔╗╚╝║
+# ╔╗║║║─║║║╚╗║║╚═╝║─║║─║╔═╗║╚═╝║║╚╗║║
+# ║╚╝║╚═╝║║─║║║╔═╗║─║║─║║─║║╔═╗║║─║║║
+# ╚══╩═══╩╝─╚═╩╝─╚╝─╚╝─╚╝─╚╩╝─╚╩╝─╚═╝
+#         ╔═══╦═══╦═══╦╗──╔╦═══╦═══╗
+#         ║╔═╗║╔══╣╔═╗║╚╗╔╝║╔═╗║╔═╗║
+#         ║║─╚╣╚══╣╚═╝╠╗║║╔╣║─║║╚══╗
+#         ║║─╔╣╔══╣╔╗╔╝║╚╝║║╚═╝╠══╗║
+#         ║╚═╝║╚══╣║║╚╗╚╗╔╝║╔═╗║╚═╝║
+#         ╚═══╩═══╩╝╚═╝─╚╝─╚╝─╚╩═══╝
+### Code to Replicate "Tools for Identifying Partisan Gerrymandering"
+# 🅙🅞🅝🅐🅣🅗🅐🅝 🅡. 🅒🅔🅡🅥🅐🅢, University of California Irvine
+# 🅑🅔🅡🅝🅐🅡🅓 🅖🅡🅞🅕🅜🅐🅝, University of California Irvine
+### Note: 
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+##########################################################################################################
+    rm(list=ls(all=TRUE))   # Remove all objects just to be safe.
+    options(scipen=999)     # Turn off Scientific Notation
+    options(stringsAsFactors = FALSE)
+seed <- 66
+set.seed(seed)
+    doInstall <- F          # Change to FALSE if you don't want packages installed.
+        toInstall <- c("maptools", "rgdal", "ggplot2", "spatstat", "RColorBrewer", "maps", "stargazer", "astro")
+        if(doInstall){install.packages(toInstall, repos = "http=//cran.r-project.org")}
+
+    lapply(toInstall, library, character.only = TRUE)
+  projection <- "+proj=lcc +lat_1=40.96666666666667 +lat_2=39.93333333333333 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs"
+# https://spatialreference.org/ref/epsg/nad83-pennsylvania-south-ftus/
+  projection <- "+init=epsg:4269"
+    # library(JudgeIt)
+# •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+    setwd("/Users/cervas/Google Drive/Papers/Tools for Identifying a Partisan Gerrymander/PA_LWV")  # Main directory
+      plan_names <- 
+        c(
+          "2011 Enacted",
+          "2018 Court Remedial",
+          "Joint Legislative",
+          "Gov. Wolf")
+	plans <- 
+		c("enacted2011", 
+        "court", 
+        "joint", 
+        "govwolf")
+# •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# =================================================================
+# -- FUNCTIONS -- -- FUNCTIONS -- -- FUNCTIONS -- -- FUNCTIONS  -- 
+# =================================================================
+    source("R/GERRYfunctions.R")
+    source("/Users/cervas/Google Drive/School/UCI/R Functions/seatsvotes.R")
+# =================================================================
+# -- DATA -- -- DATA -- -- DATA -- -- DATA  -- -- DATA  -- -- DATA 
+# =================================================================
+    source("./_data/PA_Congressional_Data.R")
+    pa.redist.dta <- read.csv("./_data/pa_redist_shp.csv")
+# ================================================================= #
+# -- TOOLS FOR IDENTIFYING PARTISAN  GERRYMANDERING -- ANALYSIS -- -#
+# ================================================================= #    
+    source("R/DataSetup.R")     
+    source("R/Simulations.R")
+    source("R/GIS.R")
+    source("R/Tables.R")
+    source("R/Plots.R")
+# ================================================================= #
+# -- MEASURES OF GERRYMANDERING -- -- MEASURES OF GERRYMANDERING -- #
+# ================================================================= #
+# Measures of Gerrymandering
+      # WE SHOULD SIMULATE RANDOM DISTRICT AND STATEWIDE SWINGS AND REPORT 
+    # AVERAGE SCORES SINCE SOME OF THE MEASURES DO NOT CONTAIN INFORMATION ON RESPONSIVENESS!
+# unc <- function(inp) -1*(inp<0.25)+1*(inp>0.75)
+
+# elecyears <- as.numeric(names(PA_house))
+# same.d <- 1*(elecyears %% 10 != 2)
+# judgeit.bias <- new.list(length(elecyears))
+# names(judgeit.bias) <- elecyears
+# seatsvotes_PA <- new.list(length(elecyears))
+# names(seatsvotes_PA) <- elecyears
+# j.ob <- JudgeIt::judgeit(model.formula=default.unc(VOTE)~unc(VOTE),vote.formula=TURNOUT~1, weight= "turnout", use.last.votes=T, same.d=same.d, data=PA_house)
+
+
+
+# for (j in elecyears) {
+#   judgeit.bias[[as.character(j)]] <- jug.tmp <- JudgeIt::bias.resp(j.ob,year=j)
+# bias_45_55 <- jug.tmp[1]$svsums[2,1]
+# responsiveness_45_55 <- jug.tmp[1]$svsums[3,1]
+# }
+
+# for (j in elecyears) {
+#   seatsvotes_PA[[as.character(j)]] <- seatsvotes(year=j, pct=default.unc(PA_house[[as.character(j)]]$VOTE), weights= PA_house[[as.character(j)]]$TURNOUT, center="average", range=c(0.45, 0.55))
+# }
+
+# judgeit.seats <- new.list(length(elecyears))
+# names(judgeit.seats) <- elecyears
+
+# for (j in elecyears) {
+#   judgeit.seats[[as.character(j)]] <- JudgeIt::seats(j.ob, year = j)
+# }
+
+
+# judgeit.plans <- new.list(length(proj.2016))
+#   judgeit.bias.plans <- rep(NA, length(proj.2016))
+# names(judgeit.plans) <- names(proj.2016)
+#   for (p in 1:length(proj.2016))
+#     {
+#   j.ob.plans <- JudgeIt::judgeit(model.formula=R_ave_TP~unc(R_ave_TP),vote.formula=sumTotal~1, weight= "turnout", use.last.votes=F, data=proj.2016[[p]])
+#   judgeit.plans[[as.character(p)]] <- jug.tmp <- JudgeIt::bias.resp(j.ob.plans,year=1)
+#   judgeit.bias.plans[p] <- jug.tmp[1]$svsums[2,1]
+# }
+
+
+
+
+
+
+
+
+
