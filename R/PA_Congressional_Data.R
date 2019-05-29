@@ -121,7 +121,7 @@ house.rep.2004 <- c(33266, 34411, 166580, 204329, 192852, 160348, 196556, 183229
  		percent(house.seats.2018)))
   rownames(congress.PA.2008.2018) <- c("Votes", "Seats")
   colnames(congress.PA.2008.2018) <- c("2008", "2010", "2012", "2014", "2016", "2018")
-
+stargazer(congress.PA.2008.2018, type="text")
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -226,7 +226,10 @@ pahouse$unc_lag <- unc(pahouse$REP_lag)
 
  pahouse$REPUBLICAN_IMPUTED <- replace.unc(pahouse$VOTE,0.25,0.75,0.25,0.75, na.rm=F)
  pahouse$REPUBLICAN_LAG_IMPUTED <- replace.unc(pahouse$REP_lag,0.25,0.75,0.25,0.75, na.rm=F)
-write.csv(pahouse, "pa_USHOUSE.csv", row.names=F, na="NA")
+write.csv(pahouse, "./_data/pa_USHOUSE.csv", row.names=F, na="NA")
 
-
+cat("
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+	")
 

@@ -6,8 +6,9 @@
 cat(
 	"\n
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-		TABLES
+		CREATING TABLES . . . . . . . . . . . . . . . . . . . . .
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••\n")
+sink("/dev/null")
 # races <- c("cong2016", "pres16", "ussen16", "atg16", "aud16", "trea16", "comp2016")
 statewide.contests.2016 <- c("Congress", "Presidential", "US Senate", "PA Attorneys General", "PA Auditor", "PA Treasurer", "Composite")
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -34,6 +35,10 @@ tab_plan_sum <- cbind.data.frame(
 	Comp2016 = c(seats.print(enacted.comp), seats.print(court.comp), seats.print(joint.comp), seats.print(govwolf.comp))
 	)
 tab_plan_sum
+plan_summary.caption = "County Splits and Compactness Scores of the Plans"
+plan_summary.label = "tab:summaries"
+plan_summary.footnote = "County splits include all the pieces in which a county is split, not just the total number of counties that have been split. (The latter number is the one most often reported in both court documents and in the media, but we regard the measure we report as both more precise and more informative.)"
+
 
 tab_plan_summary <- 
 	stargazer(tab_plan_sum,
@@ -46,10 +51,10 @@ tab_plan_summary <-
 		column.sep.width = "0pt",
 		rownames = FALSE,
 		multicolumn = TRUE,
-		label = "tab:summaries",
-		title = "County Splits, Compactness Scores Of The Plans, And Projected Outcomes Using Elections In 2008 And 2016",
+		label = plan_summary.label,
+		title = plan_summary.caption,
 		covariate.labels = ,
-		notes = "REPLACE WITH NOTES" 
+		notes = plan_summary.footnote 
 		)
 tab_plan_summary <- tab_plan_summary[c(-6, -7, -13, -14, -15, -16)]
 tab_plan_summary <- append(tab_plan_summary, 
@@ -62,12 +67,6 @@ tab_plan_summary <- append(tab_plan_summary,
 	"  \\textbf{Plan}  &  \\textbf{Splits} &  \\textbf{Popper}  &  \\textbf{Reock}  &  \\textbf{Presidential Results}  &  \\textbf{elections in 2016} \\\\",
 	after = 7)
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-Table(
-	tab_plan_summary,
-	caption = "County Splits and Compactness Scores of the Plans",
-	label = "tab:summaries",
-	footnote = "County splits include all the pieces in which a county is split, not just the total number of counties that have been split. (The latter number is the one most often reported in both court documents and in the media, but we regard the measure we report as both more precise and more informative.)"
-	)
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -78,8 +77,12 @@ Table(
 # =================================================================
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # SUMMARY OF ELECTIONS
+congsum.caption = "US House Election Summaries (PA 2004-2016)"
+congsum.label = "tab:congsum"
+congsum.footnote = "Uncontested races are imputed with 0.25 and 0.75 for the respective winners. All votes are calculated from the Republican perspective of the two-party vote. Efficiency Gap and Declination favor the Republicans when it is negative, while Bias and Mean-Median favor Republicans when positive."
 
-tmp <- cbind.data.frame(
+
+congsum.tmp <- cbind.data.frame(
 	PA2004 = gerry(default.unc(house.2004.votes)),
 	PA2006 = gerry(default.unc(house.2006.votes)),
 	PA2008 = gerry(default.unc(house.2008.votes)),
@@ -93,27 +96,21 @@ tmp <- cbind.data.frame(
   	default.unc(house.2014.votes),
   	default.unc(house.2016.votes))))
   )
-colnames(tmp) <- c(seq(2004,2018,2),"AVE")
-tmp.tex <- stargazer(tmp,
+colnames(congsum.tmp) <- c(seq(2004,2018,2),"AVE")
+congsum.tmp.tex <- stargazer(tmp,
 	style = "apsr", 
 	summary = FALSE,
 	header = FALSE,
 	column.sep.width = "-5pt",
 	multicolumn = TRUE,
-	label = "tab:congsum",
-	title = "A - US House Election Summaries (PA 2004-2018)",
-	notes = "REPLACE WITH NOTES" )
-tmp.tex <- tmp.tex[c(-6, -15, -16, -17, -18)]
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-Table(tmp.tex,
-	caption = "US House Election Summaries (PA 2004-2016)",
-	label = "tab:congsum",
-	footnote = "Uncontested races are imputed with 0.25 and 0.75 for the respective winners. All votes are calculated from the Republican perspective of the two-party vote. Efficiency Gap and Declination favor the Republicans when it is negative, while Bias and Mean-Median favor Republicans when positive.")
+	label = congsum.label,
+	title = congsum.caption,
+	notes = congsum.footnote)
+congsum.tmp.tex <- congsum.tmp.tex[c(-6, -15, -16, -17, -18)]
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-
-
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 dist_summary <- 
 	rbind(
 	  cbind.data.frame(
@@ -124,6 +121,11 @@ dist_summary <-
 	      sapply(colMeans(composite(pa.redist.dta, "enacted")), percent)
 	    )
 	)
+
+district_summary.caption = "2016 District-level Summaries for 2011 Enacted Plan"
+district_summary.label = "tab:districtvotes"
+district_summary.footnote = "Uncontested races and those with only negligible competition will be imputed with 0.25 and 0.75 for the respective winners. All votes are calculated from the Republican perspective of the two-party vote. Composite does NOT include the Congressional elections. The statewide average is the unweighted mean of districts."
+
 district_summary <- stargazer(dist_summary,
 	style = "apsr", 
 	summary = FALSE,
@@ -131,19 +133,11 @@ district_summary <- stargazer(dist_summary,
 	column.sep.width = "-5pt",
 	multicolumn = TRUE,
 	rownames = FALSE,
-	label = "tab:districtvotes",
-	title = "B - 2016 District-level Summaries for 2011 Enacted Plan",
+	label = district_summary.label,
+	title = district_summary.caption,
 	notes = "REPLACE WITH NOTES" )
 district_summary <- district_summary[c(-6, -28, -29, -30, -31)]
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-Table(district_summary,
-	caption = "B - 2016 District-level Summaries for 2011 Enacted Plan",
-	label = "tab:districtvotes",
-	footnote = "Uncontested races and those with only negligible competition will be imputed with 0.25 and 0.75 for the respective winners. All votes are calculated from the Republican perspective of the two-party vote. Composite does NOT include the Congressional elections. The statewide average is the unweighted mean of districts."
-	)
-
-
-
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -209,6 +203,10 @@ gtab <- function(x) {
 		"Declination",
 		"SD4")
 
+gerry.caption = "Measures of Gerrymandering for the Four Considered Plans"
+gerry.label = "tab:gerry"
+gerry.footnote = "Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\\% range."
+
 tab_gerry.tex <- stargazer(gerry.table.gen,
     style = "apsr", 
     summary=F,
@@ -216,15 +214,11 @@ tab_gerry.tex <- stargazer(gerry.table.gen,
     float = T, 
     header = FALSE,
     multicolumn = TRUE, 
-    title="Measures of Gerrymandering for the Four Considered Plans", 
-    label="tab:gerry",
-	notes = "REPLACE WITH NOTES")
+    title= gerry.caption, 
+    label= gerry.label,
+	notes = gerry.footnote)
 tab_gerry <- tab_gerry.tex[c(-6, -24, -25, -26, -27)]
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-Table(tab_gerry,  
-	caption="Measures of Gerrymandering for the Four Considered Plans",
-	label="tab:gerry", 
-	footnote="Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\\% range.")
 
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
@@ -237,11 +231,15 @@ Table(tab_gerry,
 # =================================================================
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 latex <- function(x) cat(paste(x, collapse="\n"), "\n")
+states_compare.caption = "Information about Twelve States with Constitutional Provisions similar to Pennsylvania"
+states_compare.label = "tab:states_compare"
+states_compare.footnote = "Seats and votes are based on the 2016 five-election projection (to deal with the existence of non-contested congressional districts). Percentages are of the of district level results. This difference is why the percentages reported in columns 6 and 8 are not identical. Data from DailyKos, All about Redistricting, and Ballotpedia web sites.States with fewer than 9 districts do not have efficiency gap or median values reported because of the potential unreliability of those calculations given the small number of districts involved."
+
 tab_states_compare <- 
 	paste("
 		\\begin{table}
-		\\caption{Information about Twelve States with Constitutional Provisions similar to Pennsylvania}
-		\\label{tab:states_compare}
+		\\caption{", states_compare.caption, "}
+		\\label{", states_compare.label, "}
 		\\begin{tabular}{
 		>{\\centering\\arraybackslash}
 		M{0.1\\linewidth}|
@@ -268,11 +266,7 @@ tab_states_compare <-
 		Tennessee & 9 & $\\surd$ (R) & $\\surd$ (R) & 22.2\\% & 36.4\\% & 37.4\\% & 31.3\\% & 0.03 & state legislature \\\\
 		Washington & 10 & $\\surd$ (D) & $\\surd$ (D) & 70\\% & 58.8\\% & 56\\% & 52.3\\% & -0.05 & 5-member independent commission \\\\
 		Wyoming & 1 & $\\surd$ (R) & $\\surd$ (R) & 0\\% & 24.3\\% & 24.3\\% &  &  & NA ")
-		
-Table(latex(tab_states_compare),  
-	caption="Information about Twelve States with Constitutional Provisions similar to Pennsylvania",
-	label="tab:states_compare", 
-	footnote="Seats and votes are based on the 2016 five-election projection (to deal with the existence of non-contested congressional districts). Percentages are of the of district level results. This difference is why the percentages reported in columns 6 and 8 are not identical. Data from DailyKos, All about Redistricting, and Ballotpedia web sites.States with fewer than 9 districts do not have efficiency gap or median values reported because of the potential unreliability of those calculations given the small number of districts involved.")
+
 
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -326,36 +320,73 @@ for (k in colnames(enacted.elections))
         default.unc(enacted.elections$TREASURER))
     ))
 
+congress_predict.caption = "Comparing Pennsylvania Congressional Results with State-wide Elections (2016)"
+congress_predict.label = "tab:tab_congress_predict"
+congress_predict.footnote = "$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001 \\\\ Uncontested (or non-competitive) elections replaced with 0.25 \\& 0.75 vote shares. Regressions are unweighted, ie, all districts are assumed to have identical turnout. This is the usual way political scientist measure aggregate congressional vote \\cite{GelmanKing1994_unifiedAJPS}. \\\\"
 
-tab_congress <- stargazer(reg_cong_pres, 
-          reg_cong_ussen, 
-          reg_cong_atg, 
-          reg_cong_aud, 
-          reg_cong_trea, 
-          reg_cong_comp,
-          reg_cong_all,
-  star.cutoffs = c(0.05,0.01, 0.001),
-  style = "apsr", 
-  header = FALSE,
-  model.numbers = FALSE,
-  initial.zero = TRUE,
-  digits = 2,
-  column.sep.width = "0pt",
-  multicolumn = TRUE,
-  omit.stat = c("ll", "F", "ser"),
-  label = "tab:reg_correlations",
-  title = "Comparing Pennsylvania Congressional Results with State-wide Elections (2016)",
-  dep.var.labels = "Actual Congressional Results (2016)",
-  covariate.labels = c("Incumbency Advantage","Presidential", "US Senate", "PA Attorneys General", "PA Auditor", "PA Treasurer", "Composite")
+tab_congress_predict <- stargazer(
+		reg_cong_pres, 
+         reg_cong_ussen, 
+         reg_cong_atg, 
+         reg_cong_aud, 
+         reg_cong_trea, 
+         reg_cong_comp,
+         reg_cong_all,
+star.cutoffs = c(0.05,0.01, 0.001),
+style = "apsr", 
+header = FALSE,
+model.numbers = FALSE,
+initial.zero = TRUE,
+digits = 2,
+column.sep.width = "0pt",
+multicolumn = TRUE,
+omit.stat = c("ll", "F", "ser"),
+dep.var.labels = "Actual Congressional Results (2016)",
+covariate.labels = c("Incumbency Advantage","Presidential", "US Senate", "PA Attorneys General", "PA Auditor", "PA Treasurer", "Composite"),
+label = congress_predict.label,
+title = congress_predict.caption,
+notes = congress_predict.footnote
     )
-tab_congress <- tab_congress[c(-6, -26, -28, -29)]
+tab_congress_predict <- tab_congress_predict[c(-6, -26, -28, -29, -30, -31, -32)]
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-Table(tab_congress,
-	  caption = "Comparing Pennsylvania Congressional Results with State-wide Elections (2016)",
-	  label = "tab:reg_correlations",
-	  footnote = "$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001 \\\\ Uncontested (or non-competitive) elections replaced with 0.25 \\& 0.75 vote shares. Regressions are unweighted, ie, all districts are assumed to have identical turnout. This is the usual way political scientist measure aggregate congressional vote \\cite{GelmanKing1994_unifiedAJPS}. \\\\"
-)
+
+sink()
 
 
 
 
+Table(tab_congress_predict,
+	caption = congress_predict.caption,
+	label = congress_predict.label,
+	footnote = congress_predict.footnote)
+
+Table(
+	tab_plan_summary,
+	caption = plan_summary.caption,
+	label = plan_summary.label,
+	footnote = plan_summary.footnote)
+
+Table(congsum.tmp.tex,
+	caption = congsum.caption,
+	label = congsum.label,
+	footnote = congsum.footnote)
+
+Table(tab_gerry,  
+	caption = gerry.caption,
+	label = gerry.label, 
+	footnote = gerry.footnote)
+		
+Table(latex(tab_states_compare),  
+	caption = states_compare.caption,
+	label = states_compare.label, 
+	footnote = states_compare.footnote)
+
+Table(district_summary,
+	caption = district_summary.caption,
+	label = district_summary.label,
+	footnote = district_summary.footnote
+	)
+cat("
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+	")

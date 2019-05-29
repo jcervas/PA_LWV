@@ -201,7 +201,10 @@ mean(abs(default.unc(enacted.elections[,"COMPOSITE"])-default.unc(pahouse.2016$V
 #     comp2016 <-  cbind.data.frame(VOTE = comp.2016.votes, TURNOUT = c$Dsum + c$Rsum)
 #     cong2016 <- cbind.data.frame(VOTE = house.2016.votes, TURNOUT = house.2016.turnout)
 
-
+cat("
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+  ")
 
 
 

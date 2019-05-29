@@ -1,7 +1,7 @@
 cat(
 	"\n
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-		SIMULATIONS
+		RUNNING SIMULATIONS . . . . . . . . . . . . . . . . . . . 
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••\n")
 simulation <- function(x, FUN=NULL) 
   {
@@ -177,9 +177,9 @@ return(
 		"	SD Vote Share: ", percent(sd(y)), "\n",
 		"	Percent of Sims Republican 'Control': ", percent(sum(1 * x>.5)/length(x)), "\n",
 		"	Percent of Sims Democratic 'Control': ", percent(sum(1 * x<.5)/length(x)), "\n",
-		"	Percent of Sims Tied: ", percent(sum(1 * x==.5)/length(x)),
-		"\n •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••"
-			, "\n", "\n"))
+		"	Percent of Sims Tied: ", percent(sum(1 * x==.5)/length(x)), "\n", 
+		"•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••", "\n", 
+			"\n"))
 	}
 
 # SIMULATE MAPS
@@ -371,4 +371,7 @@ govwolf.sims.2016.bias <- govwolf.sims.2016.unlist.bias
 #                       )}
 
 
-
+cat("
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n
+	")
