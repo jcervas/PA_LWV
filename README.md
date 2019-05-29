@@ -1127,3 +1127,291 @@ responsive to changes in voting patterns.
 [^37]: We are indebted to Jonathan Lai of the Philadelphia Inquirer
     (personal communication, April 2018) for calling this information to
     our attention. See a more detailed discussion in Elmendorf 2018.
+
+\centering 
+  ------------------------- -------------- -------- -------------- ---------- ----------
+         \[-1.8ex\]                                                           
+       \[-1.8ex\] Plan       CountySplits   Reock    PolsbyPopper   Pres2016   Comp2016
+                                                                              
+   \[-1.8ex\] 2011 Enacted       $41$       $0.27$      $0.16$       12R-6D     13R-5D
+     2018 Court Remedial         $17$       $0.43$      $0.32$       10R-8D     9R-9D
+      Joint Legislative          $19$       $0.36$      $0.28$       12R-6D     11R-7D
+          Gov. Wolf              $19$       $0.39$      $0.31$       11R-7D     11R-7D
+                                                                              
+         \[-1.8ex\]                                                           
+  ------------------------- -------------- -------- -------------- ---------- ----------
+
+  : County Splits, Compactness Scores Of The Plans, And Projected
+  Outcomes Using Elections In 2008 And 2016[]{label="tab:summaries"}
+
+\centering 
+  ------------------------- ------------ ------------ ----------- -------------------------- -----------------------
+                                                                        **Projected**             **Projected**
+                             **County**   **Polsby**                    **2016 using**         **five state-wide**
+          **Plan**           **Splits**   **Popper**   **Reock**   **Presidential Results**   **elections in 2016**
+                                                                                             
+   \[-1.8ex\] 2011 Enacted      $41$        $0.27$      $0.16$              12R-6D                   13R-5D
+     2018 Court Remedial        $17$        $0.43$      $0.32$              10R-8D                    9R-9D
+      Joint Legislative         $19$        $0.36$      $0.28$              12R-6D                   11R-7D
+          Gov. Wolf             $19$        $0.39$      $0.31$              11R-7D                   11R-7D
+  ------------------------- ------------ ------------ ----------- -------------------------- -----------------------
+
+  : County Splits, Compactness Scores Of The Plans, And Projected
+  Outcomes Using Elections In 2008 And 2016[]{label="tab:summaries"}
+
+\tabnotes{County splits include all the pieces in which a county is split, not just the total number of counties that have been split. (The latter number is the one most often reported in both court documents and in the media, but we regard the measure we report as both more precise and more informative.)}
+INSERT TABLE [\[tab:summaries\]](#tab:summaries){reference-type="ref"
+reference="tab:summaries"} ABOUT HERE
+
+\centering 
+  ------------------ -------- -------- -------- -------- -------- -------- -------- -------- --------
+      \[-1.8ex\]                                                                             
+      \[-1.8ex\]       2004     2006     2008     2010     2012     2014     2016     2018     AVE
+                                                                                             
+   \[-1.8ex\] Seats   12R-7D   7R-12D   7R-12D   12R-7D   13R-5D   13R-5D   13R-5D   9R-9D    13R-5D
+        Votes         51.56%   44.66%   46.24%   52.99%   51.06%   55.48%   54.24%   47.62%   53.59%
+         Bias         0.073    0.045    0.009    0.027    0.132    0.098    0.109     0.02    0.136
+    EfficiencyGap      -0.1    -0.107   -0.067   -0.067   -0.213   -0.105   -0.169   -0.068   -0.162
+      MeanMedian      0.077    0.034    -0.021   0.022    0.061    0.058    0.058    0.007    0.054
+     Declination      -0.26    -0.009   0.094    -0.142   -0.463   -0.357   -0.39    -0.099   -0.403
+                                                                                             
+      \[-1.8ex\]                                                                             
+  ------------------ -------- -------- -------- -------- -------- -------- -------- -------- --------
+
+  : A - US House Election Summaries (PA
+  2004-2018)[]{label="tab:congsum"}
+
+\centering 
+                       2004     2006     2008     2010     2012     2014     2016     2018     AVE
+  ------------------ -------- -------- -------- -------- -------- -------- -------- -------- --------
+                                                                                             
+   \[-1.8ex\] Seats   12R-7D   7R-12D   7R-12D   12R-7D   13R-5D   13R-5D   13R-5D   9R-9D    13R-5D
+        Votes         51.56%   44.66%   46.24%   52.99%   51.06%   55.48%   54.24%   47.62%   53.59%
+         Bias         0.073    0.045    0.009    0.027    0.132    0.098    0.109     0.02    0.136
+    EfficiencyGap      -0.1    -0.107   -0.067   -0.067   -0.213   -0.105   -0.169   -0.068   -0.162
+      MeanMedian      0.077    0.034    -0.021   0.022    0.061    0.058    0.058    0.007    0.054
+     Declination      -0.26    -0.009   0.094    -0.142   -0.463   -0.357   -0.39    -0.099   -0.403
+
+  : A - US House Election Summaries (PA
+  2004-2018)[]{label="tab:congsum"}
+
+\tabnotes{Uncontested races are imputed with 0.25 and 0.75 for the respective winners. All votes are calculated from the Republican perspective of the two-party vote. Efficiency Gap and Declination favor the Republicans when it is negative, while Bias and Mean-Median favor Republicans when positive.}
+INSERT TABLE [\[tab:congsum\]](#tab:congsum){reference-type="ref"
+reference="tab:congsum"} ABOUT HERE
+
+\centering 
+  --------------------- --------- -------- -------- -------- --------- ----------- -----------
+       \[-1.8ex\]                                                                  
+   \[-1.8ex\] District    CONG      PRES    USSEN    ATTGEN   AUDITOR   TREASURER   COMPOSITE
+                                                                                   
+      \[-1.8ex\] 1       12.51%    18.65%   20.24%   18.51%   18.90%     17.20%      18.71%
+            2            11.05%    7.74%    10.67%   9.50%    10.32%      9.48%       9.53%
+            3            100.00%   63.55%   62.14%   59.42%   57.30%     56.15%      59.77%
+            4            66.04%    61.21%   61.45%   60.88%   55.04%     59.67%      59.68%
+            5            67.12%    65.06%   63.26%   60.78%   60.08%     58.24%      61.53%
+            6            57.24%    49.70%   53.79%   52.44%   53.95%     51.05%      52.18%
+            7            59.41%    48.76%   54.23%   52.01%   54.26%     51.32%      52.11%
+            8            54.43%    50.12%   53.38%   49.94%   52.91%     50.28%      51.32%
+            9            63.37%    71.94%   67.84%   64.66%   62.33%     61.11%      65.67%
+           10            70.14%    68.62%   65.99%   64.56%   64.15%     62.63%      65.23%
+           11            63.68%    62.39%   59.77%   57.62%   54.81%     54.65%      57.92%
+           12            61.79%    60.76%   59.46%   56.08%   50.66%     48.54%      55.27%
+           13             5.42%    32.69%   36.08%   30.96%   34.73%     31.49%      33.19%
+           14            25.63%    32.00%   31.07%   29.48%   24.09%     25.82%      28.56%
+           15            60.60%    54.03%   55.46%   52.37%   53.36%     51.31%      53.32%
+           16            55.62%    53.57%   55.30%   55.00%   54.36%     54.16%      54.49%
+           17            46.19%    55.23%   50.83%   47.99%   46.97%     44.75%      49.26%
+           18            99.92%    60.10%   59.06%   56.01%   50.23%     52.44%      55.63%
+        Statewide        54.45%    50.90%   51.11%   48.79%   47.69%     46.68%      49.08%
+                                                                                   
+       \[-1.8ex\]                                                                  
+  --------------------- --------- -------- -------- -------- --------- ----------- -----------
+
+  : B - 2016 District-level Summaries for 2011 Enacted
+  Plan[]{label="tab:districtvotes"}
+
+\centering 
+     District      CONG      PRES    USSEN    ATTGEN   AUDITOR   TREASURER   COMPOSITE
+  -------------- --------- -------- -------- -------- --------- ----------- -----------
+                                                                            
+   \[-1.8ex\] 1   12.51%    18.65%   20.24%   18.51%   18.90%     17.20%      18.71%
+        2         11.05%    7.74%    10.67%   9.50%    10.32%      9.48%       9.53%
+        3         100.00%   63.55%   62.14%   59.42%   57.30%     56.15%      59.77%
+        4         66.04%    61.21%   61.45%   60.88%   55.04%     59.67%      59.68%
+        5         67.12%    65.06%   63.26%   60.78%   60.08%     58.24%      61.53%
+        6         57.24%    49.70%   53.79%   52.44%   53.95%     51.05%      52.18%
+        7         59.41%    48.76%   54.23%   52.01%   54.26%     51.32%      52.11%
+        8         54.43%    50.12%   53.38%   49.94%   52.91%     50.28%      51.32%
+        9         63.37%    71.94%   67.84%   64.66%   62.33%     61.11%      65.67%
+        10        70.14%    68.62%   65.99%   64.56%   64.15%     62.63%      65.23%
+        11        63.68%    62.39%   59.77%   57.62%   54.81%     54.65%      57.92%
+        12        61.79%    60.76%   59.46%   56.08%   50.66%     48.54%      55.27%
+        13         5.42%    32.69%   36.08%   30.96%   34.73%     31.49%      33.19%
+        14        25.63%    32.00%   31.07%   29.48%   24.09%     25.82%      28.56%
+        15        60.60%    54.03%   55.46%   52.37%   53.36%     51.31%      53.32%
+        16        55.62%    53.57%   55.30%   55.00%   54.36%     54.16%      54.49%
+        17        46.19%    55.23%   50.83%   47.99%   46.97%     44.75%      49.26%
+        18        99.92%    60.10%   59.06%   56.01%   50.23%     52.44%      55.63%
+    Statewide     54.45%    50.90%   51.11%   48.79%   47.69%     46.68%      49.08%
+
+  : B - 2016 District-level Summaries for 2011 Enacted
+  Plan[]{label="tab:districtvotes"}
+
+\tabnotes{Uncontested races and those with only negligible competition will be imputed with 0.25 and 0.75 for the respective winners. All votes are calculated from the Republican perspective of the two-party vote. Composite does NOT include the Congressional elections. The statewide average is the unweighted mean of districts.}
+INSERT TABLE
+[\[tab:districtvotes\]](#tab:districtvotes){reference-type="ref"
+reference="tab:districtvotes"} ABOUT HERE
+
+\centering 
+  --------------------------------- --------------------- -------------------------- --------------------- --------------------------
+             \[-1.8ex\]                                                                                    
+             \[-1.8ex\]                 2011 Enacted         2018 Court Remedial       Joint Legislative           Gov. Wolf
+                                                                                                           
+     \[-1.8ex\] Mean Seat Share         11.69R-6.31D             9.76R-8.24D             11.17R-6.83D             10.59R-7.41D
+                 SDS                 (9R-9D, 14.4R-3.6D)   (7.2R-10.8D, 12.6R-5.4D)   (9R-9D, 14.4R-3.6D)   (7.2R-10.8D, 12.6R-5.4D)
+          Median Seat Share                12R-6D                   10R-8D                  11R-7D                   11R-7D
+             Vote Share                    50.55%                   50.44%                  50.54%                   50.50%
+   Probability Republican Majority         96.10%                   57.90%                  90.10%                   82.50%
+   Probability Democratic Majority          0.60%                   14.20%                   1.60%                   2.60%
+     Probability Tied Delegation            3.30%                   27.90%                   8.30%                   14.90%
+            Partisan Bias                   0.086                   0.032                    0.073                   0.059
+                 SD1                    (0.05, 0.12)            (-0.01, 0.07)            (0.03, 0.12)             (0.01, 0.1)
+           Efficiency Gap                  -0.168                   -0.037                   -0.14                   -0.102
+                 SD2                   (-0.27, -0.03)            (-0.16, 0.1)             (-0.26, 0)             (-0.24, 0.04)
+             Mean/Median                    0.033                   0.009                    0.028                   0.025
+                 SD3                    (0.01, 0.06)            (-0.02, 0.04)              (0, 0.05)             (-0.01, 0.06)
+             Declination                   -0.282                   -0.064                  -0.222                   -0.159
+                 SD4                   (-0.57, -0.03)            (-0.3, 0.16)            (-0.52, 0.02)           (-0.43, 0.06)
+                                                                                                           
+             \[-1.8ex\]                                                                                    
+  --------------------------------- --------------------- -------------------------- --------------------- --------------------------
+
+  : Measures of Gerrymandering for the Four Considered
+  Plans[]{label="tab:gerry"}
+
+\centering 
+                                        2011 Enacted         2018 Court Remedial       Joint Legislative           Gov. Wolf
+  --------------------------------- --------------------- -------------------------- --------------------- --------------------------
+                                                                                                           
+     \[-1.8ex\] Mean Seat Share         11.69R-6.31D             9.76R-8.24D             11.17R-6.83D             10.59R-7.41D
+                 SDS                 (9R-9D, 14.4R-3.6D)   (7.2R-10.8D, 12.6R-5.4D)   (9R-9D, 14.4R-3.6D)   (7.2R-10.8D, 12.6R-5.4D)
+          Median Seat Share                12R-6D                   10R-8D                  11R-7D                   11R-7D
+             Vote Share                    50.55%                   50.44%                  50.54%                   50.50%
+   Probability Republican Majority         96.10%                   57.90%                  90.10%                   82.50%
+   Probability Democratic Majority          0.60%                   14.20%                   1.60%                   2.60%
+     Probability Tied Delegation            3.30%                   27.90%                   8.30%                   14.90%
+            Partisan Bias                   0.086                   0.032                    0.073                   0.059
+                 SD1                    (0.05, 0.12)            (-0.01, 0.07)            (0.03, 0.12)             (0.01, 0.1)
+           Efficiency Gap                  -0.168                   -0.037                   -0.14                   -0.102
+                 SD2                   (-0.27, -0.03)            (-0.16, 0.1)             (-0.26, 0)             (-0.24, 0.04)
+             Mean/Median                    0.033                   0.009                    0.028                   0.025
+                 SD3                    (0.01, 0.06)            (-0.02, 0.04)              (0, 0.05)             (-0.01, 0.06)
+             Declination                   -0.282                   -0.064                  -0.222                   -0.159
+                 SD4                   (-0.57, -0.03)            (-0.3, 0.16)            (-0.52, 0.02)           (-0.43, 0.06)
+
+  : Measures of Gerrymandering for the Four Considered
+  Plans[]{label="tab:gerry"}
+
+\tabnotes{Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range.}
+INSERT TABLE [\[tab:gerry\]](#tab:gerry){reference-type="ref"
+reference="tab:gerry"} ABOUT HERE
+
+[\[tab:states\_compare\]]{#tab:states_compare
+label="tab:states_compare"}
+
+ \> M0.1\| M.025\| M.075 M.075 M.075 M.075 M.075 M.075 M.075 M.3
+**State** & **\# CDs** & **Unified Control (2011)** & **Unified Control
+(2016)** & **Seats (2016)** & **Votes (2016)** & **Mean District Vote
+Share (Dem)** & **Median District Vote Share (Dem)** & **Efficiency
+Gap** & **Who does districting**\
+Arizona & 9 & $\surd$ (R) & $\surd$ (R) & 44.4% & 48.1% & 50.4% & 49.4%
+& 0.08 & Independent commission\
+Arkansas & 4 & $\surd$ (D) & $\surd$ (R) & 0% & 35.7% & 35.5% & & &
+state legislature\
+Delaware & 1 & $\surd$ (D) & $\surd$ (D) & 100% & 55.9% & 56% & & & NA\
+Illinois & 18 & $\surd$ (D) & & 61.1% & 59.0% & 59.6% & 59.8% & 0.08 &
+state legislature\
+Indiana & 9 & $\surd$ (R) & $\surd$ (R) & 22.2% & 39.9% & 40.1% & 35.9%
+& 0.09 & state legislature\
+Kentucky & 6 & & $\surd$ (R) & 16.7% & 34.3% & 33.8% & & & state
+legislature\
+Oklahoma & 5 & $\surd$ (R) & $\surd$ (R) & 0% & 30.7% & 30.7% & & &
+state legislature\
+Oregon & 5 & & $\surd$ (D) & 80% & 56.2% & 56% & & & state legislature\
+South Dakota & 1 & $\surd$ (R) & $\surd$ (R) & 0% & 34.0% & 34% & & &
+NA\
+Tennessee & 9 & $\surd$ (R) & $\surd$ (R) & 22.2% & 36.4% & 37.4% &
+31.3% & 0.03 & state legislature\
+Washington & 10 & $\surd$ (D) & $\surd$ (D) & 70% & 58.8% & 56% & 52.3%
+& -0.05 & 5-member independent commission\
+Wyoming & 1 & $\surd$ (R) & $\surd$ (R) & 0% & 24.3% & 24.3% & & & NA
+
+\tabnotes{Seats and votes are based on the 2016 five-election projection (to deal with the existence of non-contested congressional districts). Percentages are of the of district level results. This difference is why the percentages reported in columns 6 and 8 are not identical. Data from DailyKos, All about Redistricting, and Ballotpedia web sites.States with fewer than 9 districts do not have efficiency gap or median values reported because of the potential unreliability of those calculations given the small number of districts involved.}
+=
+
+\centering 
+[\[tab:reg\_correlations\]]{#tab:reg_correlations
+label="tab:reg_correlations"}
+
+  --------------------------------- -------------- -------------- -------------- -------------- -------------- -------------- ---------
+  \[-1.8ex\]                                                                                                                  
+  \[-1.8ex\]                                                                                                                  
+  \[-1.8ex\]                                                                                                                  
+                                                                                                                              
+  \[-1.8ex\] Incumbency Advantage    0.08$^{**}$     0.06$^{*}$     0.06$^{*}$     0.08$^{*}$     0.06$^{*}$     0.06$^{*}$     0.05
+                                        (0.02)         (0.02)         (0.02)         (0.03)         (0.02)         (0.02)      (0.03)
+  Presidential                       0.76$^{***}$                                                                              $-$0.23
+                                        (0.13)                                                                                 (0.65)
+  US Senate                                         0.91$^{***}$                                                                1.09
+                                                       (0.14)                                                                  (1.24)
+  PA Attorneys General                                             0.97$^{***}$                                                 0.31
+                                                                      (0.15)                                                   (1.71)
+  PA Auditor                                                                      0.85$^{***}$                                 $-$0.83
+                                                                                     (0.18)                                    (0.77)
+  PA Treasurer                                                                                   0.96$^{***}$                   0.63
+                                                                                                    (0.17)                     (1.19)
+  Composite                                                                                                     0.93$^{***}$  
+                                                                                                                   (0.15)     
+  Constant                               0.12           0.04           0.04           0.09           0.06           0.05        0.03
+                                        (0.06)         (0.07)         (0.07)         (0.08)         (0.07)         (0.07)      (0.08)
+  N                                       18             18             18             18             18             18          18
+  R$^{2}$                                0.92           0.93           0.94           0.90           0.92           0.93        0.94
+  Adjusted R$^{2}$                       0.91           0.93           0.93           0.89           0.91           0.92        0.91
+                                                                                                                              
+  \[-1.8ex\]                                                                                                                  
+  --------------------------------- -------------- -------------- -------------- -------------- -------------- -------------- ---------
+
+  : Comparing Pennsylvania Congressional Results with State-wide
+  Elections (2016)
+
+\centering 
+[\[tab:reg\_correlations\]]{#tab:reg_correlations
+label="tab:reg_correlations"}
+
+  \[-1.8ex\]                                                                                                                  
+  --------------------------------- -------------- -------------- -------------- -------------- -------------- -------------- ---------
+                                                                                                                              
+  \[-1.8ex\] Incumbency Advantage    0.08$^{**}$     0.06$^{*}$     0.06$^{*}$     0.08$^{*}$     0.06$^{*}$     0.06$^{*}$     0.05
+                                        (0.02)         (0.02)         (0.02)         (0.03)         (0.02)         (0.02)      (0.03)
+  Presidential                       0.76$^{***}$                                                                              $-$0.23
+                                        (0.13)                                                                                 (0.65)
+  US Senate                                         0.91$^{***}$                                                                1.09
+                                                       (0.14)                                                                  (1.24)
+  PA Attorneys General                                             0.97$^{***}$                                                 0.31
+                                                                      (0.15)                                                   (1.71)
+  PA Auditor                                                                      0.85$^{***}$                                 $-$0.83
+                                                                                     (0.18)                                    (0.77)
+  PA Treasurer                                                                                   0.96$^{***}$                   0.63
+                                                                                                    (0.17)                     (1.19)
+  Composite                                                                                                     0.93$^{***}$  
+                                                                                                                   (0.15)     
+  Constant                               0.12           0.04           0.04           0.09           0.06           0.05        0.03
+                                        (0.06)         (0.07)         (0.07)         (0.08)         (0.07)         (0.07)      (0.08)
+  N                                       18             18             18             18             18             18          18
+  Adjusted R$^{2}$                       0.91           0.93           0.93           0.89           0.91           0.92        0.91
+  =                                                                                                                           
+
+  : Comparing Pennsylvania Congressional Results with State-wide
+  Elections (2016)
+
+\tabnotes{$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001 \\ Uncontested (or non-competitive) elections replaced with 0.25 \& 0.75 vote shares. Regressions are unweighted, ie, all districts are assumed to have identical turnout. This is the usual way political scientist measure aggregate congressional vote \cite{GelmanKing1994_unifiedAJPS}. \\}
