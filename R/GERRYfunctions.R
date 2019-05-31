@@ -133,6 +133,13 @@ inv <- function(x) {
   (exp(x) / ( 1 + exp(x)))
 }
 
+sv.curve <- function(s,v) {
+  reg <- lm(log(sv(s)) ~ log(sv(v)))
+  vote <- seq(0.01,0.99, by=.01)
+  seatvotes <-  reg$coefficients[2]*log(vote/(1-vote)) + reg$coefficients[1]
+  return(inv(seatvotes))
+}
+
 sv <- function(x) (x / (1 - x))
 
 `seats.print` <- function(x) paste0(sum(find.winner(x)), "R-", length(x)-sum(find.winner(x)), "D")
@@ -293,6 +300,18 @@ function(r1) {
 }
 
 
+sim.election <- function(votes= NULL, center=house.2016.votes, incumbency=NULL, yr=2018, sims=1000, sigma=sigma) {
+  if (is.null(sims)) sims <- 1000
+      equal.vote <- mean(votes) - mean(center)
+      sims.year <- new.list(sims)
+    for (k in 1:sims)
+      {
+    sims.year[[k]] <- 
+        rnorm(length(votes), votes - equal.vote, 
+          sigma)
+      }
+  return(sims.year)
+  }
 # =================================================================
 # -- GERRYMANDER MEASURES -- GERRYMANDER MEASURES -- GERRYMANDER ME
 # =================================================================

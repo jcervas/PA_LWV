@@ -74,21 +74,6 @@ simulation <- function(x, FUN=NULL)
 # predict(reg)
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
-sim.election <- function(votes=	NULL, center=house.2016.votes, incumbency=NULL, yr=2018, sims=1000, sigma=sigma) {
-	if (is.null(sims)) sims <- 1000
-			equal.vote <- mean(default.unc(votes)) - mean(default.unc(center))
-			sims.year <- new.list(sims)
-		for (k in 1:sims)
-			{
-		sims.year[[k]] <- 
-			default.unc(
-				rnorm(length(votes), 
-					default.unc(votes - equal.vote), 
-					sigma))
-			}
-	return(sims.year)
-	}
-
 # SIMULATIONS OF PREVIOUS ELECTIONS TO VALIDATE COMPOSITE MEASURE
 house.sims.2016 <- sim.election(votes=house.2016.votes, center=house.2016.votes, yr=2016, sims=1000, sigma=sigma)
 # house.sims.2018 <- sim.election(votes=house.2016.votes, center=house.2018.votes, yr=2018, sims=1000, sigma=sigma)
@@ -236,9 +221,9 @@ maps.sims.votes.2016 <- new.list(4)
 
 
 	out.sims.stats("Enacted 2011", maps.sims.seats.2016$enacted, maps.sims.votes.2016$enacted)
-	out.sims.stats( "Court court", maps.sims.seats.2016$court, maps.sims.votes.2016$court)
-	out.sims.stats( "Joint Legislative", maps.sims.seats.2016$joint, maps.sims.votes.2016$joint)
-	out.sims.stats( "Gov. Wolf", maps.sims.seats.2016$govwolf, maps.sims.votes.2016$govwolf)
+	out.sims.stats("Court court", maps.sims.seats.2016$court, maps.sims.votes.2016$court)
+	out.sims.stats("Joint Legislative", maps.sims.seats.2016$joint, maps.sims.votes.2016$joint)
+	out.sims.stats("Gov. Wolf", maps.sims.seats.2016$govwolf, maps.sims.votes.2016$govwolf)
 
 
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••

@@ -65,51 +65,7 @@ set.seed(seed)
     source("R/GIS.R")
     source("R/Tables.R")
     source("R/Plots.R")
-# ================================================================= #
-# -- MEASURES OF GERRYMANDERING -- -- MEASURES OF GERRYMANDERING -- #
-# ================================================================= #
-# Measures of Gerrymandering
-      # WE SHOULD SIMULATE RANDOM DISTRICT AND STATEWIDE SWINGS AND REPORT 
-    # AVERAGE SCORES SINCE SOME OF THE MEASURES DO NOT CONTAIN INFORMATION ON RESPONSIVENESS!
-# unc <- function(inp) -1*(inp<0.25)+1*(inp>0.75)
 
-# elecyears <- as.numeric(names(PA_house))
-# same.d <- 1*(elecyears %% 10 != 2)
-# judgeit.bias <- new.list(length(elecyears))
-# names(judgeit.bias) <- elecyears
-# seatsvotes_PA <- new.list(length(elecyears))
-# names(seatsvotes_PA) <- elecyears
-# j.ob <- JudgeIt::judgeit(model.formula=default.unc(VOTE)~unc(VOTE),vote.formula=TURNOUT~1, weight= "turnout", use.last.votes=T, same.d=same.d, data=PA_house)
-
-
-
-# for (j in elecyears) {
-#   judgeit.bias[[as.character(j)]] <- jug.tmp <- JudgeIt::bias.resp(j.ob,year=j)
-# bias_45_55 <- jug.tmp[1]$svsums[2,1]
-# responsiveness_45_55 <- jug.tmp[1]$svsums[3,1]
-# }
-
-# for (j in elecyears) {
-#   seatsvotes_PA[[as.character(j)]] <- seatsvotes(year=j, pct=default.unc(PA_house[[as.character(j)]]$VOTE), weights= PA_house[[as.character(j)]]$TURNOUT, center="average", range=c(0.45, 0.55))
-# }
-
-# judgeit.seats <- new.list(length(elecyears))
-# names(judgeit.seats) <- elecyears
-
-# for (j in elecyears) {
-#   judgeit.seats[[as.character(j)]] <- JudgeIt::seats(j.ob, year = j)
-# }
-
-
-# judgeit.plans <- new.list(length(proj.2016))
-#   judgeit.bias.plans <- rep(NA, length(proj.2016))
-# names(judgeit.plans) <- names(proj.2016)
-#   for (p in 1:length(proj.2016))
-#     {
-#   j.ob.plans <- JudgeIt::judgeit(model.formula=R_ave_TP~unc(R_ave_TP),vote.formula=sumTotal~1, weight= "turnout", use.last.votes=F, data=proj.2016[[p]])
-#   judgeit.plans[[as.character(p)]] <- jug.tmp <- JudgeIt::bias.resp(j.ob.plans,year=1)
-#   judgeit.bias.plans[p] <- jug.tmp[1]$svsums[2,1]
-# }
 
 
 

@@ -113,89 +113,95 @@ cat(
 
 
 
-# # % =================================================================
-# # % -- FIGURE -- FIGURE -- FIGURE -- FIGURE -- FIGURE -- FIGURE --  %
-# # % -----------------------------------------------------------------
-# yrs <- seq(2012,2016,2)
-# pdf(paste0("Figures/fig_sims_actual_density.pdf"), 
-# 	width = 5, 
-# 	height = 6)
-# par(mfrow=c(3,1), 
-# 	oma= c(3,1.5,0,0), 
-# 	mar=c(3,1,1,1), 
-# 	mgp= c(2,1,0))
-# for (k in 1:3)
-# 	{		
-# 		x <- do.call(rbind, comp.sims.2016.seats[k]) # Vector of Seats from Simulations for each year
-# 		x.sd <- sd(x)
-# 		x.mean <- mean(x)
-# 		a <- density(x, na.rm=TRUE, from=x.mean-x.sd, to=x.mean+x.sd)
-# 		area <- abs(sum(a$y)*(a$x[1]-a$x[2]))
-# 		# twec <- sum(d$ecvotes[d$p>.5])/sum(d$ecvotes)
-# 		e1 <- density(x, na.rm=TRUE, adjust=2)
-		
-# 	plot(e1, xlim=c(0,1), ylim=c(0,10), main=yrs[k], xlab = "", ylab = "", xaxt = "n", yaxt = "n")
-# 		abline(v=seq(0,1,0.1), 
-# 			lty=2, 
-# 			col="gray95")
-# 		axis(
-# 			side=1, 
-# 			las=1, 
-# 			at=seq(0,1,0.1), 
-# 			labels=paste0(seq(0,100,10),"%"), 
-# 			cex.axis=0.85)
-# 		mtext(side=1, 
-# 			line=3, 
-# 			ifelse(k %in% c(3, 8), "Republican Share of Seats", ""), 
-# 			cex=0.65)
-# 		x4 <- min(which(e1$x>x.mean-x.sd))
-# 		x2 <- min(which(e1$x>x.mean+x.sd))
-# 	with(e1, 
-# 		polygon(
-# 			x = c(x[c(x2,x2:x4,x4)]),  
-# 			y = c(0, y[x2:x4], 0), 
-# 			col = "gray60", 
-# 			angle = 225, 
-# 			density = 40, 
-# 			border = NA))
-# 	with(e1, 
-# 		polygon(
-# 			x = c(x[c(x2,x2:x4,x4)]),  
-# 			y = c(0, y[x2:x4], 0), 
-# 			col = "gray60", 
-# 			angle = 135, 
-# 			density = 40, 
-# 			border = NA))
-# 		rect(
-# 			-.1,-1,1.1,0, 
-# 			col="black")
-# 		points(e1, 
-# 			type="l")
-# 		actual.seats <- seats(default.unc(get(paste0("house.", yrs[k], ".votes"))))
-# 			if (k == 1) arrows(
-# 				x0 = actual.seats - 0.03, 
-# 				x1 = actual.seats - 0.1, 
-# 				y0 = 7,
-# 				y1 = 7, 
-# 				angle=40, 
-# 				length=0.05, 
-# 				code=1, 
-# 				lty=1, 
-# 				col="gray10", 
-# 				lwd=1)
-# 			abline(v = actual.seats, lty=2, col="gray5")
-# 	if (k == 1) text(actual.seats - 0.1, 7, "Actual Congressional \n Results", pos=2)
-# 	}
-# 	dev.off()
+# % =================================================================
+# % -- FIGURE -- FIGURE -- FIGURE -- FIGURE -- FIGURE -- FIGURE --  %
+# % -----------------------------------------------------------------
+yrs <- seq(2012,2016,2)
+pdf(paste0("Figures/fig_sims_actual_density.pdf"), 
+	width = 5, 
+	height = 6)
+par(mfrow=c(3,1), 
+	oma= c(3,1.5,0,0), 
+	mar=c(3,1,1,1), 
+	mgp= c(2,1,0))
+for (k in 1:3)
+	{		
+		sims.tmp.yrs <- sim.election(
+			votes = default.unc(house.2016.votes), 
+			center = default.unc(get(paste0("house.", yrs[k],".votes"))), 
+			yr=yrs[k], sims=1000, 
+			sigma=sigma)
 
-# Figure(
-# 	path="Figures/fig_sims_actual_density.pdf", 
-# 	caption="Comparing the Simulated Elections with US Congressional Elections (PA)", 
-# 	label="fig:densityplots_congressional", 
-# 	footnote="Plots based on the 2016 Five Election Composite data centered at the vote share for each year. All percentages in terms of Republican share of the two-party vote from the composite measure of five state-wide races in 2016. Shaded area contains one standard deviation on either side of the mean, representing 68\\% of the simulated seat percentages.")
-# # % -----------------------------------------------------------------
-# # % -- END FIGURE -- END FIGURE -- END FIGURE -- END FIGURE -- FIGU %
-# # % =================================================================
+		x <- (unlist(lapply(sims.tmp.yrs, seats))) # Vector of Seats from Simulations for each year
+		x.sd <- sd(x)
+		x.mean <- mean(x)
+		a <- density(x, na.rm=TRUE, from=x.mean-x.sd, to=x.mean+x.sd)
+		area <- abs(sum(a$y)*(a$x[1]-a$x[2]))
+		# twec <- sum(d$ecvotes[d$p>.5])/sum(d$ecvotes)
+		e1 <- density(x, na.rm=TRUE, adjust=2)
+		
+	plot(e1, xlim=c(0,1), ylim=c(0,15), main=yrs[k], xlab = "", ylab = "", xaxt = "n", yaxt = "n")
+		abline(v=seq(0,1,0.1), 
+			lty=2, 
+			col="gray95")
+		axis(
+			side=1, 
+			las=1, 
+			at=seq(0,1,0.1), 
+			labels=paste0(seq(0,100,10),"%"), 
+			cex.axis=0.85)
+		mtext(side=1, 
+			line=3, 
+			ifelse(k %in% c(3, 8), "Republican Share of Seats", ""), 
+			cex=0.65)
+		x4 <- min(which(e1$x>x.mean-x.sd))
+		x2 <- min(which(e1$x>x.mean+x.sd))
+	with(e1, 
+		polygon(
+			x = c(x[c(x2,x2:x4,x4)]),  
+			y = c(0, y[x2:x4], 0), 
+			col = "gray60", 
+			angle = 225, 
+			density = 40, 
+			border = NA))
+	with(e1, 
+		polygon(
+			x = c(x[c(x2,x2:x4,x4)]),  
+			y = c(0, y[x2:x4], 0), 
+			col = "gray60", 
+			angle = 135, 
+			density = 40, 
+			border = NA))
+		rect(
+			-.1,-1,1.1,0, 
+			col="black")
+		points(e1, 
+			type="l")
+		actual.seats <- seats(default.unc(get(paste0("house.", yrs[k], ".votes"))))
+			if (k == 1) arrows(
+				x0 = actual.seats - 0.03, 
+				x1 = actual.seats - 0.1, 
+				y0 = 7,
+				y1 = 7, 
+				angle=40, 
+				length=0.05, 
+				code=1, 
+				lty=1, 
+				col="gray10", 
+				lwd=1)
+			abline(v = actual.seats, lty=2, col="gray5")
+	if (k == 1) text(actual.seats - 0.1, 7, "Actual Congressional \n Results", pos=2)
+	}
+	dev.off()
+
+Figure(
+	path="Figures/fig_sims_actual_density.pdf", 
+	caption="Comparing the Simulated Elections with US Congressional Elections (PA)", 
+	label="fig:densityplots_congressional", 
+	footnote="Plots based on the 2016 Five Election Composite data centered at the vote share for each year. All percentages in terms of Republican share of the two-party vote from the composite measure of five state-wide races in 2016. Shaded area contains one standard deviation on either side of the mean, representing 68\\% of the simulated seat percentages.")
+# % -----------------------------------------------------------------
+# % -- END FIGURE -- END FIGURE -- END FIGURE -- END FIGURE -- FIGU %
+# % =================================================================
 
 
 
