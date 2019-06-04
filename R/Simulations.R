@@ -41,7 +41,7 @@ simulation <- function(x, FUN=NULL)
 # house.2016.impute <- default.unc(house.2016.votes)
 # vbar.2016 <- mean(house.2016.impute)
 # # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# vbar.range <- round(vbar.2016,2) + seq(-0.1,0.1,0.002)
+# vbar.range <- r(vbar.2016,2) + seq(-0.1,0.1,0.002)
 # sbar.50 <- rep (NA, length(vbar.range))#vector for predicted seats (based on medians)
 # # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # for (j in 1:length(vbar.range)){#loop over intervals of vbar
@@ -127,29 +127,8 @@ Average number of correctly predicted districts: ",
 		, "\n")
 	cat(paste("", collapse = "\n"), "\n")
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# 		cat(
-# "Simulated 2018 Delegations Equal Actual \n",
-# 	percent(sum(1 * comp.sims.2018.seats %in% seats(house.2018.votes)) / length(comp.sims.2018.seats))
-# 		, "\n")
-# 	cat(paste("", collapse = "\n"), "\n")
-# # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# 		cat(
-# "Simulated 2018 Delegations within one seat of actual \n",
-# 	percent(sum(1 * comp.sims.2018.seats %in% seats.plusminus.one(house.2018.votes)) / length(comp.sims.2018.seats))
-# 		, "\n")
-# 	cat(paste("", collapse = "\n"), "\n")
-# # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# 		cat(
-# "Simulated 2018 Mean Seats \n",
-# 	percent(mean(comp.sims.2018.seats))
-# 		, "\n")
-# 	cat(paste("", collapse = "\n"), "\n")
-# # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# 		cat(
-# "Simulated 2018 Mean Votes \n",
-# 	percent(mean(comp.sims.2018.votes))
-# 		, "\n")
-# 	cat(paste("", collapse = "\n"), "\n")
+# •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
 out.sims.stats <- function(name, x, y) {
 return(
@@ -179,102 +158,56 @@ return(
 	joint.pres <- composite(pa.redist.dta, "joint")$PRES
 	govwolf.pres <- composite(pa.redist.dta, "gov")$PRES
 
-
-enacted.sims.2016 <- sim.election(
+enacted.sims.5050 <- sim.election(
 	votes=enacted.comp, 
-	center=enacted.comp, 
-	yr=2016, sims=1000, 
+	center = 0.50, 
+	yr=50, sims=1000, 
 	sigma=sigma)
-court.sims.2016 <- sim.election(
+court.sims.5050 <- sim.election(
 	votes=court.comp, 
-	center=enacted.comp, 
-	yr=2016, sims=1000, 
+	center = 0.50, 
+	yr=50, sims=1000, 
 	sigma=sigma)
-joint.sims.2016 <- sim.election(
+joint.sims.5050 <- sim.election(
 	votes=joint.comp, 
-	center=enacted.comp, 
-	yr=2016, 
+	center = 0.50, 
+	yr=50, 
 	sims=1000, 
 	sigma=sigma)
-govwolf.sims.2016 <- sim.election(
+govwolf.sims.5050 <- sim.election(
 	votes=govwolf.comp, 
-	center=enacted.comp, 
-	yr=2016, 
+	center = 0.50, 
+	yr=50, 
 	sims=1000, 
 	sigma=sigma)
 
-maps.sims.seats.2016 <- new.list(4)
-maps.sims.votes.2016 <- new.list(4)
-	names(maps.sims.seats.2016) <- c("enacted", "court", "joint", "govwolf")
-	names(maps.sims.votes.2016) <- c("enacted", "court", "joint", "govwolf")
-		maps.sims.seats.2016$enacted <- (unlist(lapply(enacted.sims.2016, seats)))
-		maps.sims.votes.2016$enacted <- (unlist(lapply(enacted.sims.2016, mean)))
+maps.sims.seats.5050 <- new.list(4)
+maps.sims.votes.5050 <- new.list(4)
+	names(maps.sims.seats.5050) <- c("enacted", "court", "joint", "govwolf")
+	names(maps.sims.votes.5050) <- c("enacted", "court", "joint", "govwolf")
+		maps.sims.seats.5050$enacted <- (unlist(lapply(enacted.sims.5050, seats)))
+		maps.sims.votes.5050$enacted <- (unlist(lapply(enacted.sims.5050, mean)))
 
-		maps.sims.seats.2016$court <- (unlist(lapply(court.sims.2016, seats)))
-		maps.sims.votes.2016$court <- (unlist(lapply(court.sims.2016, mean)))
+		maps.sims.seats.5050$court <- (unlist(lapply(court.sims.5050, seats)))
+		maps.sims.votes.5050$court <- (unlist(lapply(court.sims.5050, mean)))
 
-		maps.sims.seats.2016$joint <- (unlist(lapply(joint.sims.2016, seats)))
-		maps.sims.votes.2016$joint <- (unlist(lapply(joint.sims.2016, mean)))
+		maps.sims.seats.5050$joint <- (unlist(lapply(joint.sims.5050, seats)))
+		maps.sims.votes.5050$joint <- (unlist(lapply(joint.sims.5050, mean)))
 
-		maps.sims.seats.2016$govwolf <- (unlist(lapply(govwolf.sims.2016, seats)))
-		maps.sims.votes.2016$govwolf <- (unlist(lapply(govwolf.sims.2016, mean)))
+		maps.sims.seats.5050$govwolf <- (unlist(lapply(govwolf.sims.5050, seats)))
+		maps.sims.votes.5050$govwolf <- (unlist(lapply(govwolf.sims.5050, mean)))
 
 
-	out.sims.stats("Enacted 2011", maps.sims.seats.2016$enacted, maps.sims.votes.2016$enacted)
-	out.sims.stats("Court court", maps.sims.seats.2016$court, maps.sims.votes.2016$court)
-	out.sims.stats("Joint Legislative", maps.sims.seats.2016$joint, maps.sims.votes.2016$joint)
-	out.sims.stats("Gov. Wolf", maps.sims.seats.2016$govwolf, maps.sims.votes.2016$govwolf)
-
+	out.sims.stats("Enacted 2011", maps.sims.seats.5050$enacted, maps.sims.votes.5050$enacted)
+	out.sims.stats("Court court", maps.sims.seats.5050$court, maps.sims.votes.5050$court)
+	out.sims.stats("Joint Legislative", maps.sims.seats.5050$joint, maps.sims.votes.5050$joint)
+	out.sims.stats("Gov. Wolf", maps.sims.seats.5050$govwolf, maps.sims.votes.5050$govwolf)
 
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# SIMULATE PLANS USING USING COMPOSITE FOR HYPOTHTICAL TIE -- GERRYMANDERING DATA
-
-# enacted.sims.5050 <- sim.election(
-# 	votes=enacted.comp, 
-# 	center=0.5, 
-# 	yr=5050, 
-# 	sims=1000, 
-# 	sigma=sigma)
-# court.sims.5050 <- sim.election(
-# 	votes=court.comp, 
-# 	center=0.5, 
-# 	yr=5050, 
-# 	sims=1000, 
-# 	sigma=sigma)
-# joint.sims.5050 <- sim.election(
-# 	votes=joint.comp, 
-# 	center=0.5, 
-# 	yr=5050, 
-# 	sims=1000, 
-# 	sigma=sigma)
-# govwolf.sims.5050 <- sim.election(
-# 	votes=govwolf.comp, 
-# 	center=0.5, 
-# 	yr=5050, 
-# 	sims=1000, 
-# 	sigma=sigma)
-
-# maps.sims.seats.5050 <- new.list(4)
-# maps.sims.votes.5050 <- new.list(4)
-# 	maps.sims.seats.5050$enacted <- (unlist(lapply(enacted.sims.5050, seats)))
-# 	maps.sims.votes.5050$enacted <- (unlist(lapply(enacted.sims.5050, mean)))
-
-# 	maps.sims.seats.5050$court <- (unlist(lapply(court.sims.5050, seats)))
-# 	maps.sims.votes.5050$court <- (unlist(lapply(court.sims.5050, mean)))
-
-# 	maps.sims.seats.5050$joint <- (unlist(lapply(joint.sims.5050, seats)))
-# 	maps.sims.votes.5050$joint <- (unlist(lapply(joint.sims.5050, mean)))
-
-# 	maps.sims.seats.5050$govwolf <- (unlist(lapply(govwolf.sims.5050, seats)))
-# 	maps.sims.votes.5050$govwolf <- (unlist(lapply(govwolf.sims.5050, mean)))
-
-
-
-
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # SIMULATE PLANS USING USING COMPOSITE FOR 2016 ELECTION -- GERRYMANDERING DATA
+# •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 sims.gerry <- function(x) {
 	return(list(
 	list(simulation(x, eg_TP)),
@@ -284,62 +217,83 @@ sims.gerry <- function(x) {
 	))
 }
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-enacted.sims.2016.list.bias <- lapply(enacted.sims.2016, bias)
-enacted.sims.2016.unlist.bias <- do.call(rbind, enacted.sims.2016.list.bias)
+enacted.sims.5050.list.bias <- lapply(enacted.sims.5050, bias)
+enacted.sims.5050.unlist.bias <- do.call(rbind, enacted.sims.5050.list.bias)
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-court.sims.2016.list.bias <- lapply(court.sims.2016, bias)
-court.sims.2016.unlist.bias <- do.call(rbind, court.sims.2016.list.bias)
+court.sims.5050.list.bias <- lapply(court.sims.5050, bias)
+court.sims.5050.unlist.bias <- do.call(rbind, court.sims.5050.list.bias)
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-joint.sims.2016.list.bias <- lapply(joint.sims.2016, bias)
-joint.sims.2016.unlist.bias <- do.call(rbind, joint.sims.2016.list.bias)
+joint.sims.5050.list.bias <- lapply(joint.sims.5050, bias)
+joint.sims.5050.unlist.bias <- do.call(rbind, joint.sims.5050.list.bias)
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-govwolf.sims.2016.list.bias <- lapply(govwolf.sims.2016, bias)
-govwolf.sims.2016.unlist.bias <- do.call(rbind, govwolf.sims.2016.list.bias)
+govwolf.sims.5050.list.bias <- lapply(govwolf.sims.5050, bias)
+govwolf.sims.5050.unlist.bias <- do.call(rbind, govwolf.sims.5050.list.bias)
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ENACTED PARTISAN GERRYMANDERING
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-enacted.sims.2016.eg <- simulation(enacted.sims.2016, eg_TP)
-enacted.sims.2016.meanmedian <- simulation(enacted.sims.2016, meanmedian)
-enacted.sims.2016.declination <- simulation(enacted.sims.2016, declination)
-enacted.sims.2016.bias <- enacted.sims.2016.unlist.bias
+enacted.sims.5050.eg <- simulation(enacted.sims.5050, eg_TP)
+enacted.sims.5050.meanmedian <- simulation(enacted.sims.5050, meanmedian)
+enacted.sims.5050.declination <- simulation(enacted.sims.5050, declination)
+enacted.sims.5050.bias <- enacted.sims.5050.unlist.bias
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # COURT court PARTISAN GERRYMANDERING
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-court.sims.2016.eg <- simulation(court.sims.2016, eg_TP)
-court.sims.2016.meanmedian <- simulation(court.sims.2016, meanmedian)
-court.sims.2016.declination <- simulation(court.sims.2016, declination)
-court.sims.2016.bias <- court.sims.2016.unlist.bias
+court.sims.5050.eg <- simulation(court.sims.5050, eg_TP)
+court.sims.5050.meanmedian <- simulation(court.sims.5050, meanmedian)
+court.sims.5050.declination <- simulation(court.sims.5050, declination)
+court.sims.5050.bias <- court.sims.5050.unlist.bias
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # JOINT LEGISLATIVE PARTISAN GERRYMANDERING
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-joint.sims.2016.eg <- simulation(joint.sims.2016, eg_TP)
-joint.sims.2016.meanmedian <- simulation(joint.sims.2016, meanmedian)
-joint.sims.2016.declination <- simulation(joint.sims.2016, declination)
-joint.sims.2016.bias <- joint.sims.2016.unlist.bias
+joint.sims.5050.eg <- simulation(joint.sims.5050, eg_TP)
+joint.sims.5050.meanmedian <- simulation(joint.sims.5050, meanmedian)
+joint.sims.5050.declination <- simulation(joint.sims.5050, declination)
+joint.sims.5050.bias <- joint.sims.5050.unlist.bias
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # GOV. WOLF PARTISAN GERRYMANDERING
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-govwolf.sims.2016.eg <- simulation(govwolf.sims.2016, eg_TP)
-govwolf.sims.2016.meanmedian <- simulation(govwolf.sims.2016, meanmedian)
-govwolf.sims.2016.declination <- simulation(govwolf.sims.2016, declination)
-govwolf.sims.2016.bias <- govwolf.sims.2016.unlist.bias
+govwolf.sims.5050.eg <- simulation(govwolf.sims.5050, eg_TP)
+govwolf.sims.5050.meanmedian <- simulation(govwolf.sims.5050, meanmedian)
+govwolf.sims.5050.declination <- simulation(govwolf.sims.5050, declination)
+govwolf.sims.5050.bias <- govwolf.sims.5050.unlist.bias
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+enacted533 <- sim.election(
+	votes=enacted.comp, 
+	center = 0.533, 
+	yr=50, sims=1000, 
+	sigma=sigma)
 
+		enacted533seats <- (unlist(lapply(enacted.sims.5050, seats)))
+		enacted533votes <- (unlist(lapply(enacted.sims.5050, mean)))
+out.sims.stats("Enacted 53.3%", enacted533seats, enacted533votes)
+
+bias()
+
+enacted533.list.bias <- lapply(enacted533, bias)
+enacted533.unlist.bias <- do.call(rbind, enacted533.list.bias)
+	mean(enacted533.unlist.bias)
+enacted533.eg <- simulation(enacted533, eg_TP)
+	-1 * mean(enacted533.eg)
+enacted533.meanmedian <- simulation(enacted533, meanmedian)
+	mean(enacted533.meanmedian)
+enacted533.declination <- simulation(enacted533, declination)
+	-1 * mean(enacted533.declination)
+enacted533.bias <- enacted533.unlist.bias
                                
 # gerry.tab <- function(x) {
 # 	rbind(
-# 		round(mean(get(paste0(x, ".eg"))), d=3),
-# 		paste0("(", round(sd(get(paste0(x, ".eg"))), d=3), ")"),
-# 		round(mean(get(paste0(x, ".meanmedian"))), d=3),
-# 		paste0("(", round(sd(get(paste0(x, ".meanmedian"))), d=3), ")"),
-# 		round(mean(get(paste0(x, ".declination"))), d=3),
-# 		paste0("(", round(sd(get(paste0(x, ".declination"))), d=3), ")"),
-# 		round(mean(get(paste0(x, ".bias"))), d=3),
-# 		paste0("(", round(sd(get(paste0(x, ".bias"))), d=3), ")")
+# 		r(mean(get(paste0(x, ".eg")))),
+# 		paste0("(", r(sd(get(paste0(x, ".eg")))), ")"),
+# 		r(mean(get(paste0(x, ".meanmedian")))),
+# 		paste0("(", r(sd(get(paste0(x, ".meanmedian")))), ")"),
+# 		r(mean(get(paste0(x, ".declination")))),
+# 		paste0("(", r(sd(get(paste0(x, ".declination")))), ")"),
+# 		r(mean(get(paste0(x, ".bias")))),
+# 		paste0("(", r(sd(get(paste0(x, ".bias")))), ")")
 # )}
 
 # `quick.sum` <-  function (x) {

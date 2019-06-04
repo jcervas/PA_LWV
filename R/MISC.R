@@ -232,7 +232,7 @@ abline(h=0.5, lty=3, col="gray70")
 
 #### Folded Gradiant ####
 
-# district_percent <- round(district_votes.2016*100, digits=0)
+# district_percent <- r(district_votes.2016*100, digits=0)
 
 # pdf(paste0(directory,"/barplotPartisanship2.pdf"), width=8, height=8)
 # par(mfrow=c(2,4),

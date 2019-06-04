@@ -13,7 +13,7 @@ sink("/dev/null")
 statewide.contests.2016 <- c("Congress", "Presidential", "US Senate", "PA Attorneys General", "PA Auditor", "PA Treasurer", "Composite")
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # County Spliits
-county_splits <- c(41, 17, 19, 19) #, 15, 18, 16, 15)
+county_splits <- c(41, 19, 19, 17)
 # COMPACTNESS
 geom_names <- paste0(plans, ".geom")
 
@@ -30,9 +30,9 @@ tab_plan_sum <- cbind.data.frame(
 	Plan = plan_names,
 	CountySplits = county_splits, 
 	Reock = reock.plans, 
-	PolsbyPopper = polsby.plans, 
-	Pres2016 = c(seats.print(enacted.pres), seats.print(court.pres), seats.print(joint.pres), seats.print(govwolf.pres)),
-	Comp2016 = c(seats.print(enacted.comp), seats.print(court.comp), seats.print(joint.comp), seats.print(govwolf.comp))
+	PolsbyPopper = polsby.plans
+	# Pres2016 = c(seats.print(enacted.pres), seats.print(court.pres), seats.print(joint.pres), seats.print(govwolf.pres)),
+	# Comp2016 = c(seats.print(enacted.comp), seats.print(court.comp), seats.print(joint.comp), seats.print(govwolf.comp))
 	)
 tab_plan_sum
 plan_summary.caption = "County Splits and Compactness Scores of the Plans"
@@ -47,7 +47,7 @@ tab_plan_summary <-
 		summary = FALSE,
 		model.numbers = FALSE,
 		initial.zero = TRUE,
-		digits = 2,
+		digits = 3,
 		column.sep.width = "0pt",
 		rownames = FALSE,
 		multicolumn = TRUE,
@@ -57,15 +57,22 @@ tab_plan_summary <-
 		notes = plan_summary.footnote 
 		)
 tab_plan_summary <- tab_plan_summary[c(-6, -7, -13, -14, -15, -16)]
-tab_plan_summary <- append(tab_plan_summary, 
-	"  &   &  &  & \\textbf{Projected} & \\textbf{Projected}  \\\\", 
-  after = 5)
+# tab_plan_summary <- append(tab_plan_summary, 
+# 	"  &   &  &  & \\textbf{Projected} & \\textbf{Projected}  \\\\", 
+#   after = 5)
+# tab_plan_summary <- append(tab_plan_summary,
+# 	"  &  \\textbf{County}  &  \\textbf{Polsby}   &   &  \\textbf{2016 using}  &  \\textbf{five state-wide} \\\\",
+# 	after = 6)
+# tab_plan_summary <- append(tab_plan_summary,
+# 	"  \\textbf{Plan}  &  \\textbf{Splits} &  \\textbf{Popper}  &  \\textbf{Reock}  &  \\textbf{Presidential Results}  &  \\textbf{elections in 2016} \\\\",
+# 	after = 7)
+
 tab_plan_summary <- append(tab_plan_summary,
-	"  &  \\textbf{County}  &  \\textbf{Polsby}   &   &  \\textbf{2016 using}  &  \\textbf{five state-wide} \\\\",
+	"  &  \\textbf{County}  &  \\textbf{Polsby}   &   \\\\",
+	after = 5)
+tab_plan_summary <- append(tab_plan_summary,
+	"  \\textbf{Plan}  &  \\textbf{Splits} &  \\textbf{Popper}  &  \\textbf{Reock}  \\\\",
 	after = 6)
-tab_plan_summary <- append(tab_plan_summary,
-	"  \\textbf{Plan}  &  \\textbf{Splits} &  \\textbf{Popper}  &  \\textbf{Reock}  &  \\textbf{Presidential Results}  &  \\textbf{elections in 2016} \\\\",
-	after = 7)
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -77,27 +84,28 @@ tab_plan_summary <- append(tab_plan_summary,
 # =================================================================
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # SUMMARY OF ELECTIONS
-congsum.caption = "US House Election Summaries (PA 2004-2016)"
+congsum.caption = "US House Election Summaries (PA 2012-2016)"
 congsum.label = "tab:congsum"
-congsum.footnote = "Uncontested races are imputed with 0.25 and 0.75 for the respective winners. All votes are calculated from the Republican perspective of the two-party vote. Efficiency Gap and Declination favor the Republicans when it is negative, while Bias and Mean-Median favor Republicans when positive."
+congsum.footnote = "Uncontested races are imputed with 0.25 and 0.75 for the respective winners. All votes are calculated from the Republican perspective of the two-party vote. We've adjusted all gerrymandering measures such that negative numbers indicate bias in favor of the Democrats."
 
 
 congsum.tmp <- cbind.data.frame(
-	PA2004 = gerry(default.unc(house.2004.votes)),
-	PA2006 = gerry(default.unc(house.2006.votes)),
-	PA2008 = gerry(default.unc(house.2008.votes)),
-	PA2010 = gerry(default.unc(house.2010.votes)),
+	# PA2004 = gerry(default.unc(house.2004.votes)),
+	# PA2006 = gerry(default.unc(house.2006.votes)),
+	# PA2008 = gerry(default.unc(house.2008.votes)),
+	# PA2010 = gerry(default.unc(house.2010.votes)),
  	PA2012 = gerry(default.unc(house.2012.votes)), 
  	PA2014 = gerry(default.unc(house.2014.votes)), 
 	PA2016 = gerry(default.unc(house.2016.votes)),
-	PA2018 = gerry(default.unc(house.2018.votes)),
-	PA2012_2016_AVE = gerry(rowMeans(cbind(	
-  	default.unc(house.2012.votes),
-  	default.unc(house.2014.votes),
-  	default.unc(house.2016.votes))))
+	# PA2018 = gerry(default.unc(house.2018.votes)),
+	PA2012_2016_AVE = rowMeans(cbind(	
+  	gerry(default.unc(house.2012.votes), toggle=F),
+  	gerry(default.unc(house.2014.votes), toggle=F),
+  	gerry(default.unc(house.2016.votes), toggle=F)))
   )
-colnames(congsum.tmp) <- c(seq(2004,2018,2),"AVE")
-congsum.tmp.tex <- stargazer(tmp,
+congsum.tmp 
+colnames(congsum.tmp) <- c(seq(2012,2016,2),"AVE")
+congsum.tmp.tex <- stargazer(congsum.tmp,
 	style = "apsr", 
 	summary = FALSE,
 	header = FALSE,
@@ -106,7 +114,8 @@ congsum.tmp.tex <- stargazer(tmp,
 	label = congsum.label,
 	title = congsum.caption,
 	notes = congsum.footnote)
-congsum.tmp.tex <- congsum.tmp.tex[c(-6, -15, -16, -17, -18)]
+congsum.tmp.tex <- congsum.tmp.tex[c(-6, -16, -17, -18, -19)]
+congsum.tmp.tex[8] <- "Seats &  [13R-5D] &  [13R-5D] &  [13R-5D] & [13R-5D] \\\\ "
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -145,30 +154,22 @@ district_summary <- district_summary[c(-6, -28, -29, -30, -31)]
 # =================================================================
 # Measures of Gerrymandering for the Eight Considered Plans
 # =================================================================
-r <- function(round, d=3) round(round, digits=d)
 
 nintyfive <- function(x, percent=FALSE) {
 	if (percent==TRUE){ return(paste0("(", percent(r(quantile(x[!is.na(x)], 0.025),d=1)), ", ", percent(r(quantile(x[!is.na(x)], 0.975),d=1)), ")")) }
-	return(paste0("(", r(quantile(x[!is.na(x)], 0.025),d=2), ", ", r(quantile(x[!is.na(x)], 0.975),d=2), ")"))
+	return(paste0("(", r(quantile(x[!is.na(x)], 0.025)), ", ", r(quantile(x[!is.na(x)], 0.975)), ")"))
 	}
 
 gtab <- function(x) {
-	p <- (paste0(x, ".sims.2016"))
+	p <- (paste0(x, ".sims.5050"))
 	p.tmp <- get(p)
-	s.tmp <- maps.sims.seats.2016[[x]]
-	v.tmp <- maps.sims.votes.2016[[x]]
+	s.tmp <- maps.sims.seats.5050[[x]]
+	v.tmp <- maps.sims.votes.5050[[x]]
 	x.bias <- get(paste0(p, ".bias"))
 	x.eg <- get(paste0(p, ".eg"))
 	x.mm <- get(paste0(p, ".meanmedian"))
 	x.declin <- get(paste0(p, ".declination"))
 		return(c(
-			paste0(round(sum(s.tmp*18)/(1000*18)*18, d=2), "R-", round(18-sum(s.tmp*18)/(1000*18)*18, d=2), "D"),
-			paste0("(", r(quantile(s.tmp, 0.025),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.025),d=1)*18, "D, ", r(quantile(s.tmp, 0.975),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.975),d=1)*18, "D)"),
-			paste0(median(s.tmp)*18, "R-", 18-median(s.tmp)*18, "D"),
-			percent(mean(v.tmp)),
-			percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) > 0.5) / 1000),
-			percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) < 0.5) / 1000),
-			percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) == 0.5) / 1000),
 			r(mean(x.bias)), 
 				nintyfive(x.bias), 
 			r(mean(x.eg)), 
@@ -179,21 +180,67 @@ gtab <- function(x) {
 				nintyfive(x.declin)
 			))
 		}
-(gerry.table.gen <- 
+
+ptab <- function(x) {
+	p <- (paste0(x, ".sims.5050"))
+	p.tmp <- get(p)
+	s.tmp <- maps.sims.seats.5050[[x]]
+	v.tmp <- maps.sims.votes.5050[[x]]
+		return(c(
+			paste0(r(sum(s.tmp*18)/(1000*18)*18), "R-", r(18-sum(s.tmp*18)/(1000*18)*18), "D"),
+			paste0("(", r(quantile(s.tmp, 0.025),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.025),d=1)*18, "D, ", r(quantile(s.tmp, 0.975),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.975),d=1)*18, "D)"),
+			paste0(median(s.tmp)*18, "R-", 18-median(s.tmp)*18, "D"),
+			percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) > 0.5) / 1000),
+			percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) < 0.5) / 1000),
+			percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) == 0.5) / 1000)
+			))
+}	
+
+tab_prop.gen <- 
 	cbind.data.frame(
-		gtab("enacted"),
-		gtab("court"),
-		gtab("joint"),
-		gtab("govwolf")))
-	colnames(gerry.table.gen) <- c(plan_names)
-	rownames(gerry.table.gen) <- c(
+		ptab("enacted"),
+		ptab("joint"),
+		ptab("govwolf"),
+		ptab("court")
+		)
+	colnames(tab_prop.gen) <- c(plan_names)
+	rownames(tab_prop.gen) <- c(
 		"Mean Seat Share",
 		"SDS", 
 		"Median Seat Share",
-		"Vote Share",
 		"Probability Republican Majority",
 		"Probability Democratic Majority",
-		"Probability Tied Delegation",
+		"Probability Tied Delegation")
+
+prop.caption = "Probabilistic Projections of Partisan Outcomes for Four Plans"
+prop.label = "tab:prob"
+prop.footnote = "Using a Composite of Five Statewide Elections (adjusted to a 50\% Vote Share)"
+
+tab_prop.tex <- stargazer(tab_prop.gen,
+    style = "apsr", 
+    summary=F,
+    column.sep.width = "-5pt", 
+    float = T, 
+    header = FALSE,
+    multicolumn = TRUE, 
+    title= prop.caption, 
+    label= prop.label,
+	notes = prop.footnote)
+tab_prop <- tab_prop.tex[c(-6, -15, -16, -17, -18)]
+
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+gerry.table.gen <- 
+	cbind.data.frame(
+		gtab("enacted"),
+		gtab("joint"),
+		gtab("govwolf"),
+		gtab("court")
+		)
+
+	colnames(gerry.table.gen) <- c(plan_names)
+	rownames(gerry.table.gen) <- c(
 		"Partisan Bias", 
 		"SD1",
 		"Efficiency Gap",
@@ -217,7 +264,7 @@ tab_gerry.tex <- stargazer(gerry.table.gen,
     title= gerry.caption, 
     label= gerry.label,
 	notes = gerry.footnote)
-tab_gerry <- tab_gerry.tex[c(-6, -24, -25, -26, -27)]
+tab_gerry <- tab_gerry.tex[c(-6, -17, -18, -19, -20)]
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -230,42 +277,42 @@ tab_gerry <- tab_gerry.tex[c(-6, -24, -25, -26, -27)]
 # Information about Twelve States with Constitutional Provisions similar to Pennsylvania
 # =================================================================
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-latex <- function(x) cat(paste(x, collapse="\n"), "\n")
-states_compare.caption = "Information about Twelve States with Constitutional Provisions similar to Pennsylvania"
-states_compare.label = "tab:states_compare"
-states_compare.footnote = "Seats and votes are based on the 2016 five-election projection (to deal with the existence of non-contested congressional districts). Percentages are of the of district level results. This difference is why the percentages reported in columns 6 and 8 are not identical. Data from DailyKos, All about Redistricting, and Ballotpedia web sites.States with fewer than 9 districts do not have efficiency gap or median values reported because of the potential unreliability of those calculations given the small number of districts involved."
+# latex <- function(x) cat(paste(x, collapse="\n"), "\n")
+# states_compare.caption = "Information about Twelve States with Constitutional Provisions similar to Pennsylvania"
+# states_compare.label = "tab:states_compare"
+# states_compare.footnote = "Seats and votes are based on the 2016 five-election projection (to deal with the existence of non-contested congressional districts). Percentages are of the of district level results. This difference is why the percentages reported in columns 6 and 8 are not identical. Data from DailyKos, All about Redistricting, and Ballotpedia web sites.States with fewer than 9 districts do not have efficiency gap or median values reported because of the potential unreliability of those calculations given the small number of districts involved."
 
-tab_states_compare <- 
-	paste("
-		\\begin{table}
-		\\caption{", states_compare.caption, "}
-		\\label{", states_compare.label, "}
-		\\begin{tabular}{
-		>{\\centering\\arraybackslash}
-		M{0.1\\linewidth}|
-		M{.025\\linewidth}|
-		M{.075\\linewidth}
-		M{.075\\linewidth}
-		M{.075\\linewidth}
-		M{.075\\linewidth}
-		M{.075\\linewidth}
-		M{.075\\linewidth}
-		M{.075\\linewidth}
-		M{.3\\linewidth}}
-		\\textbf{State} & \\textbf{\\# CDs} & \\textbf{Unified Control (2011)} & \\textbf{Unified Control (2016)} & \\textbf{Seats (2016)} & \\textbf{Votes (2016)} & \\textbf{Mean District Vote Share (Dem)} & \\textbf{Median District Vote Share (Dem)} & \\textbf{Efficiency Gap} & \\textbf{Who does districting} \\\\
-		 \\hline
-		Arizona & 9 & $\\surd$ (R) & $\\surd$ (R) & 44.4\\% & 48.1\\% & 50.4\\% & 49.4\\% & 0.08 & Independent commission \\\\
-		Arkansas & 4 & $\\surd$ (D) & $\\surd$ (R) & 0\\% & 35.7\\% & 35.5\\% &  &  & state legislature \\\\
-		Delaware & 1 & $\\surd$ (D) & $\\surd$ (D) & 100\\% & 55.9\\% & 56\\% &  &  & NA \\\\
-		Illinois & 18 & $\\surd$ (D) &  & 61.1\\% & 59.0\\% & 59.6\\% & 59.8\\% & 0.08 & state legislature \\\\
-		Indiana & 9 & $\\surd$ (R) & $\\surd$ (R) & 22.2\\% & 39.9\\% & 40.1\\% & 35.9\\% & 0.09 & state legislature \\\\
-		Kentucky & 6 &  & $\\surd$ (R) & 16.7\\% & 34.3\\% & 33.8\\% &  &  & state legislature \\\\
-		Oklahoma & 5 & $\\surd$ (R) & $\\surd$ (R) & 0\\% & 30.7\\% & 30.7\\% &  &  & state legislature \\\\
-		Oregon & 5 &  & $\\surd$ (D) & 80\\% & 56.2\\% & 56\\% &  &  & state legislature \\\\
-		South Dakota & 1 & $\\surd$ (R) & $\\surd$ (R) & 0\\% & 34.0\\% & 34\\% &  &  & NA \\\\
-		Tennessee & 9 & $\\surd$ (R) & $\\surd$ (R) & 22.2\\% & 36.4\\% & 37.4\\% & 31.3\\% & 0.03 & state legislature \\\\
-		Washington & 10 & $\\surd$ (D) & $\\surd$ (D) & 70\\% & 58.8\\% & 56\\% & 52.3\\% & -0.05 & 5-member independent commission \\\\
-		Wyoming & 1 & $\\surd$ (R) & $\\surd$ (R) & 0\\% & 24.3\\% & 24.3\\% &  &  & NA ")
+# tab_states_compare <- 
+# 	paste("
+# 		\\begin{table}
+# 		\\caption{", states_compare.caption, "}
+# 		\\label{", states_compare.label, "}
+# 		\\begin{tabular}{
+# 		>{\\centering\\arraybackslash}
+# 		M{0.1\\linewidth}|
+# 		M{.025\\linewidth}|
+# 		M{.075\\linewidth}
+# 		M{.075\\linewidth}
+# 		M{.075\\linewidth}
+# 		M{.075\\linewidth}
+# 		M{.075\\linewidth}
+# 		M{.075\\linewidth}
+# 		M{.075\\linewidth}
+# 		M{.3\\linewidth}}
+# 		\\textbf{State} & \\textbf{\\# CDs} & \\textbf{Unified Control (2011)} & \\textbf{Unified Control (2016)} & \\textbf{Seats (2016)} & \\textbf{Votes (2016)} & \\textbf{Mean District Vote Share (Dem)} & \\textbf{Median District Vote Share (Dem)} & \\textbf{Efficiency Gap} & \\textbf{Who does districting} \\\\
+# 		 \\hline
+# 		Arizona & 9 & $\\surd$ (R) & $\\surd$ (R) & 44.4\\% & 48.1\\% & 50.4\\% & 49.4\\% & 0.08 & Independent commission \\\\
+# 		Arkansas & 4 & $\\surd$ (D) & $\\surd$ (R) & 0\\% & 35.7\\% & 35.5\\% &  &  & state legislature \\\\
+# 		Delaware & 1 & $\\surd$ (D) & $\\surd$ (D) & 100\\% & 55.9\\% & 56\\% &  &  & NA \\\\
+# 		Illinois & 18 & $\\surd$ (D) &  & 61.1\\% & 59.0\\% & 59.6\\% & 59.8\\% & 0.08 & state legislature \\\\
+# 		Indiana & 9 & $\\surd$ (R) & $\\surd$ (R) & 22.2\\% & 39.9\\% & 40.1\\% & 35.9\\% & 0.09 & state legislature \\\\
+# 		Kentucky & 6 &  & $\\surd$ (R) & 16.7\\% & 34.3\\% & 33.8\\% &  &  & state legislature \\\\
+# 		Oklahoma & 5 & $\\surd$ (R) & $\\surd$ (R) & 0\\% & 30.7\\% & 30.7\\% &  &  & state legislature \\\\
+# 		Oregon & 5 &  & $\\surd$ (D) & 80\\% & 56.2\\% & 56\\% &  &  & state legislature \\\\
+# 		South Dakota & 1 & $\\surd$ (R) & $\\surd$ (R) & 0\\% & 34.0\\% & 34\\% &  &  & NA \\\\
+# 		Tennessee & 9 & $\\surd$ (R) & $\\surd$ (R) & 22.2\\% & 36.4\\% & 37.4\\% & 31.3\\% & 0.03 & state legislature \\\\
+# 		Washington & 10 & $\\surd$ (D) & $\\surd$ (D) & 70\\% & 58.8\\% & 56\\% & 52.3\\% & -0.05 & 5-member independent commission \\\\
+# 		Wyoming & 1 & $\\surd$ (R) & $\\surd$ (R) & 0\\% & 24.3\\% & 24.3\\% &  &  & NA ")
 
 
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -353,13 +400,6 @@ tab_congress_predict <- tab_congress_predict[c(-6, -26, -28, -29, -30, -31, -32)
 sink()
 
 
-
-
-Table(tab_congress_predict,
-	caption = congress_predict.caption,
-	label = congress_predict.label,
-	footnote = congress_predict.footnote)
-
 Table(
 	tab_plan_summary,
 	caption = plan_summary.caption,
@@ -375,17 +415,22 @@ Table(tab_gerry,
 	caption = gerry.caption,
 	label = gerry.label, 
 	footnote = gerry.footnote)
-		
-Table(latex(tab_states_compare),  
-	caption = states_compare.caption,
-	label = states_compare.label, 
-	footnote = states_compare.footnote)
+
+Table(tab_prop,
+	caption = prop.caption,
+	label = prop.label, 
+	footnote = prop.footnote)
 
 Table(district_summary,
 	caption = district_summary.caption,
 	label = district_summary.label,
 	footnote = district_summary.footnote
 	)
+
+Table(tab_congress_predict,
+	caption = congress_predict.caption,
+	label = congress_predict.label,
+	footnote = congress_predict.footnote)
 cat("
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n

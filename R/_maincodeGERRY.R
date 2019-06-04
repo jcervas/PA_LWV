@@ -38,14 +38,14 @@ set.seed(seed)
   plan_names <- 
     c(
       "2011 Enacted",
-      "2018 Court Remedial",
       "Joint Legislative",
-      "Gov. Wolf")
+      "Gov. Wolf",
+      "2018 Court Remedial")
 	plans <- 
 		c("enacted2011", 
-        "court", 
         "joint", 
-        "govwolf")
+        "govwolf",
+        "court")
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # =================================================================
 # -- FUNCTIONS -- -- FUNCTIONS -- -- FUNCTIONS -- -- FUNCTIONS  -- 

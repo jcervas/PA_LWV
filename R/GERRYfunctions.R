@@ -3,7 +3,7 @@ cat(
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
     LOADING FUNCTIONS. . . . . . . . . . . . . . . . . . . . . . 
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••\n")
-`Table` <- function(x, caption="", label="", footnote="")
+`Table` <- function(x, caption="", label="", footnote="", out=NULL)
   {
     x <- append(x,
 paste0(
@@ -59,7 +59,7 @@ cat(paste0("\n \\begin{center} INSERT TABLE \\ref{", label, "} ABOUT HERE \\end{
 % -- END FIGURE -- END FIGURE -- END FIGURE -- END FIGURE -- END FI %
 % =================================================================\n \n"
 )
-cat(paste(x, collapse = "\n"), "\n")
+  cat(paste(x, collapse = "\n"), "\n")
   }
 
 `new.list` <-
@@ -103,14 +103,14 @@ seats.display <- function(x) {
   function(inp) mean(inp>.5)
 
 `make.weights` <-  
-  function(x, digits = 5) {
-    round(x/sum(x,na.rm=T), digits = digits)}
+  function(x, d = 5) {
+    r(x/sum(x,na.rm=T), d = d)}
 
-`f.num` <- function(x, digits=2) format(round(x, digits=digits), nsmall=digits)
+`f.num` <- function(x, d=2) format(round(x, d=d), nsmall=d)
 
 `percent` <- 
-  function(x, digits = 2) {
-    paste0(f.num(x * 100, digits= digits), "%")
+  function(x, d = 1) {
+    paste0(f.num(x * 100, d= d), "%")
   }
 
 `replaceNA` <- 
@@ -286,7 +286,7 @@ function(t1, t2, w = 2) {
 tmp <- t1[!is.na(t1)]
 reg <- summary(lm(tmp ~ 1))$coef[1] # mean
 reg_sig <- summary(lm(tmp ~ 1))$coef[2] # sigma
-  new.reg <- round(rnorm(length(t1[is.na(t1)]), reg, reg_sig), d=0)
+  new.reg <- r(rnorm(length(t1[is.na(t1)]), reg, reg_sig), d=0)
   t1[is.na(t1)] <- new.reg
   return(t1)}
 
@@ -312,6 +312,8 @@ sim.election <- function(votes= NULL, center=house.2016.votes, incumbency=NULL, 
       }
   return(sims.year)
   }
+
+r <- function(r, d=2) round(r, digits=d)
 # =================================================================
 # -- GERRYMANDER MEASURES -- GERRYMANDER MEASURES -- GERRYMANDER ME
 # =================================================================
@@ -359,25 +361,38 @@ eg_TP <- function(votes)
       return(eff_gap(y[1], y[2]))
   }
 
-  gerry <- function(x)
-  {
-    Seats = seats.print(x)
+  gerry <- function(x, toggle=TRUE)
+    {
+    Seats = paste0(" [", seats.print(x), "]")
+    SeatPER = percent(seats(x))
     Votes = percent(mean(default.unc(x)))
-    Bias = round(seatsvotes(x)$bias, digits=3)
-    EfficiencyGap = round(eg_TP(x), digits=3)
-    MeanMedian = round(meanmedian(x), digits=3)
-    Declination = round(declination(x), digits=3)
+    Bias = r(seatsvotes(x)$bias)
+    EfficiencyGap = -1 * r(eg_TP(x))
+    MeanMedian = r(meanmedian(x))
+    Declination = -1 * r(declination(x))
     a <- rbind.data.frame(
-      Seats,Votes,Bias,EfficiencyGap,MeanMedian,Declination)
-    rownames(a) <- c("Seats","Votes","Bias","EfficiencyGap","MeanMedian","Declination")
+      Seats, SeatPER, Votes, Bias, EfficiencyGap, MeanMedian, Declination)
+    rownames(a) <- c("Seats","Seat %","Votes","Bias","Efficiency Gap","Mean/Median","Declination")
     colnames(a) <- "Summary"
+
+    if (toggle!=TRUE) { # TO RETURN UNFORMATTED MEASUREMENTS
+    SeatsT = NA
+    SeatPERT = r(seats(x))
+    VotesT = r(mean(default.unc(x)))
+    BiasT = r(seatsvotes(x)$bias)
+    EfficiencyGapT = -1 * r(eg_TP(x))
+    MeanMedianT = r(meanmedian(x))
+    DeclinationT = -1 * r(declination(x))
+      return(rbind.data.frame(
+      SeatsT, SeatPERT, VotesT, BiasT, EfficiencyGapT, MeanMedianT, DeclinationT))}
     return(a)
-  }
+    }
 
 
 
 
  # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••   
+
 
 
 `circle.new` <- 
@@ -421,8 +436,8 @@ function (x, y, radius, nv = 100, border = NULL, col = NA, lty = 1,
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # COMPACTNESS MEASURES
 
-POLSBYPOPPER <- function (x) round(mean((4 * 3.1415926535 * x$area) / (x$perimeter^2)), digits=3)
-REOCK <- function (x) round(mean(x$area/(x$smallestcircle^2 * 3.1415926535)), digits=3)
+POLSBYPOPPER <- function (x) r(mean((4 * 3.1415926535 * x$area) / (x$perimeter^2)), d = 3)
+REOCK <- function (x) r(mean(x$area/(x$smallestcircle^2 * 3.1415926535)), d = 3)
 
 
 poly.math <- function (x) {
