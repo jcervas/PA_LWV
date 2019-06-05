@@ -267,11 +267,10 @@ enacted533 <- sim.election(
 	yr=50, sims=1000, 
 	sigma=sigma)
 
-		enacted533seats <- (unlist(lapply(enacted.sims.5050, seats)))
-		enacted533votes <- (unlist(lapply(enacted.sims.5050, mean)))
+		enacted533seats <- (unlist(lapply(enacted533, seats)))
+		enacted533votes <- (unlist(lapply(enacted533, mean)))
 out.sims.stats("Enacted 53.3%", enacted533seats, enacted533votes)
 
-bias()
 
 enacted533.list.bias <- lapply(enacted533, bias)
 enacted533.unlist.bias <- do.call(rbind, enacted533.list.bias)
@@ -283,7 +282,28 @@ enacted533.meanmedian <- simulation(enacted533, meanmedian)
 enacted533.declination <- simulation(enacted533, declination)
 	-1 * mean(enacted533.declination)
 enacted533.bias <- enacted533.unlist.bias
-                               
+  
+
+remedial.at.2018 <- sim.election(
+	votes=court.comp, 
+	center = mean.w(house.2018.votes, house.2018.turnout), 
+	yr=2018, sims=1000, 
+	sigma=sigma)
+
+		remedial.at.2018.seats <- (unlist(lapply(remedial.at.2018, seats)))
+		remedial.at.2018.votes <- (unlist(lapply(remedial.at.2018, mean)))
+out.sims.stats("Remedial Centered at 2018 Actual", remedial.at.2018.seats, remedial.at.2018.votes)
+
+enacted533.list.bias <- lapply(enacted533, bias)
+enacted533.unlist.bias <- do.call(rbind, enacted533.list.bias)
+	mean(enacted533.unlist.bias)
+enacted533.eg <- simulation(enacted533, eg_TP)
+	-1 * mean(enacted533.eg)
+enacted533.meanmedian <- simulation(enacted533, meanmedian)
+	mean(enacted533.meanmedian)
+enacted533.declination <- simulation(enacted533, declination)
+	-1 * mean(enacted533.declination)
+enacted533.bias <- enacted533.unlist.bias                             
 # gerry.tab <- function(x) {
 # 	rbind(
 # 		r(mean(get(paste0(x, ".eg")))),
