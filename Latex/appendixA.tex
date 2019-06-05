@@ -1,0 +1,33 @@
+\label{app:A}
+\setcounter{table}{0} \renewcommand{\thetable}{A.\arabic{table}}
+\setcounter{figure}{0} \renewcommand{\thefigure}{A.\arabic{figure}}
+\setcounter{footnote}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% =================================================================
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% =================================================================
+% - Methodological Appendix
+% =================================================================
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% =================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+This appendix describes in more detail how we measure different indicia found in the literature. These measures include the \textit{Efficiency Gap} \citep{McGhee2017}, the \textit{Mean/Median Gap} \citep{Best2018}, and partisan symmetry calculations \citep{Grofman2007, Mcgann_et_al_2015_ELJ, McGann_et_al_2016_gerrymandering}. The first two of these measures are straightforward, though estimates will differ depending upon the elections from which they are calculated.
+
+\subsubsection*{Efficiency Gap}
+The \textit{Efficiency Gap} is calculated as defined in \citet{Mcghee2014}, where all the party’s votes are wasted if they lose the district, and all the winner’s votes over 50\% are wasted.  The difference between each party’s wasted votes is then divided by the total votes cast to produce the \textit{Efficiency Gap}, with a value of zero denoting what is regarded as ideal.  As noted in the text, this is equivalent to taking an aggregate swing ratio of two as ideal. 
+
+\subsubsection*{Mean/Median Gap}
+The \textit{Mean/Median Gap} is the difference between the average vote percentage for a party and its share in the median district when districts are sorted according to two-party vote share.  This measure is a variant of \textit{skewness}, such that when the mean is substantially higher or lower than the median, this is indicative of bias.
+
+\subsubsection*{Partisan Bias}
+There are a number of different ways to estimate \textit{Partisan Bias} based on the shape of the votes to seats distribution \citep{Grofman1983, Browning_King_1987_seats_votes, GelmanKing1994_unifiedAJPS, Grofman_et_al_1997_SwingRatio_Bias, Zingher2016_bias_swingratio_JEPP}. \new{ \textit{Partisan Bias} tells us if an electoral system asymmetrically awards seats to one party at the expense of another. An election is not biased if at 50\% of the vote, each party gets 50\% of the seats, and at any percentage of the vote, the other party would receive the same share of the seats had they received that vote percentage.} Hypothetical elections are constructed by incrementally adding (or subtracting) one percentage point to find aggregate seat outcomes under differing mean vote shares.  The resulting (s,v) points on the votes to seats curve are then converted to a log odds form by using $ log(\frac{s}{1-s}) $ as the dependent variable, and $ log(\frac{v}{1-v}) $ as the independent variable, and the points that fall between some range, usually 45\% and 55\% vote share are entered into a regression.  \textit{Partisan Bias} is then calculated from the intercept of this regression using an exponential transformation (for details see \citet{Grofman1983}). \textit{Partisan Bias} is calculated from the Democratic perspective, so a negative bias indicates bias against Democrats. We also examine the standard errors to determine the probability that the observed bias is not due to random chance. Table \ref{tab:a1} also reports the \textit{Swing Ratio}, a measure of responsiveness that is defined as the slope of the same regression used to generate \textit{Partisan Bias}. \new{Where to center the seats/votes curve is an unresolved question in the literature \citep{Kastellec_et_al_2008_PS}. In \citet{GelmanKing1994_unifiedAJPS}'s \texttt{JudgeIt} program, the choice is to center the election at the average Democratic vote share. We've run the numbers in three ways, the aforementioned way, centering at a tied 50/50 election, and at the actual election results.  All three equations provide similar estimates as do the results from \texttt{JudgeIt}. We report here the average bias and swing ratios obtained from \texttt{JudgeIt II} in \texttt{R}. For more information on the method and uncertainty around \texttt{JudgeIt} estimates, see \citet{GelmanKing1994_unifiedAJPS}.}
+
+
+
+\subsubsection*{Results}
+Table \ref{tab:a1} in reports the measures of gerrymandering described above. No matter what measure one choices to score the plans on, the \textit{2011} unconstitutional plan is the worst, by far. The \textit{Joint Legislative} plan proposed by the Republican leaders of the state legislature is second worst on two of the three measures, and third worse on the other. By way of contrast, the \textit{Court Remedial} plan of 2018 scores the best on two of three measures, and second best on the other. The information provided in Table \ref{tab:a1} show that bias, any way measured, always points in the direction of pro-Republican.  The magnitude of the bias varies by plan and by measure, though the unconstitutional \textit{2011} plan stands out as egregious. We can not tell much about the amount of gerrymandering based solely on any of the included measures. Though the unconstitutional plan of \textit{2011} scores higher levels of bias then any other plan we have analyzed, it is difficult to derive meaning from these numbers since they don't include measures of uncertainty and the court has yet to establish a baseline, which when crossed, is \textit{indicia} of partisan gerrymandering. \new{This type of analysis does allow use to measure the relative consequences of gerrymandering among plans, on an equal playing field, using identical electoral data. The results of these analyses provide additional evidence that the \textit{2011} plans is without doubt an egregious gerrymander, the \textit{Joint legislative} plans is a \textit{Stealth Gerrymander}, and the \textit{2018 Court Remedial plan} is \underline{not} a partisan gerrymander.} 
+
+We also offer an alternative way of presenting district specific vote share or projected vote share data, of the sort provided in Table \ref{tab:2} of the main text. Figure \ref{fig:a1}’s shadings indicate the extent to which the districts are tilted toward one or the other party.    
