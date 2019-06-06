@@ -214,7 +214,7 @@ tab_prop.gen <-
 
 prop.caption = "Probabilistic Projections of Partisan Outcomes for Four Plans"
 prop.label = "tab:prob"
-prop.footnote = "Using a Composite of Five Statewide Elections (adjusted to a 50\% Vote Share)"
+prop.footnote = "Using a Composite of Five Statewide Elections (adjusted to a 50\\% Vote Share)"
 
 tab_prop.tex <- stargazer(tab_prop.gen,
     style = "apsr", 
@@ -400,26 +400,30 @@ tab_congress_predict <- tab_congress_predict[c(-6, -26, -28, -29, -30, -31, -32)
 sink()
 
 
-Table(
-	tab_plan_summary,
+Table(tab_plan_summary,
+	path = "Tables/_tab_summaries.tex",
 	caption = plan_summary.caption,
 	label = plan_summary.label,
 	footnote = plan_summary.footnote)
 
 Table(congsum.tmp.tex,
+	path = "Tables/_tab_congsum.tex",
 	caption = congsum.caption,
 	label = congsum.label,
 	footnote = congsum.footnote)
 
-Table(tab_gerry,  
+Table(tab_gerry, 
+	path = "Tables/_tab_gerry.tex", 
 	caption = gerry.caption,
 	label = gerry.label, 
 	footnote = gerry.footnote)
 
 Table(tab_prop,
+	path = "Tables/_tab_prob.tex",
 	caption = prop.caption,
 	label = prop.label, 
-	footnote = prop.footnote)
+	footnote = prop.footnote,
+	landscape = TRUE)
 
 Table(district_summary,
 	caption = district_summary.caption,

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  4 JUN 2019 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  5 JUN 2019 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1148,7 +1148,17 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 310.
 )
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `tab:summaries' multiply defined.
+
+
+LaTeX Warning: Label `tab:gerry' multiply defined.
+
+
+LaTeX Warning: Label `tab:prob' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -1301,17 +1311,12 @@ Package epstopdf Info: Source file: <Images/seal-black.eps>
 (epstopdf)                    date: 2019-06-04 19:03:50
 (epstopdf)                    size: 671406 bytes
 (epstopdf)             Output file: <Images/seal-black-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-06-04 17:10:50
+(epstopdf)                    date: 2019-06-05 12:29:31
 (epstopdf)                    size: 91597 bytes
 (epstopdf)             Command: <repstopdf --outfile=Images/seal-black-eps-conv
 erted-to.pdf Images/seal-black.eps>
 (epstopdf)             \includegraphics on input line 50.
-runsystem(repstopdf --outfile=Images/seal-black-eps-converted-to.pdf Images/sea
-l-black.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <Images/seal-black-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-06-04 17:11:23
-(epstopdf)                    size: 91597 bytes.
+Package epstopdf Info: Output file is already uptodate.
 <Images/seal-black-eps-converted-to.pdf, id=20, 55.20625pt x 56.21pt>
 File: Images/seal-black-eps-converted-to.pdf Graphic file (type pdf)
 <use Images/seal-black-eps-converted-to.pdf>
@@ -1410,47 +1415,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--114
 d in Penn-syl-va-nia",
  []
 
-[6] [7] [8] [9] [10] [11]
-Overfull \hbox (7.0924pt too wide) in paragraph at lines 292--293
+[6] (./Tables/_tab_summaries.tex
+LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <14.4> not available
+(Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 8.
+) [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+[9] [10] [11]
+Overfull \hbox (7.0924pt too wide) in paragraph at lines 289--290
 []\OT1/ppl/m/n/12 We em-pha-size that a par-ti-san ger-ry-man-der-ing claim bas
 ed on po-lit-i-cal con-se-quences
  []
 
 [12]
-Overfull \hbox (2.1119pt too wide) in paragraph at lines 308--308
+Overfull \hbox (2.1119pt too wide) in paragraph at lines 305--305
 |\OT1/ppl/b/n/14.4 Evaluating Par-ti-san Ger-ry-man-der-ing us-ing Statewide el
 ec-tions to pro-
  []
 
-[13] [14] [15]
-Overfull \hbox (0.20407pt too wide) in paragraph at lines 417--425
+[13] [14] (./Tables/_tab_gerry.tex) (./Tables/_tab_prob.tex
+Overfull \hbox (218.56424pt too wide) in paragraph at lines 10--21
+ [][] 
+ []
+
+) [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+
+Package natbib Warning: Citation `Chen2015_JOP' on page 17 undefined on input l
+ine 419.
+
+
+Overfull \hbox (0.20407pt too wide) in paragraph at lines 419--427
 []\OT1/ppl/m/n/12 Recognizing the po-ten-tial for so-called ``nat-u-ral ger-ry-
 man-der-ing", we wish to high-
  []
 
-[16] [17] [18]) (./Tables/_tab_summaries.tex
-LaTeX Font Info:    Font shape `OT1/ppl/bx/sc' in size <14.4> not available
-(Font)              Font shape `OT1/ppl/b/sc' tried instead on input line 8.
-) [19] (./Tables/_tab_congsum.tex)
-[20
+[17] [18] [19]) (./Tables/_tab_summaries.tex) [20] (./Tables/_tab_congsum.tex)
+[21
 
 
-] (./Tables/_tab_gerry.tex) [21
+] (./Tables/_tab_gerry.tex) [22
 
 
 
-] (./Tables/_tab_prop.tex) [22
+] (./Tables/_tab_prob.tex) [23
 
 
 
 ]
 (./Figures/_maps.tex
-<Figures/fig_maps.pdf, id=473, 578.16pt x 722.7pt>
+<Figures/fig_maps.pdf, id=456, 578.16pt x 722.7pt>
 File: Figures/fig_maps.pdf Graphic file (type pdf)
 <use Figures/fig_maps.pdf>
 Package pdftex.def Info: Figures/fig_maps.pdf  used on input line 13.
 (pdftex.def)             Requested size: 452.9679pt x 566.20697pt.
-) [23 <./Figures/fig_maps.pdf>]
+) [24 <./Figures/fig_maps.pdf>]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1483,7 +1505,7 @@ Package pdftex.def Info: Figures/fig_maps.pdf  used on input line 13.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./main.bbl [24
+ (./main.bbl [25
 
 
 
@@ -1492,7 +1514,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--251
 []\OT1/ppl/m/n/10 Wang, Samuel, Richard Ober, and Ben-jamin
  []
 
-) [25] (./Tables/a_tab_districtvotes.tex) [26
+) [26] (./Tables/a_tab_districtvotes.tex) [27
 
 ]
 (./Tables/_a_tab_congress_predict.tex
@@ -1500,9 +1522,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--32
 
  []
 
-) [27
+) [28
 
-] 
+]
+
+Package natbib Warning: There were undefined citations.
+
+
 AED: lastpage setting LastPage
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 101.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 101.
@@ -1511,15 +1537,19 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 101.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 101.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 71C4A623955643170D51A082B0CA65F3;236.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 31765 strings out of 492649
- 614783 string characters out of 6129622
- 697900 words of memory out of 5000000
+ 31776 strings out of 492649
+ 614988 string characters out of 6129622
+ 697941 words of memory out of 5000000
  34955 multiletter control sequences out of 15000+600000
  570896 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,94p,10396b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 62i,11n,94p,10396b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
@@ -1531,10 +1561,10 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive
 mf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-dist
 /fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/
 type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (27 pages, 3364792 bytes).
+Output written on main.pdf (28 pages, 3368283 bytes).
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 518 compressed objects within 6 object streams
- 121 named destinations out of 1000 (max. 500000)
+ 556 PDF objects out of 1000 (max. 8388607)
+ 500 compressed objects within 5 object streams
+ 126 named destinations out of 1000 (max. 500000)
  72 words of extra memory for PDF output out of 10000 (max. 10000000)
 

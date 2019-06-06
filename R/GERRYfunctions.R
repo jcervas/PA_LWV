@@ -3,29 +3,37 @@ cat(
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
     LOADING FUNCTIONS. . . . . . . . . . . . . . . . . . . . . . 
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••\n")
-`Table` <- function(x, caption="", label="", footnote="", out=NULL)
+`Table` <- function(x, path=NULL, caption="", label="", footnote="", landscape=FALSE, out=NULL)
   {
     x <- append(x,
 paste0(
 "\n% =================================================================
 % -- TABLE -- TABLE -- TABLE -- TABLE -- TABLE -- TABLE -- TABLE  % 
-% -----------------------------------------------------------------
-% ",
-caption,
-"\n% ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••• \n%"),
+% -----------------------------------------------------------------\n",
+ifelse(is.null(path),
+paste0("\\begin{center} \\textbf{", caption, "} \\end{center}"),
+paste0("\\input{", path, "}")),
+
+"\n\\begin{center}\\textbf{INSERT TABLE \\ref{", label, "} ABOUT HERE} \\end{center}
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••\n
+\n% =================================================================
+% -- TABLE -- TABLE -- TABLE -- TABLE -- TABLE -- TABLE -- TABLE  % 
+% -----------------------------------------------------------------",
+ifelse(landscape==T, "\n\\begin{landscape}", "")),
  after = 1)
 
     x <- append(x,
 paste0("\\end{tabular}
 \\tabnotes{", footnote, "}
-\\end{table} 
-%
+\\end{table}",
+ifelse(landscape==T, "\n\\end{landscape}", ""),
+"
 % -----------------------------------------------------------------
 % -- END TABLE -- END TABLE -- END TABLE -- END TABLE -- END TABL %
 % ================================================================= \n \n"),
 after = length(x))
 cat(paste(x, collapse = "\n"), "\n")
-cat(paste0("\n \\begin{center} INSERT TABLE \\ref{", label, "} ABOUT HERE \\end{center}\n"))
+cat(paste0())
   }
 
 

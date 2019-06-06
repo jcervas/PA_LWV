@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1559693338 "main.aux" "main.bbl" "main" 1559693484
+["bibtex main"] 1559782264 "main.aux" "main.bbl" "main" 1559782266
   "apsa_l.bst.bst" 0 -1 0 ""
-  "library.bib" 1559700230 900460 44b93341b32effb4f0c7f5ca23db3ac5 ""
-  "main.aux" 1559693484 8271 455c5e0f7b7e5f17b21f2967ddb92f08 ""
+  "library.bib" 1559690986 900854 2b04cf142386a54b9f79cfab0caa8865 ""
+  "main.aux" 1559782266 9089 362e9142ca8aae0bb1289dae3186b80a ""
   (generated)
-  "main.blg"
   "main.bbl"
-["pdflatex"] 1559693482 "main.tex" "main.pdf" "main" 1559693484
+  "main.blg"
+["pdflatex"] 1559782264 "main.tex" "main.pdf" "main" 1559782266
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/palatino/pplb7t.tfm" 1480098688 1616 371d1ee60c04b008c8fd760060cd34f1 ""
@@ -219,17 +219,17 @@
   "Tables/_a_tab_congress_predict.tex" 1559700230 2366 8879313383d34f46000a3f2ee12fceff ""
   "Tables/_tab_congsum.tex" 1559700230 1508 9ed60c3106c50b36bf722d6bda15b504 ""
   "Tables/_tab_gerry.tex" 1559700230 1549 93dace3f2abacd10be18be0bd705e0a7 ""
-  "Tables/_tab_prop.tex" 1559700230 1507 7da4e4e5cec9bce8a8b3a50e5752b304 ""
+  "Tables/_tab_prob.tex" 1559700230 1507 7da4e4e5cec9bce8a8b3a50e5752b304 ""
   "Tables/_tab_summaries.tex" 1559700230 1495 88fa06b855d2cc4ab1e6d4c3ba2d9649 ""
   "Tables/a_tab_districtvotes.tex" 1559700230 2642 142658f258bc4bc5a91508415c9aae87 ""
-  "_maintext.tex" 1559693480 101595 c18e6d4cec50f899d8bea6632de7ffa9 ""
+  "_maintext.tex" 1559782227 102409 4a244ee785160331cc88b28ca040c275 ""
   "cervas.sty" 1559700230 10828 6b094df1ae2a10175b8112da52025218 ""
-  "main.aux" 1559693484 8271 455c5e0f7b7e5f17b21f2967ddb92f08 ""
-  "main.bbl" 1559693338 11703 ebc43c4fd43e99e69ab68b039f662992 "bibtex main"
-  "main.out" 1559693484 236 71c4a623955643170d51a082b0ca65f3 ""
-  "main.tex" 1559700230 7003 a79783f74a71b12ebc29e339c47fb381 ""
+  "main.aux" 1559782266 9089 362e9142ca8aae0bb1289dae3186b80a ""
+  "main.bbl" 1559782264 11703 ebc43c4fd43e99e69ab68b039f662992 "bibtex main"
+  "main.out" 1559782266 236 71c4a623955643170d51a082b0ca65f3 ""
+  "main.tex" 1559782258 7003 553b70bc9c7c18b8013b705bd8ecde7f ""
   (generated)
-  "main.out"
   "main.aux"
   "main.log"
+  "main.out"
   "main.pdf"
