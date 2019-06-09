@@ -165,13 +165,13 @@ gerry.table.gen <-
 	colnames(gerry.table.gen) <- c(plan_names)
 	rownames(gerry.table.gen) <- c(
 		"Partisan Bias", 
-		"SD1",
+		"CI1",
 		"Efficiency Gap",
-		"SD2",
+		"CI2",
 		"Mean/Median",
-		"SD3",
+		"CI3",
 		"Declination",
-		"SD4")
+		"CI4")
 
 gerry.caption = "Measures of Gerrymandering for the Four Considered Plans"
 gerry.label = "tab:gerry"
@@ -187,9 +187,9 @@ tab_gerry.tex <- stargazer(gerry.table.gen,
     title= gerry.caption, 
     label= gerry.label,
 	notes = gerry.footnote)
+	tab_gerry.tex <- gsub("CI[1-9]", "", tab_gerry.tex)
 tab_gerry <- tab_gerry.tex[c(-6, -17, -18, -19, -20)]
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
 tab_prop.gen <- 
