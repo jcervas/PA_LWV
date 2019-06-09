@@ -418,7 +418,7 @@ text(.55, .55, plan_names[plan], cex = 1.2, srt = 90, xpd = NA)
 dev.off()
 
 Figure(
-	path="Figures/fig_maps.pdf", 
+	path="Figures/_maps.tex", 
 	caption="Maps Of The Proposed Pennsylvania Congressional Districts", 
 	label="fig:maps", 
 	footnote="Maps a drawn with a Mercator projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.")

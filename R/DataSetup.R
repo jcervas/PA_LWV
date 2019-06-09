@@ -84,7 +84,7 @@ base.coef <- array(NA, c(length(yrs.nondistricting),4))
 for (y in 1:length(yrs.nondistricting))
   {
 reg <- lm(update(base.form, as.formula(. ~ .)), 
-  data=pahouse.non.redist, 
+  data = pahouse.non.redist, 
   subset = year == yrs.nondistricting[y])
 
     base.coef[y,1:2] <- coef(reg)

@@ -344,13 +344,13 @@ r <- function(r, d=2) round(r, digits=d)
     gamma = atan((2*mean(abo)-1) / (length(abo) / length(votes)))
   # normalize from radians to values betwen -1 and 1
   # A little extra precision just in case :)
-    return(2.0*(gamma-theta)/3.1415926535)}
+    return(-1 * (2.0*(gamma-theta)/3.1415926535))}
 
 `declin2` <- # Simplified, not transformed from: Katz, Jonathan N. et al. 2018. Theoretical Foundations and Empirical Evaluations of Partisan Fairness in District-Based Democracies *. https://gking.harvard.edu/files/psym_2.pdf (Accessed March 16, 2019).
   function(vs) {
     abo = vs[vs > 0.5]   # districts won by party A
     bel = vs[vs <= 0.5]  # districts won by party B
-    ((mean(abo) - 0.5) / (sum(find.winner(abo))/length(vs))) - ((0.5 - mean(bel)) / (1 - sum(find.winner(abo))/length(vs)))
+    (-1 * (mean(abo) - 0.5) / (sum(find.winner(abo))/length(vs))) - ((0.5 - mean(bel)) / (1 - sum(find.winner(abo))/length(vs)))
   }
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••• MEAN/MEDIAN••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -370,18 +370,20 @@ r <- function(r, d=2) round(r, digits=d)
 eg_TP <- function(votes) 
   {
     y <- cbind.data.frame(votes, 1-votes)
-      return(eff_gap(y[1], y[2]))
+      return(-1 * eff_gap(y[1], y[2]))
   }
-
+# •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# •••• GERRY DISPLAY ••••••••••••••••••••••••••••••••••••••••••••••
+# •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
   gerry <- function(x, toggle=TRUE)
     {
     Seats = paste0(" [", seats.print(x), "]")
     SeatPER = percent(seats(x))
     Votes = percent(mean(default.unc(x)))
     Bias = r(seatsvotes(x)$bias)
-    EfficiencyGap = -1 * r(eg_TP(x))
+    EfficiencyGap = r(eg_TP(x))
     MeanMedian = r(meanmedian(x))
-    Declination = -1 * r(declination(x))
+    Declination = r(declination(x))
     a <- rbind.data.frame(
       Seats, SeatPER, Votes, Bias, EfficiencyGap, MeanMedian, Declination)
     rownames(a) <- c("Seats","Seat %","Votes","Bias","Efficiency Gap","Mean/Median","Declination")
@@ -392,16 +394,55 @@ eg_TP <- function(votes)
     SeatPERT = r(seats(x))
     VotesT = r(mean(default.unc(x)))
     BiasT = r(seatsvotes(x)$bias)
-    EfficiencyGapT = -1 * r(eg_TP(x))
+    EfficiencyGapT = r(eg_TP(x))
     MeanMedianT = r(meanmedian(x))
-    DeclinationT = -1 * r(declination(x))
+    DeclinationT = r(declination(x))
       return(rbind.data.frame(
       SeatsT, SeatPERT, VotesT, BiasT, EfficiencyGapT, MeanMedianT, DeclinationT))}
     return(a)
     }
 
 
+nintyfive <- function(x, percent=FALSE) {
+  if (percent==TRUE){ return(paste0("(", percent(r(quantile(x[!is.na(x)], 0.025),d=1)), ", ", percent(r(quantile(x[!is.na(x)], 0.975),d=1)), ")")) }
+  return(paste0("(", r(quantile(x[!is.na(x)], 0.025)), ", ", r(quantile(x[!is.na(x)], 0.975)), ")"))
+  }
 
+gtab <- function(x) {
+  p <- (paste0(x, ".sims.5050"))
+  p.tmp <- get(p)
+  s.tmp <- maps.sims.seats.5050[[x]]
+  v.tmp <- maps.sims.votes.5050[[x]]
+  x.bias <- get(paste0(p, ".bias"))
+  x.eg <- get(paste0(p, ".eg"))
+  x.mm <- get(paste0(p, ".meanmedian"))
+  x.declin <- get(paste0(p, ".declination"))
+    return(c(
+      r(mean(x.bias)), 
+        nintyfive(x.bias), 
+      r(mean(x.eg)), 
+        nintyfive(x.eg), 
+      r(mean(x.mm)), 
+        nintyfive(x.mm),
+      r(mean(x.declin)), 
+        nintyfive(x.declin)
+      ))
+    }
+
+ptab <- function(x) {
+  p <- (paste0(x, ".sims.5050"))
+  p.tmp <- get(p)
+  s.tmp <- maps.sims.seats.5050[[x]]
+  v.tmp <- maps.sims.votes.5050[[x]]
+    return(c(
+      paste0(r(sum(s.tmp*18)/(1000*18)*18), "R-", r(18-sum(s.tmp*18)/(1000*18)*18), "D"),
+      paste0("(", r(quantile(s.tmp, 0.025),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.025),d=1)*18, "D, ", r(quantile(s.tmp, 0.975),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.975),d=1)*18, "D)"),
+      paste0(median(s.tmp)*18, "R-", 18-median(s.tmp)*18, "D"),
+      percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) > 0.5) / 1000),
+      percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) < 0.5) / 1000),
+      percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) == 0.5) / 1000)
+      ))
+} 
 
  # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••   
 

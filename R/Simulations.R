@@ -149,24 +149,21 @@ return(
 # SIMULATE MAPS
 	head(pa.redist.dta)
 	enacted.comp <- composite(pa.redist.dta, "enacted")$COMPOSITE
-	court.comp <- composite(pa.redist.dta, "court")$COMPOSITE
 	joint.comp <- composite(pa.redist.dta, "joint")$COMPOSITE
 	govwolf.comp <- composite(pa.redist.dta, "gov")$COMPOSITE
-
+	court.comp <- composite(pa.redist.dta, "court")$COMPOSITE
+cat("Court-remedial 2018 set to Congressional 2018 vote-share and adjusted for incumbency\n",
+"	", percent(seats(court.comp+(incum_advant*house.inc.2018))), "\n")
 	enacted.pres <- composite(pa.redist.dta, "enacted")$PRES
-	court.pres <- composite(pa.redist.dta, "court")$PRES
 	joint.pres <- composite(pa.redist.dta, "joint")$PRES
 	govwolf.pres <- composite(pa.redist.dta, "gov")$PRES
+	court.pres <- composite(pa.redist.dta, "court")$PRES
 
 enacted.sims.5050 <- sim.election(
 	votes=enacted.comp, 
 	center = 0.50, 
-	yr=50, sims=1000, 
-	sigma=sigma)
-court.sims.5050 <- sim.election(
-	votes=court.comp, 
-	center = 0.50, 
-	yr=50, sims=1000, 
+	yr=50, 
+	sims=1000, 
 	sigma=sigma)
 joint.sims.5050 <- sim.election(
 	votes=joint.comp, 
@@ -176,6 +173,12 @@ joint.sims.5050 <- sim.election(
 	sigma=sigma)
 govwolf.sims.5050 <- sim.election(
 	votes=govwolf.comp, 
+	center = 0.50, 
+	yr=50, 
+	sims=1000, 
+	sigma=sigma)
+court.sims.5050 <- sim.election(
+	votes=court.comp, 
 	center = 0.50, 
 	yr=50, 
 	sims=1000, 
@@ -199,7 +202,7 @@ maps.sims.votes.5050 <- new.list(4)
 
 
 	out.sims.stats("Enacted 2011", maps.sims.seats.5050$enacted, maps.sims.votes.5050$enacted)
-	out.sims.stats("Court court", maps.sims.seats.5050$court, maps.sims.votes.5050$court)
+	out.sims.stats("Court remedial", maps.sims.seats.5050$court, maps.sims.votes.5050$court)
 	out.sims.stats("Joint Legislative", maps.sims.seats.5050$joint, maps.sims.votes.5050$joint)
 	out.sims.stats("Gov. Wolf", maps.sims.seats.5050$govwolf, maps.sims.votes.5050$govwolf)
 
@@ -238,7 +241,7 @@ enacted.sims.5050.meanmedian <- simulation(enacted.sims.5050, meanmedian)
 enacted.sims.5050.declination <- simulation(enacted.sims.5050, declination)
 enacted.sims.5050.bias <- enacted.sims.5050.unlist.bias
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# COURT court PARTISAN GERRYMANDERING
+# COURT REMEDIAL PARTISAN GERRYMANDERING
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 court.sims.5050.eg <- simulation(court.sims.5050, eg_TP)
 court.sims.5050.meanmedian <- simulation(court.sims.5050, meanmedian)
@@ -274,13 +277,13 @@ out.sims.stats("Enacted 53.3%", enacted533seats, enacted533votes)
 
 enacted533.list.bias <- lapply(enacted533, bias)
 enacted533.unlist.bias <- do.call(rbind, enacted533.list.bias)
-	mean(enacted533.unlist.bias)
+	r(mean(enacted533.unlist.bias))
 enacted533.eg <- simulation(enacted533, eg_TP)
-	-1 * mean(enacted533.eg)
+	r(mean(enacted533.eg))
 enacted533.meanmedian <- simulation(enacted533, meanmedian)
-	mean(enacted533.meanmedian)
+	r(mean(enacted533.meanmedian))
 enacted533.declination <- simulation(enacted533, declination)
-	-1 * mean(enacted533.declination)
+	r(mean(enacted533.declination))
 enacted533.bias <- enacted533.unlist.bias
   
 
@@ -294,16 +297,16 @@ remedial.at.2018 <- sim.election(
 		remedial.at.2018.votes <- (unlist(lapply(remedial.at.2018, mean)))
 out.sims.stats("Remedial Centered at 2018 Actual", remedial.at.2018.seats, remedial.at.2018.votes)
 
-enacted533.list.bias <- lapply(enacted533, bias)
-enacted533.unlist.bias <- do.call(rbind, enacted533.list.bias)
-	mean(enacted533.unlist.bias)
-enacted533.eg <- simulation(enacted533, eg_TP)
-	-1 * mean(enacted533.eg)
-enacted533.meanmedian <- simulation(enacted533, meanmedian)
-	mean(enacted533.meanmedian)
-enacted533.declination <- simulation(enacted533, declination)
-	-1 * mean(enacted533.declination)
-enacted533.bias <- enacted533.unlist.bias                             
+remedial.at.2018.list.bias <- lapply(remedial.at.2018, bias)
+remedial.at.2018.unlist.bias <- do.call(rbind, remedial.at.2018.list.bias)
+	r(mean(remedial.at.2018.unlist.bias))
+remedial.at.2018.eg <- simulation(remedial.at.2018, eg_TP)
+	r(mean(remedial.at.2018.eg))
+remedial.at.2018.meanmedian <- simulation(remedial.at.2018, meanmedian)
+	r(mean(remedial.at.2018.meanmedian))
+remedial.at.2018.declination <- simulation(remedial.at.2018, declination)
+	r(mean(remedial.at.2018.declination))
+remedial.at.2018.bias <- remedial.at.2018.unlist.bias                               
 # gerry.tab <- function(x) {
 # 	rbind(
 # 		r(mean(get(paste0(x, ".eg")))),

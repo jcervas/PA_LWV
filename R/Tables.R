@@ -154,83 +154,6 @@ district_summary <- district_summary[c(-6, -28, -29, -30, -31)]
 # =================================================================
 # Measures of Gerrymandering for the Eight Considered Plans
 # =================================================================
-
-nintyfive <- function(x, percent=FALSE) {
-	if (percent==TRUE){ return(paste0("(", percent(r(quantile(x[!is.na(x)], 0.025),d=1)), ", ", percent(r(quantile(x[!is.na(x)], 0.975),d=1)), ")")) }
-	return(paste0("(", r(quantile(x[!is.na(x)], 0.025)), ", ", r(quantile(x[!is.na(x)], 0.975)), ")"))
-	}
-
-gtab <- function(x) {
-	p <- (paste0(x, ".sims.5050"))
-	p.tmp <- get(p)
-	s.tmp <- maps.sims.seats.5050[[x]]
-	v.tmp <- maps.sims.votes.5050[[x]]
-	x.bias <- get(paste0(p, ".bias"))
-	x.eg <- get(paste0(p, ".eg"))
-	x.mm <- get(paste0(p, ".meanmedian"))
-	x.declin <- get(paste0(p, ".declination"))
-		return(c(
-			r(mean(x.bias)), 
-				nintyfive(x.bias), 
-			r(mean(x.eg)), 
-				nintyfive(x.eg), 
-			r(mean(x.mm)), 
-				nintyfive(x.mm),
-			r(mean(x.declin)), 
-				nintyfive(x.declin)
-			))
-		}
-
-ptab <- function(x) {
-	p <- (paste0(x, ".sims.5050"))
-	p.tmp <- get(p)
-	s.tmp <- maps.sims.seats.5050[[x]]
-	v.tmp <- maps.sims.votes.5050[[x]]
-		return(c(
-			paste0(r(sum(s.tmp*18)/(1000*18)*18), "R-", r(18-sum(s.tmp*18)/(1000*18)*18), "D"),
-			paste0("(", r(quantile(s.tmp, 0.025),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.025),d=1)*18, "D, ", r(quantile(s.tmp, 0.975),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.975),d=1)*18, "D)"),
-			paste0(median(s.tmp)*18, "R-", 18-median(s.tmp)*18, "D"),
-			percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) > 0.5) / 1000),
-			percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) < 0.5) / 1000),
-			percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) == 0.5) / 1000)
-			))
-}	
-
-tab_prop.gen <- 
-	cbind.data.frame(
-		ptab("enacted"),
-		ptab("joint"),
-		ptab("govwolf"),
-		ptab("court")
-		)
-	colnames(tab_prop.gen) <- c(plan_names)
-	rownames(tab_prop.gen) <- c(
-		"Mean Seat Share",
-		"SDS", 
-		"Median Seat Share",
-		"Probability Republican Majority",
-		"Probability Democratic Majority",
-		"Probability Tied Delegation")
-
-prop.caption = "Probabilistic Projections of Partisan Outcomes for Four Plans"
-prop.label = "tab:prob"
-prop.footnote = "Using a Composite of Five Statewide Elections (adjusted to a 50\\% Vote Share)"
-
-tab_prop.tex <- stargazer(tab_prop.gen,
-    style = "apsr", 
-    summary=F,
-    column.sep.width = "-5pt", 
-    float = T, 
-    header = FALSE,
-    multicolumn = TRUE, 
-    title= prop.caption, 
-    label= prop.label,
-	notes = prop.footnote)
-tab_prop <- tab_prop.tex[c(-6, -15, -16, -17, -18)]
-
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
-
 gerry.table.gen <- 
 	cbind.data.frame(
 		gtab("enacted"),
@@ -269,6 +192,40 @@ tab_gerry <- tab_gerry.tex[c(-6, -17, -18, -19, -20)]
 
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
+tab_prop.gen <- 
+	cbind.data.frame(
+		ptab("enacted"),
+		ptab("joint"),
+		ptab("govwolf"),
+		ptab("court")
+		)
+	colnames(tab_prop.gen) <- c(plan_names)
+	rownames(tab_prop.gen) <- c(
+		"Mean Seat Share",
+		"SDS", 
+		"Median Seat Share",
+		"Probability Republican Majority",
+		"Probability Democratic Majority",
+		"Probability Tied Delegation")
+
+prop.caption = "Probabilistic Projections of Partisan Outcomes for Four Plans at 50\\% Vote-Share"
+prop.label = "tab:prob"
+prop.footnote = "Using a Composite of Five Statewide Elections (adjusted to a 50\\% Vote Share) but not correcting for incumbency. We report the mean seat-share from 1,000 simulations, along with a 95\\% range of the simulated outcomes."
+
+tab_prop.tex <- stargazer(tab_prop.gen,
+    style = "apsr", 
+    summary=F,
+    column.sep.width = "-5pt", 
+    float = T, 
+    header = FALSE,
+    multicolumn = TRUE, 
+    title= prop.caption, 
+    label= prop.label,
+	notes = prop.footnote)
+tab_prop <- tab_prop.tex[c(-6, -15, -16, -17, -18)]
+
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+# ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
