@@ -208,13 +208,13 @@ std <- function(x) {
   (mean(x[!is.na(x)]) - x) / sd(x[!is.na(x)])
   }
 
-ci <- function(x)
-  {
-    r <- summary(lm(x~1))
-      m <- coef(r)[1]
-      se <- coef(r)[2]
-      return(qt(0.975, df=length(x)-1) * se)
-  }
+# ci <- function(x)
+#   {
+#     r <- summary(lm(x~1))
+#       m <- coef(r)[1]
+#       se <- coef(r)[2]
+#       return(qt(0.975, df=length(x)-1) * se)
+#   }
 
 `quick.summary` <- function (x) 
   {
@@ -326,6 +326,9 @@ sim.election <- function(votes= NULL, center=house.2016.votes, incumbency=NULL, 
   }
 
 r <- function(r, d=2) round(r, digits=d)
+
+
+
 # =================================================================
 # -- GERRYMANDER MEASURES -- GERRYMANDER MEASURES -- GERRYMANDER ME
 # =================================================================
@@ -402,6 +405,12 @@ eg_TP <- function(votes)
     return(a)
     }
 
+p_value <- function(x){
+  l <- quantile(x[!is.na(x)], 0.025)
+  u <- quantile(x[!is.na(x)], 0.975)
+  t <- mean(x)/sd(x)
+    return(2*pt(-abs(t),df=length(x)-1))
+  }
 
 nintyfive <- function(x, percent=FALSE) {
   if (percent==TRUE){ return(paste0("(", percent(r(quantile(x[!is.na(x)], 0.025),d=1)), ", ", percent(r(quantile(x[!is.na(x)], 0.975),d=1)), ")")) }

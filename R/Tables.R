@@ -84,9 +84,13 @@ tab_plan_summary <- append(tab_plan_summary,
 # =================================================================
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # SUMMARY OF ELECTIONS
-congsum.caption = "US House Election Summaries (PA 2012-2016)"
+percent(sum(house.rep.2012)/sum(house.2012.turnout))
+percent(sum(house.rep.2014)/sum(house.2014.turnout))
+percent(sum(house.rep.2016)/sum(house.2016.turnout))
+
+congsum.caption = "U.S. House Election Summaries \\\\ \\hspace{2cm}(PA 2012-2016 Enacted Map)"
 congsum.label = "tab:congsum"
-congsum.footnote = "Uncontested races are imputed with 0.25 and 0.75 for the respective winners. All votes are calculated from the Republican perspective of the two-party vote. We've adjusted all gerrymandering measures such that negative numbers indicate bias in favor of the Democrats."
+congsum.footnote = "Calculations based on actual congressional elections in Pennsylvania under the map found unconstitutional in 2018. Uncontested races are imputed with 0.25 and 0.75 for the respective winners. Un-adjusted Republican two-party vote totals are 49.2\\% for 2012, 55.5\\% for 2014, and 54.1\\% for 2016. All votes are calculated from the Republican perspective of the two-party vote. We've adjusted all gerrymandering measures such that negative numbers indicate bias in favor of the Democrats."
 
 
 congsum.tmp <- cbind.data.frame(
@@ -103,7 +107,8 @@ congsum.tmp <- cbind.data.frame(
   	gerry(default.unc(house.2014.votes), toggle=F),
   	gerry(default.unc(house.2016.votes), toggle=F)))
   )
-congsum.tmp 
+congsum.tmp[2:3,4]  <- percent(congsum.tmp[2:3,4])
+congsum.tmp[4:7,4] <- r(as.numeric(congsum.tmp[4:7,4]))
 colnames(congsum.tmp) <- c(seq(2012,2016,2),"AVE")
 congsum.tmp.tex <- stargazer(congsum.tmp,
 	style = "apsr", 
