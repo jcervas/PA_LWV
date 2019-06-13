@@ -1,10 +1,1 @@
-<h1 id="introduction">Introduction</h1>
-<p><span class="lettrine">I</span><span>n</span> <em>League of Women Voters v. Pennsylvania</em>, decided January 22, 2018 (henceforth abbreviated <em>LWV</em>), the Pennsylvania Supreme Court offered a new and distinctive test for unconstitutional partisan gerrymandering under which it found the state’s congressional districts to be a “severe and durable" partisan gerrymander that violated a long-standing provision of the state’s constitution. The congressional map that was struck down was drawn in 2011 by a Republican-controlled legislature and signed into law by the then Republican governor. It was used in elections from 2012 to 2016. Prior to the <em>LWV</em> decision, many academics had identified this map as a partisan gerrymander <span class="citation" data-cites="Royden2017"></span>, with some even identifying it as the most egregious congressional districting in the U.S. <span class="citation" data-cites="Wang2016_SLR"></span>. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>The Pennsylvania Supreme Court held that “the fact that the 2011 Plan cannot, as a statistical matter, be a plan directed at complying with traditional redistricting requirements is <span class="underline">sufficient</span> to establish that it violates the Free and Equal Elections Clause" [of the Pennsylvania State Constitution] (slip op. at p.128, emphasis added). <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> By <em>traditional</em> principles (also sometime called <em>neutral</em> principles, or <em>good government</em> principles), the Court meant drawing contiguous districts, satisfying the</p>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>See also <span class="citation" data-cites="Mcgann_et_al_2015_ELJ McGann_et_al_2016_gerrymandering"></span><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>“Elections shall be free and equal; and no power, civil or military, shall at any time interfere to prevent the free exercise of the right of suffrage." Pa. Const. art. I, § 5.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+README.md
