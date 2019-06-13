@@ -32,11 +32,18 @@ ifelse(landscape==T, "\n\\end{landscape}", ""),
 % ▀▄▀▄▀▄ E͎N͎D͎ T͎A͎B͎L͎E͎ ▄▀▄▀▄▀▀▄▀▄▀▄ E͎N͎D͎ T͎A͎B͎L͎E͎ ▄▀▄▀▄▀▀▄▀▄▀▄ E͎N͎D͎ T͎A͎B͎L͎E͎ ▄▀▄▀▄▀
 % ===================================================================== \n \n"),
 after = length(x))
-cat(paste(x, collapse = "\n"), "\n")
-cat(paste0())
+cat(paste(latex.special.chr(x), collapse = "\n"), "\n")
+cat(paste(latex.special.chr(x), collapse = "\n"), "\n", file = paste0("Latex/", path))
   }
 
-
+latex.special.chr <- function(x) {
+  x <- gsub("$\\hat{\\mkern6mu}$", "^", x,fixed=TRUE)
+  x <- gsub("\\textasteriskcentered ", "*", x,fixed=TRUE)
+  x <- gsub("\\textbackslash ", "\\", x,fixed=TRUE)
+  x <- gsub("\\{", "{", x,fixed=TRUE)
+  x <- gsub("\\}", "}", x,fixed=TRUE)
+  x <- gsub("\\$", "$", x,fixed=TRUE)
+}
 
  `Figure` <- function(path=NULL, caption="", label="", footnote="")
   {
@@ -412,9 +419,17 @@ p_value <- function(x){
     return(2*pt(-abs(t),df=length(x)-1))
   }
 
+strs <- function(s) {
+  strs <- 
+  ifelse(s <= 0.001, "***", 
+    ifelse(0.001 < s & s <= 0.01, "**", 
+      ifelse(0.01 < s & s <= 0.05, "*", "")))
+  return(paste0("$^{", strs, "}$"))
+}
+
 nintyfive <- function(x, percent=FALSE) {
   if (percent==TRUE){ return(paste0("(", percent(r(quantile(x[!is.na(x)], 0.025),d=1)), ", ", percent(r(quantile(x[!is.na(x)], 0.975),d=1)), ")")) }
-  return(paste0("(", r(quantile(x[!is.na(x)], 0.025)), ", ", r(quantile(x[!is.na(x)], 0.975)), ")"))
+  return(paste0("{\\small\\textit{[", r(quantile(x[!is.na(x)], 0.025)), ", ", r(quantile(x[!is.na(x)], 0.975)), "]}}"))
   }
 
 gtab <- function(x) {
@@ -427,13 +442,13 @@ gtab <- function(x) {
   x.mm <- get(paste0(p, ".meanmedian"))
   x.declin <- get(paste0(p, ".declination"))
     return(c(
-      r(mean(x.bias)), 
+      paste0(r(mean(x.bias)), strs(p_value(x.bias))), 
         nintyfive(x.bias), 
-      r(mean(x.eg)), 
+      paste0(r(mean(x.eg)), strs(p_value(x.eg))),
         nintyfive(x.eg), 
-      r(mean(x.mm)), 
+      paste0(r(mean(x.mm)), strs(p_value(x.mm))),
         nintyfive(x.mm),
-      r(mean(x.declin)), 
+      paste0(r(mean(x.declin)), strs(p_value(x.declin))),
         nintyfive(x.declin)
       ))
     }
@@ -444,8 +459,8 @@ ptab <- function(x) {
   s.tmp <- maps.sims.seats.5050[[x]]
   v.tmp <- maps.sims.votes.5050[[x]]
     return(c(
-      paste0(r(sum(s.tmp*18)/(1000*18)*18), "R-", r(18-sum(s.tmp*18)/(1000*18)*18), "D"),
-      paste0("(", r(quantile(s.tmp, 0.025),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.025),d=1)*18, "D, ", r(quantile(s.tmp, 0.975),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.975),d=1)*18, "D)"),
+      paste0(r(sum(s.tmp*18)/(1000*18)*18, d=1), "R-", r(18-sum(s.tmp*18)/(1000*18)*18, d=1), "D"),
+      paste0("{\\small\\textit{[", r(quantile(s.tmp, 0.025),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.025),d=1)*18, "D, ", r(quantile(s.tmp, 0.975),d=1)*18, "R-", 18-r(quantile(s.tmp, 0.975),d=1)*18, "D]}}"),
       paste0(median(s.tmp)*18, "R-", 18-median(s.tmp)*18, "D"),
       percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) > 0.5) / 1000),
       percent(sum(1 * do.call(rbind, lapply(p.tmp, function(x) mean(find.winner(x)))) < 0.5) / 1000),

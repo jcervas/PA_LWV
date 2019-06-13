@@ -3,31 +3,31 @@
 % =====================================================================
 % ▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟
 % ---------------------------------------------------------------------
-\input{Tables/_tab_prob.tex}
- \begin{center}\textbf{INSERT TABLE \ref{tab:prob} ABOUT HERE} \end{center}
+\input{Tables/_tab_gerry.tex}
+ \begin{center}\textbf{INSERT TABLE \ref{tab:gerry} ABOUT HERE} \end{center}
 % •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 
 
 % =====================================================================
 % ▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟
 % ---------------------------------------------------------------------
-\begin{landscape}
 \begin{table}[!htbp] \centering 
-  \caption{Probabilistic Projections of Partisan Outcomes for Four Plans at 50\% Vote-Share} 
-  \label{tab:prob} 
+  \caption{Measures of Gerrymandering for the Four Considered Plans} 
+  \label{tab:gerry} 
 \begin{tabular}{@{\extracolsep{-5pt}} ccccc} 
  & 2011 Enacted & Joint Legislative & Gov. Wolf & 2018 Court Remedial \\ 
 \hline \\[-1.8ex] 
-Mean Seat Share & 12.2R-5.8D & 11.7R-6.3D & 10.8R-7.2D & 10.2R-7.8D \\ 
- & {\small\textit{[10.8R-7.2D, 14.4R-3.6D]}} & {\small\textit{[9R-9D, 14.4R-3.6D]}} & {\small\textit{[9R-9D, 12.6R-5.4D]}} & {\small\textit{[7.2R-10.8D, 12.6R-5.4D]}} \\ 
-Median Seat Share & 12R-6D & 12R-6D & 11R-7D & 10R-8D \\ 
-Probability Republican Majority & 98.6\% & 97.3\% & 88.3\% & 69.4\% \\ 
-Probability Democratic Majority & 0.3\% & 0.3\% & 2.0\% & 6.6\% \\ 
-Probability Tied Delegation & 1.1\% & 2.4\% & 9.7\% & 24.0\% \\ 
+Partisan Bias & 0.09$^{***}$ & 0.08$^{***}$ & 0.06$^{**}$ & 0.04$^{}$ \\ 
+ & \textit{[0.05, 0.13]} & \textit{[0.03, 0.12]} & \textit{[0.02, 0.11]} & \textit{[-0.01, 0.08]} \\ 
+Efficiency Gap & 0.24$^{***}$ & 0.22$^{**}$ & 0.14$^{}$ & 0.08$^{}$ \\ 
+ & \textit{[0.09, 0.36]} & \textit{[0.07, 0.36]} & \textit{[0, 0.3]} & \textit{[-0.07, 0.21]} \\ 
+Mean/Median & 0.05$^{***}$ & 0.04$^{**}$ & 0.04$^{*}$ & 0.02$^{}$ \\ 
+ & \textit{[0.02, 0.07]} & \textit{[0.01, 0.07]} & \textit{[0, 0.07]} & \textit{[-0.01, 0.05]} \\ 
+Declination & 0.39$^{**}$ & 0.33$^{*}$ & 0.21$^{}$ & 0.14$^{}$ \\ 
+ & \textit{[0.13, 0.63]} & \textit{[0.07, 0.61]} & \textit{[-0.02, 0.47]} & \textit{[-0.1, 0.42]} \\ 
 \end{tabular}
-\tabnotes{Using a Composite of Five Statewide Elections (adjusted to a 50\% Vote Share) but not correcting for incumbency. We report the mean seat-share from 1,000 simulations, along with a 95\% range of the simulated outcomes.}
+\tabnotes{$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range.}
 \end{table}
-\end{landscape}
 % ---------------------------------------------------------------------
 % ▀▄▀▄▀▄ E͎N͎D͎ T͎A͎B͎L͎E͎ ▄▀▄▀▄▀▀▄▀▄▀▄ E͎N͎D͎ T͎A͎B͎L͎E͎ ▄▀▄▀▄▀▀▄▀▄▀▄ E͎N͎D͎ T͎A͎B͎L͎E͎ ▄▀▄▀▄▀
 % ===================================================================== 

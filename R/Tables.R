@@ -88,7 +88,7 @@ percent(sum(house.rep.2012)/sum(house.2012.turnout))
 percent(sum(house.rep.2014)/sum(house.2014.turnout))
 percent(sum(house.rep.2016)/sum(house.2016.turnout))
 
-congsum.caption = "U.S. House Election Summaries \\\\ \\hspace{2cm}(PA 2012-2016 Enacted Map)"
+congsum.caption = "U.S. House Election Summaries \\\\ {\\large\\hspace{4cm}(PA 2012-2016 Enacted Map)}"
 congsum.label = "tab:congsum"
 congsum.footnote = "Calculations based on actual congressional elections in Pennsylvania under the map found unconstitutional in 2018. Uncontested races are imputed with 0.25 and 0.75 for the respective winners. Un-adjusted Republican two-party vote totals are 49.2\\% for 2012, 55.5\\% for 2014, and 54.1\\% for 2016. All votes are calculated from the Republican perspective of the two-party vote. We've adjusted all gerrymandering measures such that negative numbers indicate bias in favor of the Democrats."
 
@@ -180,8 +180,8 @@ gerry.table.gen <-
 
 gerry.caption = "Measures of Gerrymandering for the Four Considered Plans"
 gerry.label = "tab:gerry"
-gerry.footnote = "Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\\% range."
-
+gerry.footnote = "$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\\% range."
+ 
 tab_gerry.tex <- stargazer(gerry.table.gen,
     style = "apsr", 
     summary=F,
@@ -207,7 +207,7 @@ tab_prop.gen <-
 	colnames(tab_prop.gen) <- c(plan_names)
 	rownames(tab_prop.gen) <- c(
 		"Mean Seat Share",
-		"SDS", 
+		"CI1", 
 		"Median Seat Share",
 		"Probability Republican Majority",
 		"Probability Democratic Majority",
@@ -227,6 +227,7 @@ tab_prop.tex <- stargazer(tab_prop.gen,
     title= prop.caption, 
     label= prop.label,
 	notes = prop.footnote)
+tab_prop.tex <- gsub("CI[1-9]", "", tab_prop.tex)
 tab_prop <- tab_prop.tex[c(-6, -15, -16, -17, -18)]
 
 # ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -388,12 +389,14 @@ Table(tab_prop,
 	landscape = TRUE)
 
 Table(district_summary,
+	path = "Tables/_a_tab_districtvotes.tex",
 	caption = district_summary.caption,
 	label = district_summary.label,
 	footnote = district_summary.footnote
 	)
 
 Table(tab_congress_predict,
+	path = "Tables/a_tab_congress_predict.tex",
 	caption = congress_predict.caption,
 	label = congress_predict.label,
 	footnote = congress_predict.footnote)
