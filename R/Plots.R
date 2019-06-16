@@ -360,7 +360,7 @@ radius <- function(x) perimeter(x) / (2 * 3.1415926535)
 		colnames(rim) <- c("x", "y")
 		c <- rbind(rim,c, c[1,])
 		dev.off()
-pdf(paste0("Figures/fig_maps.pdf"), 
+pdf(paste0("Latex/Figures/fig_maps.pdf"), 
   	width=8, 
   	height=10)
 par(mar=c(0,0,0,0),
@@ -369,7 +369,7 @@ nf <- layout(
 	rbind(mat=
 		c(0,1:2), c(3,7,8), c(4,9,10), c(5,11,12), c(6,13,14)
 		),
-	widths= c(.1,3,1.5),
+	widths= c(.15,3,1.45),
 	heights= c(.1,1,1,1,1), respect=F)
 # layout.show(nf)
 par(mar=c(0,0,0,0))
@@ -380,7 +380,7 @@ text(.55, .55, "Philadelphia", cex = 1.2, srt = 0, xpd = NA)
 for (plan in 1:4){
 par(mar=c(0,0.5,0,0))
 plot(.5,.5, xlim = c(.4, .7), ylim = c(.4, .7), type = "n", axes = F, xlab = "", ylab = "")#call empty plot to keep on same scale
-text(.55, .55, plan_names[plan], cex = 1.2, srt = 90, xpd = NA)
+text(.55, .55, plan_names[plan], cex = 2, srt = 90, xpd = NA)
 }
 	for (plan in 1:length(plans.compressed)) {
 		shapeFile.compressed <- get(plans.compressed[plan])
@@ -409,7 +409,7 @@ text(.55, .55, plan_names[plan], cex = 1.2, srt = 90, xpd = NA)
 dev.off()
 
 Figure(
-	path="Figures/_maps.tex", 
+	path="Figures/fig_maps.pdf", 
 	caption="Maps Of The Proposed Pennsylvania Congressional Districts", 
 	label="fig:maps", 
 	footnote="Maps a drawn with a Mercator projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.")
