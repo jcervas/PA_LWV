@@ -354,7 +354,7 @@ radius <- function(x) perimeter(x) / (2 * 3.1415926535)
 		e2 <- e + c(-.1, .1, -.1, .1)
 		x <- e[2] - (e[2]-e[1])/2
 		y <- e[4] - (e[4]-e[3])/2
-		cir <-  circle(x,y, radius=(e[2]-e[1])/2.5)
+		cir <-  circle(x,y, radius=(e[2]-e[1])/2.4)
 		c <- cbind.data.frame(x=rev(cir$x),y=rev(cir$y))
 		rim <- rbind(cbind(e2[2],e2[3]),cbind(e2[2],e2[4]), cbind(e2[1],e2[4]), cbind(e2[1],e2[3]), cbind(e2[2],e2[3])) 
 		colnames(rim) <- c("x", "y")
@@ -369,7 +369,8 @@ nf <- layout(
 	rbind(mat=
 		c(0,1:2), c(3,7,8), c(4,9,10), c(5,11,12), c(6,13,14)
 		),
-	widths= c(.15,3,1.45),
+	# widths= c(.15,3,1.45),
+	widths= c(1, 3, 2),
 	heights= c(.1,1,1,1,1), respect=F)
 # layout.show(nf)
 par(mar=c(0,0,0,0))
@@ -401,7 +402,7 @@ text(.55, .55, plan_names[plan], cex = 2, srt = 90, xpd = NA)
 		plot(rem.philly, border=NA)
 		plot(raster::crop(shapeFile.compressed,c), add=T, col="gray30", border="gray70", lwd=1)
 		plot(pa_counties.compressed, add=T, col="NA", border="gray10", lwd=3)
-		plot(raster::crop(shapeFile.compressed,c), add=T, col=NA, border="white", lwd=0.25)
+		plot(raster::crop(shapeFile.compressed,c), add=T, col=NA, border="white", lwd=0.20)
 		polygon(cir, border="black", lwd=15)
 		polygon(cir, border="white", lwd=5)
 		polygon(c, col="white", border="white")
@@ -412,7 +413,7 @@ Figure(
 	path="Figures/fig_maps.pdf", 
 	caption="Maps Of The Proposed Pennsylvania Congressional Districts", 
 	label="fig:maps", 
-	footnote="Maps a drawn with a Mercator projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.")
+	footnote="Maps a drawn with a Lambert Conformal Conic projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.")
 
 
 cat("
