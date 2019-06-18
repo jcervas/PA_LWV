@@ -1,4 +1,7 @@
+{% for js in page.customjs %}
 <script src="//yihui.name/js/math-code.js"></script>
+{% endfor %}
+
 <!-- Just one possible MathJax CDN below. You may use others. -->
 
 # Tools for Identifying Partisan Gerrymandering
