@@ -178,7 +178,7 @@ gerry.table.gen <-
 		"Declination",
 		"CI4")
 
-gerry.caption = "Measures of Gerrymandering for the Four Considered Plans"
+gerry.caption = "Measures of Gerrymandering for the Four Considered Plans at 50\\% Vote Share"
 gerry.label = "tab:gerry"
 gerry.footnote = "$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\\% range."
  
