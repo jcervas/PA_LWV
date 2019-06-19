@@ -461,6 +461,8 @@ INPUT Tables/_tab_prob.tex
 INPUT Tables/_tab_prob.tex
 INPUT main.bbl
 INPUT main.bbl
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsppl.fd
+INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsppl.fd
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

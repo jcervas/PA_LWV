@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1560912391 "main.aux" "main.bbl" "main" 1560912393
+["bibtex main"] 1560923529 "main.aux" "main.bbl" "main" 1560923532
   "apsa_l.bst.bst" 0 -1 0 ""
-  "library.bib" 1560882547 934076 298d2158721aed4946b80e112c61ab08 ""
-  "main.aux" 1560912393 8325 88160e8c8ac58fec800862d2c04f818b ""
+  "library.bib" 1560920728 934142 7226f3492fb8df142240a14b6922ab1e ""
+  "main.aux" 1560923531 8429 32dcc7aff753e51f3054fb4047426c40 ""
   (generated)
-  "main.bbl"
   "main.blg"
-["pdflatex"] 1560912391 "main.tex" "main.pdf" "main" 1560912393
+  "main.bbl"
+["pdflatex"] 1560923530 "main.tex" "main.pdf" "main" 1560923532
   "/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2018/texmf-dist/fonts/tfm/adobe/palatino/pplb7t.tfm" 1480098688 1616 371d1ee60c04b008c8fd760060cd34f1 ""
@@ -192,6 +192,7 @@
   "/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty" 1480098837 325 2bcd023400636339210573e2b3ee298b ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/mathpazo.sty" 1480098837 8977 7001b1ab94674ce4a6004aef2826ec90 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlzplm.fd" 1480098837 638 2349dd185efcefd0c3380a2601df0cee ""
+  "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsppl.fd" 1480098837 576 be451a105739548c4929bd91be18fae6 ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omszplm.fd" 1480098837 455 c09241d92b40b1b84eb2bb5776606aea ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxzplm.fd" 1480098837 322 fb88cb3e5f25cf1596ba8826c4210e0e ""
   "/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ppl.fd" 1480098837 961 06b773644d960aac68add40fcb596208 ""
@@ -218,14 +219,14 @@
   "Tables/_tab_gerry.tex" 1560912354 1990 b6233a8fe851a1b6870f11d9068a2cd5 ""
   "Tables/_tab_prob.tex" 1560912354 1764 cf724431857c63e7878e3b55e5b692e6 ""
   "Tables/_tab_summaries.tex" 1560912354 1514 697d19b2643f2973a601aa0b36c910e1 ""
-  "_maintext.tex" 1560893313 99226 b519e4ca429ceddee723fe777706c9a8 ""
+  "_maintext.tex" 1560923517 99149 ebbf581cdb10d7a352cd85eedf7c8f96 ""
   "cervas.sty" 1560488324 10828 6b094df1ae2a10175b8112da52025218 ""
-  "main.aux" 1560912393 8325 88160e8c8ac58fec800862d2c04f818b ""
-  "main.bbl" 1560912391 12965 1f0b7eabf638c0a9622718dab9d72a18 "bibtex main"
-  "main.out" 1560912393 236 71c4a623955643170d51a082b0ca65f3 ""
+  "main.aux" 1560923531 8429 32dcc7aff753e51f3054fb4047426c40 ""
+  "main.bbl" 1560923530 13216 9cd8b1ffe23da7d9172e42378a7e2e98 "bibtex main"
+  "main.out" 1560923531 236 71c4a623955643170d51a082b0ca65f3 ""
   "main.tex" 1560893788 7137 2d5c6eb7115b6fc3cd77595bfaddb27e ""
   (generated)
   "main.pdf"
-  "main.out"
   "main.aux"
   "main.log"
+  "main.out"

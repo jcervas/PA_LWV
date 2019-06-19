@@ -16,45 +16,45 @@ note
 Harvard Institute for Quantitative Social Science
 ---the literal stack isn't empty for entry Kaufman2018
 while executing---line 1401 of file apsa_l.bst.bst
-You've used 51 entries,
+You've used 52 entries,
             2924 wiz_defined-function locations,
-            990 strings with 15581 characters,
-and the built_in function-call counts, 208088 in all, are:
-= -- 34179
-> -- 2337
+            995 strings with 15713 characters,
+and the built_in function-call counts, 212435 in all, are:
+= -- 34870
+> -- 2397
 < -- 0
-+ -- 15885
-- -- 769
-* -- 17707
-:= -- 41643
-add.period$ -- 208
-call.type$ -- 51
-change.case$ -- 664
-chr.to.int$ -- 49
-cite$ -- 51
-duplicate$ -- 775
-empty$ -- 1682
-format.name$ -- 838
-if$ -- 37440
++ -- 16193
+- -- 787
+* -- 18082
+:= -- 42491
+add.period$ -- 212
+call.type$ -- 52
+change.case$ -- 677
+chr.to.int$ -- 50
+cite$ -- 52
+duplicate$ -- 790
+empty$ -- 1747
+format.name$ -- 856
+if$ -- 38238
 int.to.chr$ -- 7
 int.to.str$ -- 0
-missing$ -- 53
-newline$ -- 217
-num.names$ -- 571
-pop$ -- 181
+missing$ -- 54
+newline$ -- 221
+num.names$ -- 583
+pop$ -- 184
 preamble$ -- 1
-purify$ -- 765
+purify$ -- 780
 quote$ -- 0
-skip$ -- 619
+skip$ -- 631
 stack$ -- 0
-substring$ -- 48466
-swap$ -- 110
-text.length$ -- 714
+substring$ -- 49493
+swap$ -- 112
+text.length$ -- 728
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 196
+type$ -- 200
 warning$ -- 0
-while$ -- 1197
+while$ -- 1221
 width$ -- 0
-write$ -- 713
+write$ -- 726
 (There were 5 error messages)
