@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{cervas}[2018/09/09 Custom Package]
+\ProvidesPackage{anon}[2018/09/09 Custom Package]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % =================================================================
 %                   - Load Packages - 
@@ -20,7 +20,7 @@
 % - Align Equations
     \usepackage[nosumlimits]{amsmath} 
 % - Set up margins
-    \usepackage[left=1in, right=1in, top=1in, bottom=1in, footskip=0.25in]{geometry}
+    \usepackage[left=1in, right=1in, top=1in, bottom=1in, footskip=0.25in, headheight=14.5pt]{geometry}
 % - Make reference to variants
     \usepackage{enumitem} 
 % - Table for Formulas
@@ -41,8 +41,6 @@
     \usepackage{natbib} 
     \bibpunct{(}{)}{;}{a}{}{,} % Reference punctuation 
     \bibliographystyle{apsa_l.bst}
-% - Import other TEX files
-    \usepackage{import} 
 % - Table Rotating
     \usepackage{rotating} 
 % - Landscape pages
@@ -52,9 +50,7 @@
 % - Allows for imbedded pages
 %    \usepackage{varwidth}
 % - Gets current time in US format
-\usepackage{datetime} 
-    \settimeformat{ampmtime}
-    \usdate
+\usepackage[useregional]{datetime2}
 % Adds line numbers to left side of document for editing
     \usepackage[switch]{lineno} 
 % - Page Numbers
@@ -87,27 +83,37 @@
     \newcommand{\rpm}{\sbox0{$1$}\sbox2{$\scriptstyle\pm$}
         \raise\dimexpr(\ht0-\ht2)/2\relax\box2 } %
 % - Table Notes
-    \newcommand{\tabnotes}[1]{\centering \begin{minipage}{0.95\linewidth}
+    \newcommand{\tabnotes}[1]{\centering{ \begin{minipage}{0.95\linewidth}
 \hrulefill \vspace{-10pt} \noindent\singlespacing \footnotesize{\textit{Note: }#1}
-\end{minipage}
+\end{minipage}}
 }
+
+\newcommand{\titleseal}[1]{\gdef\@titleseal{#1}}
+    \let\@titleseal\@empty
+\newcommand{\titlebanner}[1]{\gdef\@titlebanner{#1}}
+    \let\@titlebanner\@empty
 
 \newcommand{\authorone}[1]{\gdef\@authorone{#1}}
 \newcommand{\authortwo}[1]{\gdef\@authortwo{#1}}
+    \let\@authortwo\@empty
 \newcommand{\authorthree}[1]{\gdef\@authorthree{#1}}
+    \let\@authorthree\@empty
 
 \newcommand{\institone}[1]{\gdef\@institone{#1}}
 \newcommand{\instittwo}[1]{\gdef\@instittwo{#1}}
+    \let\@instittwo\@empty
 \newcommand{\institthree}[1]{\gdef\@institthree{#1}}
+    \let\@institthree\@empty
 
 \newcommand{\subtitle}[1]{\gdef\@subtitle{#1 \hfill}}
 \renewcommand{\abstract}[1]{\gdef\@abstract{#1}}
 \renewcommand{\thanks}[1]{\gdef\@thanks{#1}}
 \newcommand{\status}[1]{\gdef\@status{#1}}
+\newcommand{\paperdate}[1]{\gdef\@paperdate{#1}}
 \newcommand{\data}[1]{\gdef\@data{#1}}
 \newcommand{\titlerunning}[1]{\gdef\@titlerunning{#1}}
-\newcommand{\makestatus}{%
-       \normalsize{[\@status} , \today]}  
+\newcommand{\makestatus}[1]{%
+        \normalsize{[\@status}, \today]}  
 
 % - Title
 
@@ -129,7 +135,7 @@
 \renewcommand{\maketitle}{%
 	\thispagestyle{empty}
 		\newgeometry{
-		top=.25in,
+		top=0.25in,
 		bottom=1in,
 		inner=1in,
 		outer=1in,
@@ -138,30 +144,20 @@
 		nomarginpar,
 	}% - First Page Footer
 \fancypagestyle{firstpage}{%
-        \rfoot{\footnotesize\textit{\thepage}
-        }
+        \rfoot{\footnotesize\textit{\thepage}}
 }
-       \thispagestyle{firstpage}
-
-\vspace*{2in}
+\thispagestyle{firstpage}
 
 
-         \textbf{\LARGE{\@title} \Large{\@subtitle}} \hfill  \vspace{-.25in}\\
+
+        \vspace*{1in} \textbf{\LARGE{\@title} \Large{\@subtitle}} \hfill  \vspace{-.25in}\\
         \begin{center}\normalsize \textsc{\makestatus}\end{center}
-\begin{flushleft}
-\noindent
 
-\vspace{-0.2in} \large \textbf{\@authorone} \quad \normalsize{\@institone} \\
-\large \textbf{\@authortwo} \quad \normalsize{\@instittwo} \\
-\end{flushleft}
-\vspace{-0.2in}
+\vspace{2in}
 \begin{center}
 \begin{minipage}{0.85\textwidth}
 \small{\textbf{Abstract: }\textit{\@abstract}} \vspace{0.5mm} \\
 % \textbf{KEYWORDS: Gerrymandering; Redistricting; Elections} \\
-
-\small{\textbf{Replication Material: } The data, code, and any additional materials required to replicate all analyses in this article are available at \url{\@data}.} \vspace{-.15in} \\
-
 \end{minipage}
 \end{center}
 
@@ -179,10 +175,6 @@
 \setlength{\parskip}{.25em}
 
 
-% =================================================================
-%                    - Table Spacing
-% =================================================================
-\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % =================================================================
 %                   - Custom Header
@@ -202,9 +194,7 @@
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % - Turn off footnote line
     \renewcommand*\footnoterule{} 
-    \fancyfoot[CE,CO]{\vfill\scriptsize{Last Edit: \textit{\today}}}
-    
- 
+    \fancyfoot[CE,CO]{\vfill\scriptsize{This draft was generated on \textit{\today at \DTMcurrenttime PST} }}
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % =================================================================
@@ -228,8 +218,22 @@
 ] % after-code
  
  
-\titleformat{\section}[hang]{\filcenter\singlespacing\normalfont\Large\bfseries}
-{}{0pt}{}
+%\titleformat
+%{\section}[hang] % command
+%{\filcenter\singlespacing\normalfont\Large\bfseries} % format
+%{} % label
+%{0ex} % sep
+%{} % before-code
+%[] % after-code
+
+\newdimen\@bls                              
+\@bls=\baselineskip
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {0\@bls  plus 0\@bls minus 0\@bls}%
+                                   {5pt\@afterindentfalse}%
+                                   {\filcenter\singlespacing\normalfont\Large\bfseries}}
+\renewcommand\thesection{}
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % =================================================================
@@ -238,7 +242,7 @@
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \usepackage[
         labelfont={large, bf, sc},
-        textfont={Large, bf, sc},
+        textfont={Large, bf},
         labelsep=quad,
         skip=2pt,
         singlelinecheck=false,
@@ -252,15 +256,20 @@
 \DeclareCaptionFormat{myformat}{#1#2#3\hrulefill}
 \captionsetup{format=myformat}
 
+% =================================================================
+%                    - Table Spacing
+% =================================================================
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % =================================================================
 %                   - Footnotes
 % =================================================================
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[hang]{footmisc}
-\renewcommand{\hangfootparindent}{1em}% Indentation for 2nd etc. paragraphs in footnotes which cosists of more than one paragraph
+\renewcommand{\hangfootparindent}{1em}% Indentation for 2nd etc. paragraphs in footnotes which consists of more than one paragraph
 \renewcommand{\hangfootparskip}{3pt}% Vertical space between paragraphs in multiparagraph footnotes
-\renewcommand{\footnotemargin}{0.00001pt}% Setting left margin; this is the smallest value I can get to have second etc. lines indented to footnote number; zero put indentation to some positive value, and negative values do not help actually
+\renewcommand{\footnotemargin}{5pt}% Setting left margin; this is the smallest value I can get to have second etc. lines indented to footnote number; zero put indentation to some positive value, and negative values do not help actually
 \renewcommand{\footnotelayout}{\hspace{1em}}% Here you can modify the spacing between the footnote number and the text of footnote; keep this value and \hangfootparindent value the same
 
 
@@ -283,3 +292,4 @@
 
 
 \endinput
+
