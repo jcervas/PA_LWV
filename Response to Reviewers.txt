@@ -1,71 +1,26 @@
-We apologize for the delay in returning this manuscript. The reviewer comments were invaluable, and we decided to makes extensive changes in the manuscript to be able to respond
- fully to them. That took considerably more time than we had originally thought. We believe that we have fully addressed all of the reviewer’s concerns and created a much better paper
- as a result. Since the reviewers were basically positive, we are optimistic that this much improved and very extensively rewritten version can be published in Political Geography.
+We apologize for the delay in returning this manuscript. The reviewer comments were invaluable, and we decided to make extensive changes in the manuscript to be able to respond fully to them. That took considerably more time than we had originally thought. We believe that we have fully addressed all of the reviewer’s concerns and created a much better paper as a result. Since the reviewers were basically positive, we are optimistic that this much improved and very extensively rewritten version can be published in Political Geography.
 
-There were several key changes in both substance and style: First, we have simplified all tables and figures to concentrate on only four plans rather than eight. 
-The four we have picked are the ones most relevant to the case: the 2011 Enacted map, the Court ordered map used in 2018, and the two most important partisan remedial plans offered:
- one by Republican legislators, one by the Democratic governor. Second, we have completely redone all the tables, and used only one composite measure of state-wide election outcomes 
-rather than a plethora of measures. This was requested by the reviewers.  Furthermore, we have added robustness checks for the composite we have chosen. 
-Third, we have added in additional measures of partisan asymmetry, INCLUDING THE EFFICIENCY GAP, as requested. 
-Fourth we have added in lots of new language in the second half of the paper explaining 
-much more carefully exactly what we have done and what we trying to do, and most importantly, why it might matter.
+There were several key changes in both substance and style: First, we have simplified all tables and figures to concentrate on only four plans rather than eight. The four we have picked are the ones most relevant to the case: the 2011 Enacted map, the Court ordered map used in 2018, and the two most important partisan remedial plans offered: one by Republican legislators, one by the Democratic governor. Second, we have completely redone all the tables, and used only one composite measure of state-wide election outcomes rather than a plethora of measures. This was requested by the reviewers. Furthermore, we have added robustness checks for the composite we have chosen. Third, we have added in additional measures of partisan asymmetry, including the efficiency gap, as requested. Fourth we have added in lots of new language in the second half of the paper explaining much more carefully exactly what we have done and what we trying to do, and most importantly, why it might matter.
 
 REVIEWER 1
 
 Reviewer 1 had three main criticisms. 
-	(1) we should either pick one metric for assessing gerrymandering or use multiple metrics and show that they gave the same results –- and, with respect to the latter approach, 
-we picked an unnecessary fight by omitting calculations for the efficiency gap. 
-	(2) We needed more justification for projecting outcomes and our methodology was to helter-skelter 
-since we offered multiple models without a clear reason to prefer one to the other. 
+	(1) we should either pick one metric for assessing gerrymandering or use multiple metrics and show that they gave the same results –- and, with respect to the latter approach, we picked an unnecessary fight by omitting calculations for the efficiency gap. 
+	(2) We needed more justification for projecting outcomes and our methodology was to helter-skelter since we offered multiple models without a clear reason to prefer one to the other. 
 Moreover, this reviewer suggested that 
-	(3)  our pre-2018 projections for the 2018 congressional elections were erroneous in the light of the actual election results, which was a significantly more democratic year
- than anything earlier in the decade.
+	(3) our pre-2018 projections for the 2018 congressional elections were erroneous in the light of the actual election results, which was a significantly more democratic year than anything earlier in the decade.
 
-The first point was easy to deal with –- the reviewer was quite right -- We now provide calculations for four different measures of (statewide) asymmetry in votes
- to seats relationships 
-as a way to measure gerrymandering, with the efficiency gap one of these four, and we have omitted our critique of the efficiency gap, simply presenting results. 
-The other three metrics 
-are partisan bias, the mean-median gap, and a new recently offered measure called declination. 
-In addition, in a more clearly organized table, we provide comparisons of the four plans
- with respect to the degree to which EACH preserves county boundaries and offers compact districts (two measures; one perimeter based, one area-based) 
- We are pleased to report that all seven measures give exactly the same ordering of plans with respect to the claim that they are gerrymanders. 
-The 2011 map is a clear gerrymander; the Republican proposed remedial plan can appropriately be called a “stealth gerrymander,” 
-the 2018 court-ordered plan is a politically neutral map, and the Democratic Governor’s plan is hard to characterize but the one thing that can be said for sure
- is that it is not a pro-Democratic gerrymander (indeed, it has, if anything, a slight pro-Republican tilt to it).
+The first point was easy to deal with –- the reviewer was quite right -- We now provide calculations for four different measures of (statewide) asymmetry in votes to seats relationships as a way to measure gerrymandering, with the efficiency gap one of these four, and we have omitted our critique of the efficiency gap, simply presenting results. The other three metrics are partisan bias, the mean-median gap, and a new recently offered measure called declination. In addition, in a more clearly organized table, we provide comparisons of the four plans with respect to the degree to which each preserve county boundaries and offers compact districts (two measures; one perimeter based, one area-based). We are pleased to report that all seven measures give exactly the same ordering of plans with respect to the claim that they are gerrymanders. The 2011 map is a clear gerrymander; the Republican proposed remedial plan can appropriately be called a “stealth gerrymander,” the 2018 court-ordered plan is a politically neutral map, and the Democratic Governor’s plan is hard to characterize but the one thing that can be said for sure is that it is not a pro-Democratic gerrymander (indeed, it has, if anything, a slight pro-Republican tilt to it).
 
-The second point was very well taken, and caused us to do lots more work in evaluating different projection models involving state-wide elections 
-to find the best model that best fits the observed 2012-16 congressional data for the 2011 map and also works for the court-ordered map in 2018. 
-That has taken us a while -- settling on a composite involving five statewide elections, with outcomes split 3-2 between the parties. We also realized that we 
-first needed to clarify a really important methodological issue that was very poorly written up in the previous draft, and that led the reviewer to 
-mistake what we were trying to do. We failed to make clear that there is a critical difference between the methods used to assess the degree to which
- a plan is a partisan gerrymander over a wide range of hypothetical election outcomes that are feasible given the historical level of inter-election shift,
- on the one hand, and predicting specific outcomes at the congressional district level in future election before those elections take place, on the other. 
- We have never tried to predict specific district outcomes in advance of an election. Rather what we want to do is show feasible ranges given empirically 
-supported inter-election swings.  When this range of outcomes is sufficiently skewed in favor of one party, then we have evidence of gerrymandering. 
+The second point was very well taken and caused us to do lots more work in evaluating different projection models involving state-wide elections to find the best model that best fits the observed 2012-16 congressional data for the 2011 map and also works for the court-ordered map in 2018. That has taken us a while -- settling on a composite involving five statewide elections, with outcomes split 3-2 between the parties. We also realized that we first needed to clarify a really important methodological issue that was very poorly written up in the previous draft, and that led the reviewer to mistake what we were trying to do. We failed to make clear that there is a critical difference between the methods used to assess the degree to which a plan is a partisan gerrymander over a wide range of hypothetical election outcomes that are feasible given the historical level of inter-election shift, on the one hand, and predicting specific outcomes at the congressional district level in future election before those elections take place, on the other. We have never tried to predict specific district outcomes in advance of an election. Rather what we want to do is show feasible ranges given empirically supported inter-election swings. When this range of outcomes is sufficiently skewed in favor of one party, then we have evidence of gerrymandering. 
 
-One source of the confusion is that both assessment of asymmetry and attempts to project outcomes make use of the same data: actual results of congressional elections
- that have already taken place and/or the normal statewide vote from statewide elections that have already taken place. What we now do is to show that our normal vote
- data from statewide elections gives plausible estimates of partisan control/district outcomes for the 2011 Enacted map, since for that map we have 
-actual election outcomes for three different election years to compare against. Using the actual statewide two-party vote for a composite of five 2016 
-statewide elections (the best normal vote prediction model we have found), projected into congressional districts, we show that the state-wide election based composite 
-“normal vote” can be used to reliably project outcomes in the 2011 plan, once we take into account the actual inter-election electoral tides over the 2012-16 period.
- That result gave us confidence that the same method could be used to assess the level of gerrymandering in a plan had not yet been implemented at the time of our 
-original submission, the Court-ordered map that was (to be) used in 2018, as well as for two other maps that will never be used, the Republican legislative proposed
- remedial map and the Democratic Governor’s proposed remedial map.  THAT CONFIDENCE IS FURTHER CONFIRMED BY OUR SUCCESS IN USING 2016 STATEWIDE ELECTION RESULTS PROJECTED
- INTO 2018 DISTRICTS TO ASSESS CONGRESSIONAL DISTRICT OUTCOMES, BUT IN ORDER TO GET AN ACCURATE PREDICTION WE FURTHER NEED TO INCORPORATE THE  CONGRESIONAL INCUMBENCY EFFECTS 
-WHICH WE HAVE SEPARATELY MODELED.  YOU NEED TO UNBOLD THIS
+One source of the confusion is that both assessment of asymmetry and attempts to project outcomes make use of the same data: actual results of congressional elections that have already taken place and/or the normal statewide vote from statewide elections that have already taken place. What we now do is to show that our normal vote data from statewide elections gives plausible estimates of partisan control/district outcomes for the 2011 Enacted map, since for that map we have actual election outcomes for three different election years to compare against. Using the actual statewide two-party vote for a composite of five 2016 statewide elections (the best normal vote prediction model we have found), projected into congressional districts, we show that the state-wide election based composite “normal vote” can be used to reliably project outcomes in the 2011 plan, once we take into account the actual inter-election electoral tides over the 2012-16 period. That result gave us confidence that the same method could be used to assess the level of gerrymandering in a plan had not yet been implemented at the time of our original submission, the Court-ordered map that was (to be) used in 2018, as well as for two other maps that will never be used, the Republican legislative proposed remedial map and the Democratic Governor’s proposed remedial map. That confidence is further confirmed by our success in using 2016 statewide election results projected into 2018 districts to assess congressional district outcomes, but in order to get an accurate prediction we further need to incorporate the congresional incumbency effects which we have separately modeled.
 
 The new language addressing this point reads as follows.
 
-	“We must distinguish our ability to assess asymmetry in expected seats-vote relationships based on the ``normal vote'' distribution of party support across 
-districts -- and thus to assess the degree to which a plan is a gerrymander -- from our ability to predict actual election outcomes. The more competitive districts 
-there are in a map, the more results depend strongly on electoral tides, and the greater the potential for winning vote margins in some districts to be small 
-and determined by factors idiosyncratic to a district and by incumbency advantage. The 2011 map has 13 non-competitive districts (10+ percentage point margin) 
-with a clear 9-4 Republican advantage, thus virtually guaranteeing continued Republican dominance regardless of aggregate two party vote share. The Court drawn map, comparatively, had only 8 non-competitive districts, with a balance of 3-R and 5-D. Which party will control the delegation under a highly competitive plan such as the Court-ordered plan depends almost entirely on the state-wide vote share and on incumbency advantage, along with idiosyncratic features of the competitive districts that might be small in magnitude but still matter in highly competitive seats."
+	“We must distinguish our ability to assess asymmetry in expected seats-vote relationships based on the ``normal vote'' distribution of party support across districts -- and thus to assess the degree to which a plan is a gerrymander -- from our ability to predict actual election outcomes. The more competitive districts there are in a map, the more results depend strongly on electoral tides, and the greater the potential for winning vote margins in some districts to be small and determined by factors idiosyncratic to a district and by incumbency advantage. The 2011 map has 13 non-competitive districts (10+ percentage point margin) with a clear 9-4 Republican advantage, thus virtually guaranteeing continued Republican dominance regardless of aggregate two party vote share. The Court drawn map, comparatively, had only 8 non-competitive districts, with a balance of 3-R and 5-D. Which party will control the delegation under a highly competitive plan such as the Court-ordered plan depends almost entirely on the state-wide vote share and on incumbency advantage, along with idiosyncratic features of the competitive districts that might be small in magnitude but still matter in highly competitive seats."
 
-With respect to the third point about projection for the court ordered map in 2018, once we incorporated the aggregate statewide share of the two-party congressional 
-vote in 2018, and data on which districts had Dem or Rep incumbents in that election, our projection of the composite “normal vote” state-wide election data into the
- new 2018 congressional districts also turns out to work quite well. While there is a considerable range of feasible outcomes in the 2018 map based on the potential inter-election electoral shifts -— exactly as the reviewer pointed out -- once the election happens, we can check to seek to project results at the district level by adjusting the 2016 state-wide composite to the actual state-wide share of the two-party vote, and add in information about incumbency, since incumbency advantage also factors into election outcomes in highly competitive districts. When we combine all this information into one model -– information not available in advance --  we project the most likely congressional outcome in 2018 to be 9R-9D, but we also emphasize that the high number of highly competitive districts in the 2018 map made many other outcomes possible. 
+With respect to the third point about projection for the court ordered map in 2018, once we incorporated the aggregate statewide share of the two-party congressional vote in 2018, and data on which districts had Dem or Rep incumbents in that election, our projection of the composite “normal vote” state-wide election data into the new 2018 congressional districts also turns out to work quite well. While there is a considerable range of feasible outcomes in the 2018 map based on the potential inter-election electoral shifts -— exactly as the reviewer pointed out -- once the election happens, we can check to seek to project results at the district level by adjusting the 2016 state-wide composite to the actual state-wide share of the two-party vote, and add in information about incumbency, since incumbency advantage also factors into election outcomes in highly competitive districts. When we combine all this information into one model -– information not available in advance -- we project the most likely congressional outcome in 2018 to be 9R-9D, but we also emphasize that the high number of highly competitive districts in the 2018 map made many other outcomes possible. 
 
  The new language addressing this point reads as follows.
 
@@ -74,51 +29,33 @@ vote in 2018, and data on which districts had Dem or Rep incumbents in that elec
 	% ================================================================= 
 	% -- FOOTNOTE -- FOOTNOTE -- FOOTNOTE -- FOOTNOTE -- FOOTNOTE --  %
 	% -----------------------------------------------------------------		
-		Six Republicans and five Democrats ran for re-election after the new map was put in place. No incumbent lost. There were two Republican incumbents who won by less than 2 percentage points, along with one who won by less than 3 percentage points. There was just one seat won by Democrats in 2018 with a margin of 5 percentage points or less. Republicans therefore had four incumbents running and winning in competitive districts compared to just two for Democrats (10+ percentage point margin).
+	Six Republicans and five Democrats ran for re-election after the new map was put in place. No incumbent lost. There were two Republican incumbents who won by less than 2 percentage points, along with one who won by less than 3 percentage points. There was just one seat won by Democrats in 2018 with a margin of 5 percentage points or less. Republicans therefore had four incumbents running and winning in competitive districts compared to just two for Democrats (10+ percentage point margin).
 	% ----------------------------------------------------------------- 
 	% -- END FOOTNOTE -- END FOOTNOTE -- END FOOTNOTE -- END FOOTNOTE %
 	% =================================================================
 
-    We are not claiming to predict vote shares in advance of an election. We also recognize that the composite of state-wide elections is intended to provide a 
-``normal vote'' baseline that must be ``corrected'' with incumbency effects if we do wish to actually predict outcomes.
+	We are not claiming to predict vote shares in advance of an election. We also recognize that the composite of state-wide elections is intended to provide a ``normal vote'' baseline that must be ``corrected'' with incumbency effects if we do wish to actually predict outcomes.
 
-	When we look at the five election composite we need to (a) adjust it for the actual statewide congressional Democratic vote share in 2018, and 
-(b) to take into account this differential incumbency advantage that still benefits Republicans. Without doing so, the outcomes of the Court-ordered plan 
-have a wide range, with anywhere from a 5R to an 11R outcome possible because of the high number of competitive seats. However, when we take both factors into account by uniformly shifting the state-wide composite to reflect the 2018 statewide two-party congressional vote, and by adding in congressional incumbency advantage, which we have estimated in the 2012-2016 period to be on the order of magnitude of 4.3\% (analyses omitted for space reasons), we get a 9R-9D outcome as the most likely outcome in 2018 under the court-ordered map in our predictive model. Thus, our confidence in the five election projection method is further buttressed when we applied this method to predict the results of the 2018 election under the court-ordered remedial map in the light of the actual statewide aggregate results in 2018.”
+When we look at the five-election composite we need to (a) adjust it for the actual statewide congressional Democratic vote share in 2018, and (b) to take into account this differential incumbency advantage that still benefits Republicans. Without doing so, the outcomes of the Court-ordered plan have a wide range, with anywhere from a 5R to an 11R outcome possible because of the high number of competitive seats. However, when we take both factors into account by uniformly shifting the state-wide composite to reflect the 2018 statewide two-party congressional vote, and by adding in congressional incumbency advantage, which we have estimated in the 2012-2016 period to be on the order of magnitude of 4.3% (analyses omitted for space reasons), we get a 9R-9D outcome as the most likely outcome in 2018 under the court-ordered map in our predictive model. Thus, our confidence in the five-election projection method is further buttressed when we applied this method to predict the results of the 2018 election under the court-ordered remedial map in the light of the actual statewide aggregate results in 2018.”
 
-Finally, the reviewer's interest in the comparison between a "fair" plan and a "neutral" plan led us to expand 
-the disscussion, especially in light of the natural geographical features in Pennsylvania. It now is featured as it's own sub-section.
+Finally, the reviewer's interest in the comparison between a "fair" plan and a "neutral" plan led us to expand the discussion, especially in light of the natural geographical features in Pennsylvania. It now is featured as its own sub-section.
 
 ______________________________
 
 
 REVIEWER 2
-Reviewer 2 had one main criticism which overlapped that of Reviewer 1. Reviewer 2 notes that we picked an unnecessary fight by omitting calculations 
-for the efficiency gap. Here, as noted in our response to Reviewer 1, we have fully complied with the reviewer’s suggestion putting that measure 
-into the paper (without seeking to critique it, or any of the other measures, but simply reporting results), 
-and it gives us exactly the same results for the four plans as the other asymmetry measures. 
 
-The second point made by Reviewer 2 is that there is inevitable arbitrariness in saying whether a plan is or is not a partisan gerrymander 
-since we need to specify a threshold. 
+Reviewer 2 had one main criticism which overlapped that of Reviewer 1. Reviewer 2 notes that we picked an unnecessary fight by omitting calculations for the efficiency gap. Here, as noted in our response to Reviewer 1, we have fully complied with the reviewer’s suggestion putting that measure into the paper (without seeking to critique it, or any of the other measures, but simply reporting results), and it gives us exactly the same results for the four plans as the other asymmetry measures. 
 
-In our view it is self-evident as significant the difference between the 43 county splits in the 2011 map and the 17 county splits in the court-ordered map used in 2018,
- and judging as  lacking  IN clear significance the comparison of the 17 county splits in the court-ordered map versus the 19 county splits in the 
-Republican and Democratic plans (see Table 1). On the other hand, though there is no red-line test yet adopted by the courts for defining a gerrymander, we have in this
- new submission added tests for  statistical significance for the asymmetry measures.  In particular, as reported in Table 3, all four gerrymandering metrics yield 
-results that are statistically significant for both the 2011 map and the Republican proposed remedial map, but none are statistically significant for the court-ordered
- map. This material on statistical significance is new to this revised draft.
+The second point made by Reviewer 2 is that there is inevitable arbitrariness in saying whether a plan is or is not a partisan gerrymander since we need to specify a threshold. 
 
- Reviewers were correct in pointing out that our composite measure is somewhat of an arbitrary choice and our justification for using it should be derived from 
-it's ability to accurately predict elections. Following this logic, we constructed simulations of our measure and then used these simulations to
- show how closely our measure relates to the actual 2012, 2014, and 2016 House elections, while also adding in data from 2018 now that the election has happened since
- our submission. This data shows that   our measure is remarkably accurate at the district level for all these elections once we take into account election -specific statewide results and also take incumbency effects into account. 
- 
-The third point made by the reviewer has to do with typos.  We are grateful for the care with which this reviewer read the paper! We have, we believe, cleaned up 
-all the mistakes the reviewer identified, though we have now have so much new text that, despite our best efforts, we may have inadvertently created new ones.
+In our view it is self-evident as significant the difference between the 43 county splits in the 2011 map and the 17 county splits in the court-ordered map used in 2018, and judging as lacking in clear significance the comparison of the 17 county splits in the court-ordered map versus the 19 county splits in the Republican and Democratic plans (see Table 1). On the other hand, though there is no bright-line test yet adopted by the courts for defining a gerrymander, we have in this new submission added tests for statistical significance for the asymmetry measures. In particular, as reported in Table 3, all four gerrymandering metrics yield results that are statistically significant for both the 2011 map and the Republican proposed remedial map, but none are statistically significant for the court-ordered map. This material on statistical significance is new to this revised draft.
 
 
-Responses to the reviewers concerns appropriately added some lengthy discussions to the text. We offset the increase in page count by eliminating non-essential data
- and streamlining the essay to more succinctly follow the paper's title and objective. We feel this more narrow   design helps to explicate our
- contribution as both 
-a historical account of the most important partisan gerrymandering court case to date, but also to help structure a framework with which the partisan effects of 
-districting plans can be measured and compared.
+Reviewers were correct in pointing out that our composite measure is somewhat of an arbitrary choice and our justification for using it should be derived from it's ability to accurately predict elections. Following this logic, we constructed simulations of our measure and then used these simulations to show how closely our measure relates to the actual 2012, 2014, and 2016 House elections, while also adding in data from 2018 now that the election has happened since our submission. This shows that our measure is remarkably accurate for all these elections once we take election specific statewide factors and our additional modeling work also shows the usefulness of a more probabilistic approach to estimating gerrymandering.
+
+The third point made by the reviewer has to do with typos. We are grateful for the care with which this reviewer read the paper! We have, we believe, cleaned up all the mistake the reviewer identified, though we have now had so much new text that, despite our best efforts, we may have inadvertently created new ones.
+
+
+Responses to the reviewers concerns appropriately added some lengthy discussions to the text. We offset the increase in page count by eliminating non-essential data and streamlining the essay to more succinctly follow the paper's title and objective. We feel this narrower design helps to explicate our contribution as both a historical account of the most important partisan gerrymandering court case to date, but also to help structure a framework with which the partisan effects of districting plans can be measured and compared.
+
