@@ -32,7 +32,7 @@ govwolf.compressed <- readOGR("shapefiles/topojson/shapefiles3.json", "govwolf")
 	proj4string(govwolf.compressed) <- CRS("+init=epsg:4269")
 
 enacted2011 <- spTransform(readOGR("shapefiles/enacted/enacted.shp"), CRS(projection))
-court <- spTransform(readOGR("shapefiles/remedial/remedial.shp"), CRS(projection))
+court <- spTransform(readOGR("shapefiles/court/remedial.shp"), CRS(projection))
 joint <- spTransform(readOGR("shapefiles/joint/joint.shp"), CRS(projection))
 govwolf <- spTransform(readOGR("shapefiles/govwolf/govwolf.shp"), CRS(projection))
 

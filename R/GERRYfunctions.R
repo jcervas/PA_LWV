@@ -5,7 +5,7 @@ cat(
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••\n")
 `Table` <- function(x, path=NULL, caption="", label="", footnote="", landscape=FALSE, out=NULL)
   {
-    x <- append(x,
+t <- 
 paste0(
 "\n% =====================================================================
 % ▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟
@@ -15,8 +15,10 @@ paste0("\\begin{center} \\textbf{", caption, "} \\end{center}"),
 paste0("\\input{", path, "}")),
 
 "\n \\begin{center}\\textbf{INSERT TABLE \\ref{", label, "} ABOUT HERE} \\end{center}
-% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••\n
-\n% =====================================================================
+% •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••\n")
+
+    x <- append(x,
+paste0("\n% =====================================================================
 % ▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟ ▄▀▄▀▄▀▀▄▀▄▀▄ T̟A̟B̟L̟E̟
 % ---------------------------------------------------------------------",
 ifelse(landscape==T, "\n\\begin{landscape}", "")),
@@ -32,7 +34,7 @@ ifelse(landscape==T, "\n\\end{landscape}", ""),
 % ▀▄▀▄▀▄ E͎N͎D͎ T͎A͎B͎L͎E͎ ▄▀▄▀▄▀▀▄▀▄▀▄ E͎N͎D͎ T͎A͎B͎L͎E͎ ▄▀▄▀▄▀▀▄▀▄▀▄ E͎N͎D͎ T͎A͎B͎L͎E͎ ▄▀▄▀▄▀
 % ===================================================================== \n \n"),
 after = length(x))
-cat(paste(latex.special.chr(x), collapse = "\n"), "\n")
+cat(paste(latex.special.chr(t), collapse = "\n"), "\n")
 cat(paste(latex.special.chr(x), collapse = "\n"), "\n", file = paste0("Latex/", path))
   }
 

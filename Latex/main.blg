@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: main.aux
+The style file: apsa_l.bst.bst
+Database file #1: library.bib
+`note' is a missing field, not a string, for entry Barnett2018_NC_gerry
+while executing---line 1401 of file apsa_l.bst.bst
+You can't pop an empty literal stack for entry Barnett2018_NC_gerry
+while executing---line 1401 of file apsa_l.bst.bst
+`note' is a missing field, not a string, for entry Fang2014
+while executing---line 1401 of file apsa_l.bst.bst
+You can't pop an empty literal stack for entry Fang2014
+while executing---line 1401 of file apsa_l.bst.bst
+ptr=2, stack=
+note
+Harvard Institute for Quantitative Social Science
+---the literal stack isn't empty for entry Kaufman2018
+while executing---line 1401 of file apsa_l.bst.bst
+You've used 51 entries,
+            2924 wiz_defined-function locations,
+            990 strings with 15581 characters,
+and the built_in function-call counts, 208088 in all, are:
+= -- 34179
+> -- 2337
+< -- 0
++ -- 15885
+- -- 769
+* -- 17707
+:= -- 41643
+add.period$ -- 208
+call.type$ -- 51
+change.case$ -- 664
+chr.to.int$ -- 49
+cite$ -- 51
+duplicate$ -- 775
+empty$ -- 1682
+format.name$ -- 838
+if$ -- 37440
+int.to.chr$ -- 7
+int.to.str$ -- 0
+missing$ -- 53
+newline$ -- 217
+num.names$ -- 571
+pop$ -- 181
+preamble$ -- 1
+purify$ -- 765
+quote$ -- 0
+skip$ -- 619
+stack$ -- 0
+substring$ -- 48466
+swap$ -- 110
+text.length$ -- 714
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 196
+warning$ -- 0
+while$ -- 1197
+width$ -- 0
+write$ -- 713
+(There were 5 error messages)
