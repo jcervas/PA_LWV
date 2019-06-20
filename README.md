@@ -268,7 +268,7 @@ relationship with the federal government [@Ansolabehere2002a]. That the
 is revealed clearly in Figure
 [\[fig:maps\]](#fig:maps){reference-type="ref" reference="fig:maps"}.
 
-### [fig:maps]:Maps Of The Proposed Pennsylvania Congressional Districts
+### [fig:maps]: Maps Of The Proposed Pennsylvania Congressional Districts
 <img src="Figures/fig_maps.png" alt="Maps Of The Proposed Pennsylvania Congressional Districts" width="450"/>
 ###### _Notes:_ Maps a drawn with a Mercator projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.
 
