@@ -269,10 +269,12 @@ is revealed clearly in Figure
 [\[fig:maps\]](#fig:maps){reference-type="ref" reference="fig:maps"}.
 
 ![Maps Of The Proposed Pennsylvania Congressional Districts](Figures/fig_maps.pdf)
+<img src="Figures/fig_maps.pdf"
+     alt="Maps Of The Proposed Pennsylvania Congressional Districts"
+     style="float: center;" />
+###### _Notes:_ Maps a drawn with a Mercator projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.}
 
-\tabnotes{Maps a drawn with a Mercator projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.}
-INSERT FIGURE [\[fig:maps\]](#fig:maps){reference-type="ref"
-reference="fig:maps"} ABOUT HERE
+
 
 ### Compactness {#compactness}
 
