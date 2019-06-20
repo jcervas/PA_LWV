@@ -671,7 +671,7 @@ will do better under their plan than under the Democratic plan.
 
 ### Probabilistic Projections of Partisan Outcomes for Four Plans at 50% Vote-Share
 |                                 | 2011 Enacted               | Joint Legislative     | Gov. Wolf             | 2018 Court Remedial        |
-|---------------------------------|----------------------------|-----------------------|-----------------------|----------------------------|
+|---------------------------------|:--------------------------:|:---------------------:|:---------------------:|:--------------------------:|
 | Mean Seat Share                 | 12.2R-5.8D                 | 11.7R-6.3D            | 10.8R-7.2D            | 10.2R-7.8D                 |
 |                                 | _[10.8R-7.2D, 14.4R-3.6D]_ | _[9R-9D, 14.4R-3.6D]_ | _[9R-9D, 12.6R-5.4D]_ | _[7.2R-10.8D, 12.6R-5.4D]_ |
 | Median Seat Share               | 12R-6D                     | 12R-6D                | 11R-7D                | 10R-8D                     |
