@@ -212,9 +212,9 @@ Institutional Measures {#institutional-measures}
 
   ### County Splits and Compactness Scores of the Plans
 
-|                     | *County* | *Polsby* |                |
-|---------------------|-----------------|-----------------|----------------|
-| *Plan*       | *Splits* | *Popper* | *Reock* |
+
+| *Plan*       | *County Splits* | *Polsby Popper* | *Reock* |
+|---------------------|:---------------:|:---------------:|:--------------:|
 | 2011 Enacted        | 41            | 0.271         | 0.164        |
 | Joint Legislative   | 19            | 0.365         | 0.282        |
 | Gov. Wolf           | 19            | 0.393         | 0.310        |
@@ -501,7 +501,7 @@ the 2011 map as an (enduring) partisan gerrymander.
 
 
 |                | 2012     | 2014     | 2016     | AVE      |
-|----------------|----------|----------|----------|----------|
+|----------------|:--------:|:--------:|:---------|:--------:|
 | Seats          | [13R-5D] | [13R-5D] | [13R-5D] | [13R-5D] |
 | Seat %         | 72.2\%   | 72.2\%   | 72.2\%   | 72.0\%   |
 | Votes          | 51.1\%   | 55.5\%   | 54.2\%   | 53.3\%   |
@@ -616,7 +616,7 @@ for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 
 ### Measures of Gerrymandering for the Four Considered Plans at 50% Vote Share
 |                | 2011 Enacted       | Joint Legislative  | Gov. Wolf           | 2018 Court Remedial |
-|----------------|--------------------|--------------------|---------------------|---------------------|
+|----------------|:------------------:|:------------------:|:-------------------:|:-------------------:|
 | Partisan Bias  | 0.09***            | 0.08***            | 0.06**              | 0.04                |
 |                | _[0.05, 0.13]_     | _[0.03, 0.12]_     | _[0.02, 0.11]_      | _[-0.01, 0.08]_     |
 | Efficiency Gap | 0.24***            | 0.22**             | 0.14                | 0.08                |
@@ -888,15 +888,7 @@ of unconstitutionality. The language of the Final Order implementing the
 Court's own plan strongly suggests this possibility. There, the Court
 said about the 2011 plan that it
 
-> "was designed to dilute the votes of those who in prior elections
-> voted for the party not in power in order to give the party in power a
-> lasting electoral advantage. In stark contrast, Article I, Section 5
-> of the Pennsylvania Constitution provides: 'Elections shall be free
-> and equal; and no power, civil or military, shall at any time
-> interfere to prevent the free exercise of the right of suffrage.' Pa.
-> Const. art. I, § 5. On this record, it is clear that the 2011 Plan
-> violates Article I, Section 5, since a diluted vote is not an equal
-> vote" (slip op. p. 2).
+> "was designed to dilute the votes of those who in prior elections voted for the party not in power in order to give the party in power a lasting electoral advantage. In stark contrast, Article I, Section 5 of the Pennsylvania Constitution provides: 'Elections shall be free and equal; and no power, civil or military, shall at any time interfere to prevent the free exercise of the right of suffrage.' Pa. Const. art. I, § 5. On this record, it is clear that the 2011 Plan violates Article I, Section 5, since a diluted vote is not an equal vote" (slip op. p. 2).
 
 Thus, we have some optimism that state courts can provide a venue to
 check partisan gerrymandering, even when it comes in the form of a
