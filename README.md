@@ -266,7 +266,7 @@ outcome, which can affect both national politics and a county's
 relationship with the federal government [@Ansolabehere2002a]. That the
 2011 map is an eyesore vis-a-vis unnecessary splits of county boundaries
 is revealed clearly in Figure
-[\[fig:maps\]](#fig:maps){reference-type="ref" reference="fig:maps"}.
+[fig:maps].
 
 ### [fig:maps]: Maps Of The Proposed Pennsylvania Congressional Districts
 <img src="Figures/fig_maps.png" alt="Maps Of The Proposed Pennsylvania Congressional Districts" width="450"/>
