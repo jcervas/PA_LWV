@@ -209,23 +209,18 @@ these two "good government" criteria further.
 Institutional Measures {#institutional-measures}
 ----------------------
 
-\centering 
-  ------------------------- ------------ ------------ -----------
-                             **County**   **Polsby**  
-          **Plan**           **Splits**   **Popper**   **Reock**
-                                                      
-   \[-1.8ex\] 2011 Enacted      41       0.271      0.164
-      Joint Legislative         19       0.365      0.282
-          Gov. Wolf             19       0.393      0.310
-     2018 Court Remedial        17       0.426      0.324
-  ------------------------- ------------ ------------ -----------
 
-  ###### County Splits and Compactness Scores of the
-  Plans[]{label="tab:summaries"}
+  ### County Splits and Compactness Scores of the Plans
 
-\tabnotes{County splits include all the pieces in which a county is split, not just the total number of counties that have been split. (The latter number is the one most often reported in both court documents and in the media, but we regard the measure we report as both more precise and more informative.)}
-**INSERT TABLE [\[tab:summaries\]](#tab:summaries){reference-type="ref"
-reference="tab:summaries"} ABOUT HERE**
+|                     | *County* | *Polsby* |                |
+|---------------------|-----------------|-----------------|----------------|
+| *Plan*       | *Splits* | *Popper* | *Reock* |
+| 2011 Enacted        | 41            | 0.271         | 0.164        |
+| Joint Legislative   | 19            | 0.365         | 0.282        |
+| Gov. Wolf           | 19            | 0.393         | 0.310        |
+| 2018 Court Remedial | 17            | 0.426         | 0.324        |
+###### _Note:_ County splits include all the pieces in which a county is split, not just the total number of counties that have been split. (The latter number is the one most often reported in both court documents and in the media, but we regard the measure we report as both more precise and more informative.)
+
 
 We begin our analyses describing map features distinct from partisan
 outcomes or proposed measures of partisan asymmetries. Table
