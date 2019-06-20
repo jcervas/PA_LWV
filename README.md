@@ -268,8 +268,8 @@ relationship with the federal government [@Ansolabehere2002a]. That the
 is revealed clearly in Figure
 [\[fig:maps\]](#fig:maps){reference-type="ref" reference="fig:maps"}.
 
-### Maps Of The Proposed Pennsylvania Congressional Districts
-<img src="Figures/fig_maps.png" alt="Maps Of The Proposed Pennsylvania Congressional Districts" width="400"/>
+### [fig:maps]:Maps Of The Proposed Pennsylvania Congressional Districts
+<img src="Figures/fig_maps.png" alt="Maps Of The Proposed Pennsylvania Congressional Districts" width="450"/>
 ###### _Notes:_ Maps a drawn with a Mercator projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.
 
 
@@ -1257,7 +1257,7 @@ partisan gerrymandering.
 [^35]: Commenting on the potential for the North Carolina district court
     to strike down their maps as unconstitutional (which ultimately they
     did), David Daley, author of "Ratf\*\*ked: Why Your Vote Doesn't
-    Count" [@Daley2016_ratf**ked], stated about a possible remedial plan
+    Count" [@Daley2016_ratf\*\*ked], stated about a possible remedial plan
     by the map's original consultant that, "\[Thomas B. Hofeller\] was
     really good at maps that look more normal, that break up fewer towns
     and counties but are just as partisan and just as advantageous for
