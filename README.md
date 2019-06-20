@@ -592,7 +592,7 @@ congressional results for 2012-2016 and an average of the three,
 reported in Table [2](#u.s.-house-election-summaries), are 0.11 for partisan bias, 0.16 for the
 efficiency gap, 0.06 for the value of the mean minus median gap, and
 0.40 for *declination*. The comparable results from Table
-[\[tab:gerry\]](#tab:gerry){reference-type="ref" reference="tab:gerry"}
+[3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50%-vote-share)
 for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 0.39. [^26]
 
@@ -630,12 +630,12 @@ Finally, we return to the plan offered by the Democratic governor,
 Governor Wolf. To our surprise, this plan appeared to have a
 pro-Republican tilt, nearly to the same extent as the joint legislative
 plan for three of the four metrics in Table
-[\[tab:gerry\]](#tab:gerry){reference-type="ref" reference="tab:gerry"}.
+[3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50%-vote-share).
 This puzzling finding suggests that the Governor might have been under
 pressure from Democratic incumbents not to reduce their expected vote
 margins, or that he sincerely intended it to be a compromise that the
 Republican legislature might agree to. However, as shown in
-[\[tab:gerry\]](#tab:gerry){reference-type="ref" reference="tab:gerry"},
+[3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50%-vote-share),
 two of the apparent pro-Republican indicators for the plan are
 statistically insignificant. Moreover, there is one important difference
 between the joint plan and that of the Governor: among the seven
