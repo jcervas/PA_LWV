@@ -268,7 +268,7 @@ relationship with the federal government [@Ansolabehere2002a]. That the
 is revealed clearly in Figure
 [\[fig:maps\]](#fig:maps){reference-type="ref" reference="fig:maps"}.
 
-![Maps Of The Proposed Pennsylvania Congressional Districts](Figures/fig_maps.tiff)
+![Maps Of The Proposed Pennsylvania Congressional Districts](Figures/fig_maps.png)
 <object data="Figures/fig_maps.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="Figures/fig_maps.pdf">
         <p>This browser does not support PDFs. Please download the PDF to view it: <a href="Figures/fig_maps.pdf">Download PDF</a>.</p>
