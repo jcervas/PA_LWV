@@ -220,7 +220,7 @@ Institutional Measures {#institutional-measures .unnumbered .unnumbered}
      2018 Court Remedial        $17$       $0.426$      $0.324$
   ------------------------- ------------ ------------ -----------
 
-  : County Splits and Compactness Scores of the
+  ###### County Splits and Compactness Scores of the
   Plans[]{label="tab:summaries"}
 
 \tabnotes{County splits include all the pieces in which a county is split, not just the total number of counties that have been split. (The latter number is the one most often reported in both court documents and in the media, but we regard the measure we report as both more precise and more informative.)}
@@ -619,21 +619,18 @@ efficiency gap, 0.06 for the value of the mean minus median gap, and
 for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 0.39. [^26]
 
-\centering 
-                                2011 Enacted     Joint Legislative       Gov. Wolf       2018 Court Remedial
-  -------------------------- ------------------ ------------------- ------------------- ---------------------
-                                                                                        
-   \[-1.8ex\] Partisan Bias     0.09$^{***}$       0.08$^{***}$         0.06$^{**}$           0.04$^{}$
-                              *\[0.05, 0.13\]*   *\[0.03, 0.12\]*    *\[0.02, 0.11\]*     *\[-0.01, 0.08\]*
-        Efficiency Gap          0.24$^{***}$        0.22$^{**}$          0.14$^{}$            0.08$^{}$
-                              *\[0.09, 0.36\]*   *\[0.07, 0.36\]*      *\[0, 0.3\]*       *\[-0.07, 0.21\]*
-         Mean/Median            0.05$^{***}$        0.04$^{**}$         0.04$^{*}$            0.02$^{}$
-                              *\[0.02, 0.07\]*   *\[0.01, 0.07\]*      *\[0, 0.07\]*      *\[-0.01, 0.05\]*
-         Declination            0.39$^{**}$         0.33$^{*}$           0.21$^{}$            0.14$^{}$
-                              *\[0.13, 0.63\]*   *\[0.07, 0.61\]*    *\[-0.02, 0.47\]*    *\[-0.1, 0.42\]*
+|                | 2011 Enacted            | Joint Legislative       | Gov. Wolf                | 2018 Court Remedial      |
+|----------------|-------------------------|-------------------------|--------------------------|--------------------------|
+| Partisan Bias  | 0.09$^{***}$            | 0.08$^{***}$            | 0.06$^{**}$              | 0.04$^{}$                |
+|                | {\textit{[0.05, 0.13]}} | {\textit{[0.03, 0.12]}} | {\textit{[0.02, 0.11]}}  | {\textit{[-0.01, 0.08]}} |
+| Efficiency Gap | 0.24$^{***}$            | 0.22$^{**}$             | 0.14$^{}$                | 0.08$^{}$                |
+|                | {\textit{[0.09, 0.36]}} | {\textit{[0.07, 0.36]}} | {\textit{[0, 0.3]}}      | {\textit{[-0.07, 0.21]}} |
+| Mean/Median    | 0.05$^{***}$            | 0.04$^{**}$             | 0.04$^{*}$               | 0.02$^{}$                |
+|                | {\textit{[0.02, 0.07]}} | {\textit{[0.01, 0.07]}} | {\textit{[0, 0.07]}}     | {\textit{[-0.01, 0.05]}} |
+| Declination    | 0.39$^{**}$             | 0.33$^{*}$              | 0.21$^{}$                | 0.14$^{}$                |
+|                | {\textit{[0.13, 0.63]}} | {\textit{[0.07, 0.61]}} | {\textit{[-0.02, 0.47]}} | {\textit{[-0.1, 0.42]}}  |
 
-  : Measures of Gerrymandering for the Four Considered Plans at 50% Vote
-  Share[]{label="tab:gerry"}
+  ###### Measures of Gerrymandering for the Four Considered Plans at 50% Vote Share
 
 \tabnotes{$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range.}
 **INSERT TABLE [\[tab:gerry\]](#tab:gerry){reference-type="ref"
