@@ -206,13 +206,8 @@ All the plans create contiguous districts. Similarly, all four plans
 appear to satisfy voting rights requirements. Thus, we do not discuss
 these two "good government" criteria further.
 
-Institutional Measures {#institutional-measures}
-----------------------
 
-
-  ### County Splits and Compactness Scores of the Plans
-
-
+### County Splits and Compactness Scores of the Plans
 | *Plan*       | *County Splits* | *Polsby Popper* | *Reock* |
 |---------------------|:---------------:|:---------------:|:--------------:|
 | 2011 Enacted        | 41            | 0.271         | 0.164        |
@@ -221,11 +216,11 @@ Institutional Measures {#institutional-measures}
 | 2018 Court Remedial | 17            | 0.426         | 0.324        |
 ###### _Note:_ County splits include all the pieces in which a county is split, not just the total number of counties that have been split. (The latter number is the one most often reported in both court documents and in the media, but we regard the measure we report as both more precise and more informative.)
 
-
+Institutional Measures {#institutional-measures}
+----------------------
 We begin our analyses describing map features distinct from partisan
 outcomes or proposed measures of partisan asymmetries. Table
-[\[tab:summaries\]](#tab:summaries){reference-type="ref"
-reference="tab:summaries"} offers a comparison of two key good
+[1](#county-splits-and-compactness-scores-of-the-plans) offers a comparison of two key good
 government features of the map.
 
 -   the number of county splits, since the Pennsylvania Supreme Court
@@ -254,8 +249,7 @@ number of counties were split in the 2011 congressional map, and they
 found this fact deeply troubling.
 
 The data provided in Table
-[\[tab:summaries\]](#tab:summaries){reference-type="ref"
-reference="tab:summaries"} shows how the high number of county splits in
+[1](#county-splits-and-compactness-scores-of-the-plans)shows how the high number of county splits in
 the 2011 map was completely unnecessary. Both the Republican and
 Democrat proposed remedy plans cut the number of county splits from 41
 to 19. [^15] The Court plan goes even further and gets the number of
@@ -290,8 +284,7 @@ appear ill-compact on another. The two most common ideas of compactness
 refer, on the one hand, to how close a legislative district's boundaries
 are to its geographic center and, on the other, to how "regular" in
 shape a district appears to be [@Niemi1990; @Kaufman2018]. In Table
-[\[tab:summaries\]](#tab:summaries){reference-type="ref"
-reference="tab:summaries"} we report two well-known measures which tap
+[1](#county-splits-and-compactness-scores-of-the-plans) we report two well-known measures which tap
 respectively each of these two dimensions. The *Polsby-Popper* measure
 looks at perimeter irregularity by examining the area of the district
 compared to that of a circle with similar perimeter, while the *Reock*
@@ -311,8 +304,7 @@ be found even in plans with compact appearing districts, or in a plan
 with districts that preserve most county borders.
 
 Each of the three measures in Table
-[\[tab:summaries\]](#tab:summaries){reference-type="ref"
-reference="tab:summaries"} indicates a very dramatic deviation from good
+[1](#county-splits-and-compactness-scores-of-the-plans) indicates a very dramatic deviation from good
 government standards in the 2011 Enacted map. And, each of three metrics
 order the plans in good government terms from worst to best in exactly
 the same way, with the worst plan being the 2011 Enacted map, the next
@@ -334,7 +326,7 @@ claims to "remedy".
 
 To give a more intuitive feel for how egregiously ill-compact the 2011
 map is compared to the other alternatives we are considering, Figure
-[\[fig:maps\]](#fig:maps){reference-type="ref" reference="fig:maps"}
+[1](#maps-of-the-proposed-pennsylvania-congressional-districts)
 shows all four maps in the same scale, in a gray and white format. What
 is visually apparent from these maps is how aesthetically "ugly" the
 2011 map is compared to all of its alternatives. But it also clear that
@@ -491,12 +483,11 @@ Democratic share of the average two-party vote in the congressional
 elections in Pennsylvania was 48.0%, in 2014 it was 44.5%, and in 2016
 it was 45.8%. [^22] Thus, the discrepancy between Republican vote share
 and Republican seat share was huge, and yet the seat share appeared to
-be immutable. Table [\[tab:congsum\]](#tab:congsum){reference-type="ref"
-reference="tab:congsum"} shows the indicators of statewide partisan
+be immutable. Table [2](#u.s.-house-election-summaries) shows the indicators of statewide partisan
 gerrymandering effects that provides additional compelling evidence of
 the 2011 map as an (enduring) partisan gerrymander.
 
-
+### U.S. House Election Summaries
 |                | 2012     | 2014     | 2016     | AVE      |
 |----------------|:--------:|:--------:|:---------|:--------:|
 | Seats          | [13R-5D] | [13R-5D] | [13R-5D] | [13R-5D] |
@@ -506,13 +497,8 @@ the 2011 map as an (enduring) partisan gerrymander.
 | Efficiency Gap | 0.21     | 0.11     | 0.17     | 0.16     |
 | Mean/Median    | 0.06     | 0.06     | 0.06     | 0.06     |
 | Declination    | 0.46     | 0.36     | 0.39     | 0.4      |
+###### _Notes:_ Calculations based on actual congressional elections in Pennsylvania under the map found unconstitutional in 2018. Uncontested races are imputed with 0.25 and 0.75 for the respective winners. Un-adjusted Republican two-party vote totals are 49.2\% for 2012, 55.5\% for 2014, and 54.1\% for 2016. All votes are calculated from the Republican perspective of the two-party vote. We've adjusted all gerrymandering measures such that negative numbers indicate bias in favor of the Democrats.
 
-  : U.S. House Election Summaries\
-  (PA 2012-2016 Enacted Map)[]{label="tab:congsum"}
-
-\tabnotes{Calculations based on actual congressional elections in Pennsylvania under the map found unconstitutional in 2018. Uncontested races are imputed with 0.25 and 0.75 for the respective winners. Un-adjusted Republican two-party vote totals are 49.2\% for 2012, 55.5\% for 2014, and 54.1\% for 2016. All votes are calculated from the Republican perspective of the two-party vote. We've adjusted all gerrymandering measures such that negative numbers indicate bias in favor of the Democrats.}
-**INSERT TABLE [\[tab:congsum\]](#tab:congsum){reference-type="ref"
-reference="tab:congsum"} ABOUT HERE**
 
 Evaluating district plans using Statewide elections to provide a normal vote baseline {#evaluating-district-plans-using-statewide-elections-to-provide-a-normal-vote-baseline}
 -------------------------------------------------------------------------------------
@@ -603,8 +589,7 @@ that map. What we are doing is comparing a hypothetical "normal vote"
 not taking incumbency effects into account) with the average of what we
 actually get in three different congressional elections. The
 congressional results for 2012-2016 and an average of the three,
-reported in Table [\[tab:congsum\]](#tab:congsum){reference-type="ref"
-reference="tab:congsum"}, are 0.11 for partisan bias, 0.16 for the
+reported in Table [2](#u.s.-house-election-summaries), are 0.11 for partisan bias, 0.16 for the
 efficiency gap, 0.06 for the value of the mean minus median gap, and
 0.40 for *declination*. The comparable results from Table
 [\[tab:gerry\]](#tab:gerry){reference-type="ref" reference="tab:gerry"}
@@ -622,13 +607,11 @@ for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 |                | _[0.02, 0.07]_     | _[0.01, 0.07]_     | _[0, 0.07]_         | _[-0.01, 0.05]_     |
 | Declination    | 0.39**             | 0.33*              | 0.21                | 0.14                |
 |                | _[0.13, 0.63]_     | _[0.07, 0.61]_     | _[-0.02, 0.47]_     | _[-0.1, 0.42]_      |
-
  ###### _Note:_ \*p < 0.05; \*\*p < .01; \*\*\*p < 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range.
 
 
 
-The findings from Table [\[tab:gerry\]](#tab:gerry){reference-type="ref"
-reference="tab:gerry"} are very clear; regardless of which metric we
+The findings from Table [3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50%-vote-share) are very clear; regardless of which metric we
 examine, the 2011 map is the most gerrymandered. Not surprisingly, the
 nature of the bias is in a pro-Republican direction. Given the
 cumulative weight of all the evidence, the 2011 congressional map was
@@ -677,11 +660,10 @@ Looking at the evidence above, we see exactly the same ordering of plans
 according to their characterizability as a partisan gerrymander as we
 saw when we ordered plans according to the degree to which they
 satisfied good government criteria (see Table
-[\[tab:summaries\]](#tab:summaries){reference-type="ref"
-reference="tab:summaries"}), with the 2011 map the worst and the 2018
+[1](#county-splits-and-compactness-scores-of-the-plans)), with the 2011 map the worst and the 2018
 court-ordered map far and away the best. This conclusion is further
 buttressed by the data we present in Table
-[\[tab:prob\]](#tab:prob){reference-type="ref" reference="tab:prob"}.
+[4](probabilistic-projections-of-partisan-outcomes-for-four-plans-at-50%-vote-share).
 Here we create a probabilistic simulation using statewide five-election
 composite (set to a 50-50 vote share) to estimate the likelihood that
 random shocks (based on past state inter-election shift data) would
@@ -852,7 +834,7 @@ pro-Republican direction -- as is the 2011 map. As noted above, we
 believe it appropriate to label this plan as a *stealth gerrymander*
 since it creates partisan asymmetries while (mostly) providing the
 visual appearance of a good government map (see Figure
-[\[fig:maps\]](#fig:maps){reference-type="ref" reference="fig:maps"}).
+[1](#maps-of-the-proposed-pennsylvania-congressional-districts)).
 However, having labeled the joint legislative plan a *stealth
 gerrymander*, it is worth reminding readers of two important points.
 
@@ -861,8 +843,7 @@ is very much an open question as to whether it would have been rejected
 by the Pennsylvania Supreme Court. Even though, in partisan terms, it is
 nearly identical to the 2011 plan, it is considerably more consistent
 with good government criteria (see Table
-[\[tab:summaries\]](#tab:summaries){reference-type="ref"
-reference="tab:summaries"}) -- not that much worse than the Court
+[1](#county-splits-and-compactness-scores-of-the-plans)) -- not that much worse than the Court
 Remedial plan -- that it would have required detailed political election
 analyses like those we have done here to demonstrate its *stealth
 gerrymander* features, plus a court willing to rule on political
