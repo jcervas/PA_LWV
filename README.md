@@ -216,7 +216,7 @@ these two "good government" criteria further.
 | 2018 Court Remedial | 17            | 0.426         | 0.324        |
 ###### _Note:_ County splits include all the pieces in which a county is split, not just the total number of counties that have been split. (The latter number is the one most often reported in both court documents and in the media, but we regard the measure we report as both more precise and more informative.)
 
-Institutional Measures {#institutional-measures}
+Institutional Measures
 ----------------------
 We begin our analyses describing map features distinct from partisan
 outcomes or proposed measures of partisan asymmetries. Table
@@ -230,7 +230,7 @@ government features of the map.
 -   compactness measures, since compactness is also a criterion
     specifically referenced by the Pennsylvania Supreme Court
 
-### County Splits {#county-splits}
+### County Splits
 
 Avoiding county splits is incorporated into the language of many state
 constitutions [@Grofman1985] and can be seen as a way of guarding
@@ -267,7 +267,7 @@ is revealed clearly in Figure [1](#maps-of-the-proposed-pennsylvania-congression
 
 
 
-### Compactness {#compactness}
+### Compactness
 
 The measurement of compactness has long been a central issue in the
 districting literature [see e.g.,
@@ -334,7 +334,7 @@ three remedy maps that are similar in having relatively few county cuts
 nonetheless can look quite different in terms of how each configures
 districts. [^17]
 
-Asymmetry Measures {#asymmetry-measures}
+Asymmetry Measures
 ------------------
 
 We emphasize that a partisan gerrymandering claim based on statewide
@@ -377,7 +377,7 @@ favor Democrats.
 We now define these four measures of gerrymandering in which we will
 evaluate the four competing maps.
 
-### Partisan Bias {#partisan-bias}
+### Partisan Bias
 
 *Partisan Bias* indicates asymmetry in the translation of each party's
 votes into seats. Customarily, partisan bias is measured at the
@@ -408,7 +408,7 @@ values in some range near a 50% vote share. [^21] *Partisan Bias* is
 then calculated from the intercept of this regression using an
 exponential transformation (for details see @Grofman1983).
 
-### Mean-Median Gap {#mean-median-gap}
+### Mean-Median Gap
 
 When districts are sorted according to two-party vote share, the
 *Mean-Median Gap* is the difference between the average vote percentage
@@ -417,7 +417,7 @@ This measure is a variant of *skewness*. When the mean is substantially
 higher or lower than the median, this is taken to be indicative of
 partisan bias.
 
-### Efficiency Gap {#efficiency-gap}
+### Efficiency Gap
 
 The *Efficiency Gap* is calculated as defined in
 @Stephanopoulos2014_UofChicagoLaw, where all the party's votes are
@@ -428,7 +428,7 @@ value of zero denoting what is regarded as ideal. As noted in @Best2018
 [p. 13], this is equivalent to taking an aggregate responsiveness (swing
 ratio) of two as ideal.
 
-### Declination {#declination}
+### Declination
 
 Among the more recent measures of gerrymandering is the *Declination*.
 *Declination* is an astronomical term referring to the angle on a
@@ -458,10 +458,10 @@ essay. Here we point out, however, all four indicators point clearly and
 overwhelmingly in the same direction vis-à-vis the 2011 Enacted plan --
 namely that it is a blatant pro-Republican partisan gerrymander.
 
-Evaluation of the 2011 enacted map {#evaluation-of-the-2011-enacted-map}
+Evaluation of the 2011 enacted map
 ----------------------------------
 
-### Partisan results in actual congressional elections held under the 2011 map {#partisan-results-in-actual-congressional-elections-held-under-the-2011-map}
+### Partisan results in actual congressional elections held under the 2011 map
 
 The best evidence about a plan's partisan consequences is, of course,
 evidence derived from actual elections under the plan -- if there are
@@ -500,7 +500,7 @@ the 2011 map as an (enduring) partisan gerrymander.
 ###### _Notes:_ Calculations based on actual congressional elections in Pennsylvania under the map found unconstitutional in 2018. Uncontested races are imputed with 0.25 and 0.75 for the respective winners. Un-adjusted Republican two-party vote totals are 49.2\% for 2012, 55.5\% for 2014, and 54.1\% for 2016. All votes are calculated from the Republican perspective of the two-party vote. We've adjusted all gerrymandering measures such that negative numbers indicate bias in favor of the Democrats.
 
 
-Evaluating district plans using Statewide elections to provide a normal vote baseline {#evaluating-district-plans-using-statewide-elections-to-provide-a-normal-vote-baseline}
+Evaluating district plans using Statewide elections to provide a normal vote baseline
 -------------------------------------------------------------------------------------
 
 In order to assess expected partisan consequences for plans that have
@@ -706,7 +706,7 @@ In the next section we introduce a potentially important distinction
 between "*neutral plans*" and "*fair plans*", and we consider some
 important aspects of Pennsylvania's electoral geography.
 
-Natural Gerrymanders {#natural-gerrymanders}
+Natural Gerrymanders
 --------------------
 
 In 2018, even under a court-drawn plan, in a year when Democrats had won
