@@ -504,17 +504,16 @@ reference="tab:congsum"} shows the indicators of statewide partisan
 gerrymandering effects that provides additional compelling evidence of
 the 2011 map as an (enduring) partisan gerrymander.
 
-\centering 
-                         2012         2014         2016         AVE
-  ------------------ ------------ ------------ ------------ ------------
-                                                            
-   \[-1.8ex\] Seats   \[13R-5D\]   \[13R-5D\]   \[13R-5D\]   \[13R-5D\]
-        Seat %          72.2%        72.2%        72.2%        72.0%
-        Votes           51.1%        55.5%        54.2%        53.3%
-         Bias            0.13         0.1          0.11         0.11
-    Efficiency Gap       0.21         0.11         0.17         0.16
-     Mean/Median         0.06         0.06         0.06         0.06
-     Declination         0.46         0.36         0.39         0.4
+
+|                | 2012     | 2014     | 2016     | AVE      |
+|----------------|----------|----------|----------|----------|
+| Seats          | [13R-5D] | [13R-5D] | [13R-5D] | [13R-5D] |
+| Seat %         | 72.2\%   | 72.2\%   | 72.2\%   | 72.0\%   |
+| Votes          | 51.1\%   | 55.5\%   | 54.2\%   | 53.3\%   |
+| Bias           | 0.13     | 0.1      | 0.11     | 0.11     |
+| Efficiency Gap | 0.21     | 0.11     | 0.17     | 0.16     |
+| Mean/Median    | 0.06     | 0.06     | 0.06     | 0.06     |
+| Declination    | 0.46     | 0.36     | 0.39     | 0.4      |
 
   : U.S. House Election Summaries\
   (PA 2012-2016 Enacted Map)[]{label="tab:congsum"}
