@@ -39,9 +39,9 @@ To facilitate comparisons of the 2011 enacted and 2018 court plans to the two mo
 All the plans create contiguous districts. Similarly, all four plans appear to satisfy voting rights requirements. Thus, we do not discuss these two "good government" criteria further.
 
 ### County Splits and Compactness Scores of the Plans
-| *Plan*              | *County Splits* | *Polsby Popper* | *Reock*        |
-|---------------------|-----------------|-----------------|----------------|
-| 2011 Enacted        | 41            | 0.271         | 0.164        |
+| Plan              | County Splits | Polsby Popper | Reock        |
+|------------------:|:-------------:|:-------------:|:------------:|
+| 2011 Enacted        | 41          | 0.271         | 0.164        |
 | Joint Legislative   | 19            | 0.365         | 0.282        |
 | Gov. Wolf           | 19            | 0.393         | 0.310        |
 | 2018 Court Remedial | 17            | 0.426         | 0.324        |
@@ -114,7 +114,7 @@ The best evidence about a plan's partisan consequences is, of course, evidence d
 
 ### U.S. House Election Summaries
 |                | 2012   | 2014   | 2016   | AVE    |
-|----------------|--------|--------|--------|--------|
+|---------------:|:------:|:------:|:------:|:------:|
 | Seat %         | 72.2%  | 72.2 % | 72.2%  | 72.0%  |
 | Votes          | 51.1%  | 55.5%  | 54.2%  | 53.3%  |
 | Bias           | 0.13   | 0.1    | 0.11   | 0.11   |
@@ -137,7 +137,7 @@ We wish to do a further robustness check on the plausibility of using our five-e
 
 ### Measures of Gerrymandering for the Four Considered Plans at 50% Vote Share
 | ccccc}         | 2011 Enacted                  | Joint Legislative             | Gov. Wolf                      | 2018 Court Remedial            |
-|----------------|-------------------------------|-------------------------------|--------------------------------|--------------------------------|
+|---------------:|:-----------------------------:|:-----------------------------:|:------------------------------:|:------------------------------:|
 | Partisan Bias  | 0.09\*\*\*                  | 0.08\*\*\*                  | 0.06\*\*                    | 0.04                      |
 |                |               _[0.05, 0.13]_  |               _[0.03, 0.12]_  |               _[0.02, 0.11]_   |               _[-0.01, 0.08]_  |
 | Efficiency Gap | 0.24\*\*\*                  | 0.22\*\*                   | 0.14                      | 0.08                      |
@@ -154,7 +154,7 @@ Finally, we return to the plan offered by the Democratic governor, Governor Wolf
 
 ### Probabilistic Projections of Partisan Outcomes for Four Plans at 50% #Vote-Share
 |                                | 2011 Enacted                              | Joint Legislative                    | Gov. Wolf                            | 2018 Court Remedial                       |
-|---------------------------------|-------------------------------------------|--------------------------------------|--------------------------------------|-------------------------------------------|
+|--------------------------------:|:-----------------------------------------:|:------------------------------------:|:------------------------------------:|:-----------------------------------------:|
 | Mean Seat Share                 | 12.2R-5.8D                                | 11.7R-6.3D                           | 10.8R-7.2D                           | 10.2R-7.8D                                |
 |                                 | _[10.8R-7.2D, 14.4R-3.6D]_                | _[9R-9D, 14.4R-3.6D]_                | _[9R-9D, 12.6R-5.4D]_                | _[7.2R-10.8D, 12.6R-5.4D]_                |
 | Median Seat Share               | 12R-6D                                    | 12R-6D                               | 11R-7D                               | 10R-8D                                    |
@@ -201,7 +201,7 @@ Thus, we have some optimism that state courts can provide a venue to check parti
 
 [^1] [Jonathan Cervas](https://www.jonathancervas.com) is a Ph.D. candidate in political science at the University of California, Irvine with an interest in elections and skills in geographic information systems. When Grofman was the Special Master in service to the U.S. District Court of Utah, Cervas prepared under his direction remedial maps for the County Commission and the School Board in San Juan County (Navajo Nation et al v. San Juan County et al \[12/21/2017]) When Grofman was the Special Master in service to the US District Court for Eastern Virginia, Cervas prepared under his direction remedial maps for Virginia House of Delegates districts (Bethune-Hill et al v. State Board of Election \[02/14/2019]). Cervas's work on this article was supported by the Peltason Chair at UCI and the UCI School of Social Sciences, with supplementary funding from the Peltason Center for the Study of Democracy at UCI.
 
-    [Bernard Grofman](http://www.socsci.uci.edu/~bgrofman/) is the Jack W.     Peltason (Bren Foundation Endowed) Chair of Democracy Studies and     Distinguished Professor of Political Science at the University of     California, Irvine. He has drawn remedial redistricting plans for federal     courts and has testified as an expert in numerous redistricting cases over     four decades. Most recently. he is the co-author of an Amicus Brief in two     2019 partisan gerrymandering cases that were heard by the U.S. Supreme     Court, one from North Carolina and one from Maryland. Grofman's work on this     article was supported by the Peltason Chair at UCI, with supplementary     funding from the Peltason Center for the Study of Democracy at UCI.\     Questions or comments should be directed to     [jcervas\@uci.edu](jcervas@uci.edu). The authors would like to thank [Esther     Elizabeth Bailey](https://www.linkedin.com/in/esther-bailey-9289391a/),     [David Canon](https://polisci.wisc.edu/people/faculty/david-canon),     [Jonathan Lai](http://www.philly.com/archive/jonathan_lai/), [Lingge     Li](https://github.com/modestbayes), [Pooya     Safarzadeh](mailto:psafarza@uci.edu), [Charles Anthony     Smith](https://www.faculty.uci.edu/profile.cfm?faculty_id=5443), [Aruhn     Venkat](https://twitter.com/aruhnv?lang=en), and [Stephen     Wolf](https://www.dailykos.com/user/Stephen Wolf) for their helpful     suggestions.
+    [Bernard Grofman](http://www.socsci.uci.edu/~bgrofman/) is the Jack W. Peltason (Bren Foundation Endowed) Chair of Democracy Studies and Distinguished Professor of Political Science at the University of     California, Irvine. He has drawn remedial redistricting plans for federal courts and has testified as an expert in numerous redistricting cases over     four decades. Most recently. he is the co-author of an Amicus Brief in two 2019 partisan gerrymandering cases that were heard by the U.S. Supreme     Court, one from North Carolina and one from Maryland. Grofman's work on this     article was supported by the Peltason Chair at UCI, with supplementary     funding from the Peltason Center for the Study of Democracy at UCI.\     Questions or comments should be directed to     [jcervas\@uci.edu](jcervas@uci.edu). The authors would like to thank [Esther Elizabeth Bailey](https://www.linkedin.com/in/esther-bailey-9289391a/), [David Canon](https://polisci.wisc.edu/people/faculty/david-canon),     [Jonathan Lai](http://www.philly.com/archive/jonathan_lai/), [Lingge Li](https://github.com/modestbayes), [Pooya Safarzadeh](mailto:psafarza@uci.edu), [Charles Anthony Smith](https://www.faculty.uci.edu/profile.cfm?faculty_id=5443), [Aruhn Venkat](https://twitter.com/aruhnv?lang=en), and [Stephen Wolf](https://www.dailykos.com/user/Stephen Wolf) for their helpful suggestions.
 
 [^2] See also @Mcgann_et_al_2015_ELJ [@McGann_et_al_2016_gerrymandering]
 
