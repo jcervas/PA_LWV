@@ -269,8 +269,7 @@ is revealed clearly in Figure
 [\[fig:maps\]](#fig:maps){reference-type="ref" reference="fig:maps"}.
 
 ### Maps Of The Proposed Pennsylvania Congressional Districts
-![Maps Of The Proposed Pennsylvania Congressional Districts](Figures/fig_maps.png)
-
+<img src="Figures/fig_maps.png" alt="Maps Of The Proposed Pennsylvania Congressional Districts" width="400"/>
 ###### _Notes:_ Maps a drawn with a Mercator projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.
 
 
