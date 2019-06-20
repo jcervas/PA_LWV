@@ -214,10 +214,10 @@ Institutional Measures {#institutional-measures}
                              **County**   **Polsby**  
           **Plan**           **Splits**   **Popper**   **Reock**
                                                       
-   \[-1.8ex\] 2011 Enacted      $41$       $0.271$      $0.164$
-      Joint Legislative         $19$       $0.365$      $0.282$
-          Gov. Wolf             $19$       $0.393$      $0.310$
-     2018 Court Remedial        $17$       $0.426$      $0.324$
+   \[-1.8ex\] 2011 Enacted      41       0.271      0.164
+      Joint Legislative         19       0.365      0.282
+          Gov. Wolf             19       0.393      0.310
+     2018 Court Remedial        17       0.426      0.324
   ------------------------- ------------ ------------ -----------
 
   ###### County Splits and Compactness Scores of the
@@ -251,8 +251,8 @@ size of the county population relative to the ideal population of a
 congressional district (705,687). Allegheny and Montgomery must each be
 split at least twice, while Philadelphia must be split at least three
 times. If no set of counties exactly equals the ideal congressional
-population, every districting plan requires a minimum of $n-1$ splits
-(where $n$ equals the number of congressional districts; assuming that
+population, every districting plan requires a minimum of n-1 splits
+(where n equals the number of congressional districts; assuming that
 population equality between district must be one person or less). The
 Pennsylvania Supreme Court found that an unusually and egregiously large
 number of counties were split in the 2011 congressional map, and they
@@ -402,7 +402,7 @@ exactly 50%. At that point, both parties should, by symmetry, receive
 identical seats shares. Thus, the difference between a party's projected
 seat-share with 50% of the vote and exactly 50% can be taken as a
 measure of partisan bias. Note, however, that although a plan must be
-proportional at the ($50,50$) point, a partisan bias of zero does imply
+proportional at the (50,50) point, a partisan bias of zero does imply
 proportional representational. What partisan bias taps is the
 differential treatment of parties. Thus, for example, if party R gets
 61% of the seats with 52% of the vote, this is not a sign of bias as
@@ -415,11 +415,11 @@ the shape of the votes to seats distribution
 The method we use here is that of @Tufte1973. Hypothetical elections are
 constructed by incrementally adding (or subtracting) one percentage
 point (on average) at a time to find aggregate seat outcomes under
-differing mean vote shares. The resulting ($s$, $v$) points on the
+differing mean vote shares. The resulting (s, v) points on the
 votes-to-seats curve are then converted to a log odds form by using
-$log(\frac{s}{1-s})$ as the dependent variable, and $log(\frac{v}{1-v})$
+log(\frac{s}{1-s}) as the dependent variable, and log(\frac{v}{1-v})
 as the independent variable. A regression on the transformed variables
-is then run, with transformed $s$ as the dependent variable, for $v$
+is then run, with transformed s as the dependent variable, for v
 values in some range near a 50% vote share. [^21] *Partisan Bias* is
 then calculated from the intercept of this regression using an
 exponential transformation (for details see @Grofman1983).
@@ -619,19 +619,22 @@ efficiency gap, 0.06 for the value of the mean minus median gap, and
 for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 0.39. [^26]
 
-|                | 2011 Enacted            | Joint Legislative       | Gov. Wolf                | 2018 Court Remedial      |
-|----------------|-------------------------|-------------------------|--------------------------|--------------------------|
-| Partisan Bias  | 0.09$^{***}$            | 0.08$^{***}$            | 0.06$^{**}$              | 0.04$^{}$                |
-|                | _[0.05, 0.13]_ | _[0.03, 0.12]_ | _[0.02, 0.11]_  | _[-0.01, 0.08]_ |
-| Efficiency Gap | 0.24$^{***}$            | 0.22$^{**}$             | 0.14$^{}$                | 0.08$^{}$                |
-|                | _[0.09, 0.36]_ | _[0.07, 0.36]_ | _[0, 0.3]_      | _[-0.07, 0.21]_ |
-| Mean/Median    | 0.05$^{***}$            | 0.04$^{**}$             | 0.04$^{*}$               | 0.02$^{}$                |
-|                | _[0.02, 0.07]_ | _[0.01, 0.07]_ | _[0, 0.07]_     | _[-0.01, 0.05]_ |
-| Declination    | 0.39$^{**}$             | 0.33$^{*}$              | 0.21$^{}$                | 0.14$^{}$                |
-|                | _[0.13, 0.63]_ | _[0.07, 0.61]_ | _[-0.02, 0.47]_ | _[-0.1, 0.42]_  |
+|                | 2011 Enacted       | Joint Legislative  | Gov. Wolf           | 2018 Court Remedial |
+|----------------|--------------------|--------------------|---------------------|---------------------|
+| Partisan Bias  | 0.09***            | 0.08***            | 0.06**              | 0.04                |
+|                | _[0.05, 0.13]_     | _[0.03, 0.12]_     | _[0.02, 0.11]_      | _[-0.01, 0.08]_     |
+| Efficiency Gap | 0.24***            | 0.22**             | 0.14                | 0.08                |
+|                | _[0.09, 0.36]_     | _[0.07, 0.36]_     | _[0, 0.3]_          | _[-0.07, 0.21]_     |
+| Mean/Median    | 0.05***            | 0.04**             | 0.04*               | 0.02                |
+|                | _[0.02, 0.07]_     | _[0.01, 0.07]_     | _[0, 0.07]_         | _[-0.01, 0.05]_     |
+| Declination    | 0.39**             | 0.33*              | 0.21                | 0.14                |
+|                | _[0.13, 0.63]_     | _[0.07, 0.61]_     | _[-0.02, 0.47]_     | _[-0.1, 0.42]_      |
 
   ###### Measures of Gerrymandering for the Four Considered Plans at 50% Vote Share
-{$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range.}
+<!-- *p < 0.05; **p < .01; ***p < 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range. -->
+
+
+
 
 The findings from Table [\[tab:gerry\]](#tab:gerry){reference-type="ref"
 reference="tab:gerry"} are very clear; regardless of which metric we
@@ -1118,10 +1121,10 @@ partisan gerrymandering.
     Cause v. Rucho* No 1:16-CV-1026 (U.S. District Court, Middle
     District of North Carolina, 2018, slip op at p. 105 \[p. 194\])).
 
-[^16]: $A_D$ = area of district, $P_D$= perimeter of district,
-    $Circle_D$= minimum circumscribing circle;\
-    *POLSBYPOPPER* = $\frac{4 \pi A_D}{{P_{D}}^{2}}$ *REOCK* =
-    $\frac{A_D}{A(Circle_D)}$
+[^16]: A_D = area of district, P_D= perimeter of district,
+    Circle_D= minimum circumscribing circle;\
+    *POLSBYPOPPER* = \frac{4 \pi A_D}{{P_{D}}^{2}} *REOCK* =
+    \frac{A_D}{A(Circle_D)}
 
 [^17]: This latter point is reinforced if we examine good government
     maps prepared by
@@ -1193,14 +1196,14 @@ partisan gerrymandering.
     are comparing the 2011 enacted map.
 
 [^24]: We report the Republican share of the two-party vote
-    ($\delta_{i}$). Districting plans are represented by $\mathcal D$,
-    (e.g., $\mathcal D_{enacted}$, $\mathcal D_{remedial}$, ...,
-    $\mathcal D_{j}$), and each election in year $y$ has a district vote
+    (\delta_{i}). Districting plans are represented by \mathcal D,
+    (e.g., \mathcal D_{enacted}, \mathcal D_{remedial}, ...,
+    \mathcal D_{j}), and each election in year y has a district vote
     distribution
-    $\Delta_{y} = [\delta_{y1}, \delta_{y2}, \dots, \delta_{yi}]$. To
+    \Delta_{y} = [\delta_{y1}, \delta_{y2}, \dots, \delta_{yi}]. To
     find the overall state-wide vote share, we calculate the average
     district vote share,
-    $\bar{\Delta}_{\mathcal D y} = \frac{1}{n}\sum\limits_{i=1}^{n} \delta_{yi}$.
+    \bar{\Delta}_{\mathcal D y} = \frac{1}{n}\sum\limits_{i=1}^{n} \delta_{yi}.
     By averaging, we reduce the influence of turnout variation among
     districts. This district-specific average is a useful state-wide
     estimate of voter sentiment though it is in part effected by the
