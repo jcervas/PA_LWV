@@ -483,7 +483,7 @@ Democratic share of the average two-party vote in the congressional
 elections in Pennsylvania was 48.0%, in 2014 it was 44.5%, and in 2016
 it was 45.8%. [^22] Thus, the discrepancy between Republican vote share
 and Republican seat share was huge, and yet the seat share appeared to
-be immutable. Table [2](#u.s.-house-election-summaries) shows the indicators of statewide partisan
+be immutable. Table [2](#us-house-election-summaries) shows the indicators of statewide partisan
 gerrymandering effects that provides additional compelling evidence of
 the 2011 map as an (enduring) partisan gerrymander.
 
@@ -589,10 +589,10 @@ that map. What we are doing is comparing a hypothetical "normal vote"
 not taking incumbency effects into account) with the average of what we
 actually get in three different congressional elections. The
 congressional results for 2012-2016 and an average of the three,
-reported in Table [2](#u.s.-house-election-summaries), are 0.11 for partisan bias, 0.16 for the
+reported in Table [2](#us-house-election-summaries), are 0.11 for partisan bias, 0.16 for the
 efficiency gap, 0.06 for the value of the mean minus median gap, and
 0.40 for *declination*. The comparable results from Table
-[3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50%-vote-share)
+[3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50-vote-share)
 for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 0.39. [^26]
 
@@ -611,7 +611,7 @@ for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 
 
 
-The findings from Table [3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50%-vote-share) are very clear; regardless of which metric we
+The findings from Table [3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50-vote-share) are very clear; regardless of which metric we
 examine, the 2011 map is the most gerrymandered. Not surprisingly, the
 nature of the bias is in a pro-Republican direction. Given the
 cumulative weight of all the evidence, the 2011 congressional map was
@@ -630,12 +630,12 @@ Finally, we return to the plan offered by the Democratic governor,
 Governor Wolf. To our surprise, this plan appeared to have a
 pro-Republican tilt, nearly to the same extent as the joint legislative
 plan for three of the four metrics in Table
-[3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50%-vote-share).
+[3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50-vote-share).
 This puzzling finding suggests that the Governor might have been under
 pressure from Democratic incumbents not to reduce their expected vote
 margins, or that he sincerely intended it to be a compromise that the
 Republican legislature might agree to. However, as shown in Table
-[3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50%-vote-share),
+[3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50-vote-share),
 two of the apparent pro-Republican indicators for the plan are
 statistically insignificant. Moreover, there is one important difference
 between the joint plan and that of the Governor: among the seven
@@ -663,7 +663,7 @@ satisfied good government criteria (see Table
 [1](#county-splits-and-compactness-scores-of-the-plans)), with the 2011 map the worst and the 2018
 court-ordered map far and away the best. This conclusion is further
 buttressed by the data we present in Table
-[4](probabilistic-projections-of-partisan-outcomes-for-four-plans-at-50%-vote-share).
+[4](probabilistic-projections-of-partisan-outcomes-for-four-plans-at-50-vote-share).
 Here we create a probabilistic simulation using statewide five-election
 composite (set to a 50-50 vote share) to estimate the likelihood that
 random shocks (based on past state inter-election shift data) would
