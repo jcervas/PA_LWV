@@ -622,19 +622,16 @@ for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 |                | 2011 Enacted            | Joint Legislative       | Gov. Wolf                | 2018 Court Remedial      |
 |----------------|-------------------------|-------------------------|--------------------------|--------------------------|
 | Partisan Bias  | 0.09$^{***}$            | 0.08$^{***}$            | 0.06$^{**}$              | 0.04$^{}$                |
-|                | {\textit{[0.05, 0.13]}} | {\textit{[0.03, 0.12]}} | {\textit{[0.02, 0.11]}}  | {\textit{[-0.01, 0.08]}} |
+|                | _[0.05, 0.13_]} | _[0.03, 0.12_]} | _[0.02, 0.11_]}  | _[-0.01, 0.08_]} |
 | Efficiency Gap | 0.24$^{***}$            | 0.22$^{**}$             | 0.14$^{}$                | 0.08$^{}$                |
-|                | {\textit{[0.09, 0.36]}} | {\textit{[0.07, 0.36]}} | {\textit{[0, 0.3]}}      | {\textit{[-0.07, 0.21]}} |
+|                | _[0.09, 0.36_]} | _[0.07, 0.36_]} | _[0, 0.3_]}      | _[-0.07, 0.21_]} |
 | Mean/Median    | 0.05$^{***}$            | 0.04$^{**}$             | 0.04$^{*}$               | 0.02$^{}$                |
-|                | {\textit{[0.02, 0.07]}} | {\textit{[0.01, 0.07]}} | {\textit{[0, 0.07]}}     | {\textit{[-0.01, 0.05]}} |
+|                | _[0.02, 0.07_]} | _[0.01, 0.07_]} | _[0, 0.07_]}     | _[-0.01, 0.05_]} |
 | Declination    | 0.39$^{**}$             | 0.33$^{*}$              | 0.21$^{}$                | 0.14$^{}$                |
-|                | {\textit{[0.13, 0.63]}} | {\textit{[0.07, 0.61]}} | {\textit{[-0.02, 0.47]}} | {\textit{[-0.1, 0.42]}}  |
+|                | _[0.13, 0.63_]} | _[0.07, 0.61_]} | _[-0.02, 0.47_]} | _[-0.1, 0.42_]}  |
 
   ###### Measures of Gerrymandering for the Four Considered Plans at 50% Vote Share
-
-\tabnotes{$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range.}
-**INSERT TABLE [\[tab:gerry\]](#tab:gerry){reference-type="ref"
-reference="tab:gerry"} ABOUT HERE**
+{$^{*}$p $<$ 0.05; $^{**}$p $<$ .01; $^{***}$p $<$ 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range.}
 
 The findings from Table [\[tab:gerry\]](#tab:gerry){reference-type="ref"
 reference="tab:gerry"} are very clear; regardless of which metric we
