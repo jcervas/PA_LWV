@@ -868,31 +868,19 @@ said about the 2011 plan that it
 
 > "was designed to dilute the votes of those who in prior elections voted for the party not in power in order to give the party in power a lasting electoral advantage. In stark contrast, Article I, Section 5 of the Pennsylvania Constitution provides: 'Elections shall be free and equal; and no power, civil or military, shall at any time interfere to prevent the free exercise of the right of suffrage.' Pa. Const. art. I, § 5. On this record, it is clear that the 2011 Plan violates Article I, Section 5, since a diluted vote is not an equal vote" (slip op. p. 2).
 
-Thus, we have some optimism that state courts can provide a venue to
-check partisan gerrymandering, even when it comes in the form of a
-*stealth gerrymander*. But we have also placed a number of caveats on
-any claim that state courts can compensate fully for any continued
-failure of the federal courts to act. Citizen-based reforms such as
-referendum and initiatives may also help with reducing egregious
-gerrymandering in states where the passage of such measures is feasible.
-[^37] Ultimately, there is no substitute for a federal standard that
-guarantees each citizen in the United States *equal protection under the
-law*. Absent the United States Supreme Court setting this standard,
-state courts offer one promising pathway towards ending undemocratic
+Thus, we have some optimism that state courts can provide a venue to check
+partisan gerrymandering, even when it comes in the form of a *stealth
+gerrymander*. But we have also placed a number of caveats on any claim that
+state courts can compensate fully for any continued failure of the federal
+courts to act. Citizen-based reforms such as referendum and initiatives may
+also help with reducing egregious gerrymandering in states where the passage
+of such measures is feasible. [^37] Ultimately, there is no substitute for a
+federal standard that guarantees each citizen in the United States *equal
+protection under the law*. Absent the United States Supreme Court setting this
+standard, state courts offer one promising pathway towards ending undemocratic
 partisan gerrymandering.
 
-\clearpage
-\nolinenumbers
-\newgeometry{
-        top=1in,
-        bottom=1in,
-        inner=0.85in,
-        outer=0.85in,
-        ignorehead,
-        ignorefoot,
-        nomarginpar,
-    }
-2
+
 
 [^1]: [Jonathan Cervas](https://www.jonathancervas.com) is a Ph.D.
     candidate in political science at the University of California,
