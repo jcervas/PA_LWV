@@ -669,23 +669,18 @@ cut more narrowly in the Republican plan than in the Governor's plan in
 three of the districts so that, in a good Republican year, Republicans
 will do better under their plan than under the Democratic plan.
 
-\centering 
-                                             2011 Enacted              Joint Legislative             Gov. Wolf              2018 Court Remedial
-  --------------------------------- ------------------------------ ------------------------- ------------------------- ------------------------------
-                                                                                                                       
-     \[-1.8ex\] Mean Seat Share               12.2R-5.8D                  11.7R-6.3D                10.8R-7.2D                   10.2R-7.8D
-                                     *\[10.8R-7.2D, 14.4R-3.6D\]*   *\[9R-9D, 14.4R-3.6D\]*   *\[9R-9D, 12.6R-5.4D\]*   *\[7.2R-10.8D, 12.6R-5.4D\]*
-          Median Seat Share                     12R-6D                      12R-6D                    11R-7D                       10R-8D
-   Probability Republican Majority              98.6%                        97.3%                     88.3%                       69.4%
-   Probability Democratic Majority               0.3%                        0.3%                      2.0%                         6.6%
-     Probability Tied Delegation                 1.1%                        2.4%                      9.7%                        24.0%
-
+|                                 | 2011 Enacted               | Joint Legislative     | Gov. Wolf             | 2018 Court Remedial        |
+|---------------------------------|----------------------------|-----------------------|-----------------------|----------------------------|
+| Mean Seat Share                 | 12.2R-5.8D                 | 11.7R-6.3D            | 10.8R-7.2D            | 10.2R-7.8D                 |
+|                                 | _[10.8R-7.2D, 14.4R-3.6D]_ | _[9R-9D, 14.4R-3.6D]_ | _[9R-9D, 12.6R-5.4D]_ | _[7.2R-10.8D, 12.6R-5.4D]_ |
+| Median Seat Share               | 12R-6D                     | 12R-6D                | 11R-7D                | 10R-8D                     |
+| Probability Republican Majority | 98.6\%                     | 97.3\%                | 88.3\%                | 69.4\%                     |
+| Probability Democratic Majority | 0.3\%                      | 0.3\%                 | 2.0\%                 | 6.6\%                      |
+| Probability Tied Delegation     | 1.1\%                      | 2.4\%                 | 9.7\%                 | 24.0\%                     |
   : Probabilistic Projections of Partisan Outcomes for Four Plans at 50%
   Vote-Share[]{label="tab:prob"}
+###### _Note:_ Using a Composite of Five Statewide Elections (adjusted to a 50\% Vote Share) but not correcting for incumbency. We report the mean seat-share from 1,000 simulations, along with a 95\% range of the simulated outcomes.
 
-\tabnotes{Using a Composite of Five Statewide Elections (adjusted to a 50\% Vote Share) but not correcting for incumbency. We report the mean seat-share from 1,000 simulations, along with a 95\% range of the simulated outcomes.}
-**INSERT TABLE [\[tab:prob\]](#tab:prob){reference-type="ref"
-reference="tab:prob"} ABOUT HERE**
 
 Looking at the evidence above, we see exactly the same ordering of plans
 according to their characterizability as a partisan gerrymander as we
