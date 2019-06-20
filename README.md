@@ -619,6 +619,7 @@ efficiency gap, 0.06 for the value of the mean minus median gap, and
 for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 0.39. [^26]
 
+### Measures of Gerrymandering for the Four Considered Plans at 50% Vote Share
 |                | 2011 Enacted       | Joint Legislative  | Gov. Wolf           | 2018 Court Remedial |
 |----------------|--------------------|--------------------|---------------------|---------------------|
 | Partisan Bias  | 0.09***            | 0.08***            | 0.06**              | 0.04                |
@@ -630,8 +631,7 @@ for the 2011 enacted map at 50% vote-share are 0.09, 0.24, 0.05, and
 | Declination    | 0.39**             | 0.33*              | 0.21                | 0.14                |
 |                | _[0.13, 0.63]_     | _[0.07, 0.61]_     | _[-0.02, 0.47]_     | _[-0.1, 0.42]_      |
 
-### Measures of Gerrymandering for the Four Considered Plans at 50% Vote Share
- ###### \*p < 0.05; \*\*p < .01; \*\*\*p < 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range.
+ ###### _Note:_ \*p < 0.05; \*\*p < .01; \*\*\*p < 0.001. Measures are averages of 1,000 simulations for each map using the 2016 composite. Brackets numbers are the 95\% range.
 
 
 
