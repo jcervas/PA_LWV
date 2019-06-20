@@ -634,7 +634,7 @@ plan for three of the four metrics in Table
 This puzzling finding suggests that the Governor might have been under
 pressure from Democratic incumbents not to reduce their expected vote
 margins, or that he sincerely intended it to be a compromise that the
-Republican legislature might agree to. However, as shown in
+Republican legislature might agree to. However, as shown in Table
 [3](#measures-of-gerrymandering-for-the-four-considered-plans-at-50%-vote-share),
 two of the apparent pro-Republican indicators for the plan are
 statistically insignificant. Moreover, there is one important difference
