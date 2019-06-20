@@ -41,10 +41,10 @@ All the plans create contiguous districts. Similarly, all four plans appear to s
 ### County Splits and Compactness Scores of the Plans
 | *Plan*              | *County Splits* | *Polsby Popper* | *Reock*        |
 |---------------------|-----------------|-----------------|----------------|
-| 2011 Enacted        | $41$            | $0.271$         | $0.164$        |
-| Joint Legislative   | $19$            | $0.365$         | $0.282$        |
-| Gov. Wolf           | $19$            | $0.393$         | $0.310$        |
-| 2018 Court Remedial | $17$            | $0.426$         | $0.324$        |
+| 2011 Enacted        | 41            | 0.271         | 0.164        |
+| Joint Legislative   | 19            | 0.365         | 0.282        |
+| Gov. Wolf           | 19            | 0.393         | 0.310        |
+| 2018 Court Remedial | 17            | 0.426         | 0.324        |
 ###### _Note:_ County splits include all the pieces in which a county is split, #not just the total number of counties that have been split. (The latter number #is the one most often reported in both court documents and in the media, but we #regard the measure we report as both more precise and more informative.)
 
 ## Institutional Measures
@@ -138,13 +138,13 @@ We wish to do a further robustness check on the plausibility of using our five-e
 ### Measures of Gerrymandering for the Four Considered Plans at 50% Vote Share
 | ccccc}         | 2011 Enacted                  | Joint Legislative             | Gov. Wolf                      | 2018 Court Remedial            |
 |----------------|-------------------------------|-------------------------------|--------------------------------|--------------------------------|
-| Partisan Bias  | 0.09$^{***}$                  | 0.08$^{***}$                  | 0.06$^{**}$                    | 0.04$^{}$                      |
+| Partisan Bias  | 0.09\*\*\*                  | 0.08\*\*\*                  | 0.06\*\*                    | 0.04                      |
 |                |               _[0.05, 0.13]_  |               _[0.03, 0.12]_  |               _[0.02, 0.11]_   |               _[-0.01, 0.08]_  |
-| Efficiency Gap | 0.24$^{***}$                  | 0.22$^{**}$                   | 0.14$^{}$                      | 0.08$^{}$                      |
+| Efficiency Gap | 0.24\*\*\*                  | 0.22\*\*                   | 0.14                      | 0.08                      |
 |                |               _[0.09, 0.36]_  |               _[0.07, 0.36]_  |               _[0, 0.3]_       |               _[-0.07, 0.21]_  |
-| Mean/Median    | 0.05$^{***}$                  | 0.04$^{**}$                   | 0.04$^{*}$                     | 0.02$^{}$                      |
+| Mean/Median    | 0.05\*\*\*                  | 0.04\*\*                   | 0.04\*                     | 0.02                      |
 |                |               _[0.02, 0.07]_  |               _[0.01, 0.07]_  |               _[0, 0.07]_      |               _[-0.01, 0.05]_  |
-| Declination    | 0.39$^{**}$                   | 0.33$^{*}$                    | 0.21$^{}$                      | 0.14$^{}$                      |
+| Declination    | 0.39\*\*                   | 0.33\*                    | 0.21                      | 0.14                      |
 |                |               _[0.13, 0.63]_  |               _[0.07, 0.61]_  |               _[-0.02, 0.47]_  |               _[-0.1, 0.42]_   |
 ###### _Note:_ \*p ; 0.05; \*\*p &lt; .01; \*\*\*p &lt; 0.001. Measures are #averages of 1,000 simulations for each map using the 2016 composite. Brackets #numbers are the 95\\% range.
 
