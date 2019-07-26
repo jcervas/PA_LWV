@@ -413,7 +413,7 @@ Figure(
 	path="Figures/fig_maps.pdf", 
 	caption="Maps Of The Proposed Pennsylvania Congressional Districts", 
 	label="fig:maps", 
-	footnote="Maps a drawn with a Lambert Conformal Conic projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.")
+	footnote="Maps drawn with a Lambert Conformal Conic projection. Shapefiles were obtained from the Pennsylvania Supreme Court website for the four government plans.")
 
 
 cat("
