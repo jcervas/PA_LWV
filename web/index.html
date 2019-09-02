@@ -1,0 +1,476 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LWV v. Pennsylvania | Political Geography</title>
+<link href="css/palwv.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--<script src="js/d3.v3.min.js"></script>-->
+<!--<script src="js/topojson.v1.min.js"></script>-->
+<script src="https://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script> <!-- Inclusion of d3 v4 -->
+<!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
+	
+	<style>
+body {
+	font-family:nyt-imperial,georgia,'times new roman',times,serif;
+	height: 100%;
+	text-align: center;
+	text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+}
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+.feature {
+  fill: none;
+  fill-opacity: 0.3;
+	stroke: #000;
+	stroke-opacity: 0;
+  cursor: pointer;
+}
+		
+.feature.active, path:hover {
+	fill: #000;
+/*  fill-opacity: .7;*/
+	stroke: #fff;
+	stroke-opacity: 0.8;
+}
+
+.mesh {
+	stroke: #252525;
+	stroke-width: 1px;
+	stroke-opacity: .7;
+	/*	stroke-dasharray: 1;*/
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: "#D9D9D9";
+	fill-opacity: 0.5;
+}
+		
+path {
+  stroke: none;
+  fill: #999;
+  cursor: pointer;
+}
+
+path.q0-11 {
+  fill: #67001f;
+}
+
+path.q1-11 {
+  fill: #b2182b;
+}
+
+path.q2-11 {
+  fill: #d6604d;
+}
+
+path.q3-11 {
+  fill: #f4a582;
+}
+
+path.q4-11 {
+  fill: #fddbc7;
+}
+
+path.q5-11 {
+  fill: #f7f7f7;
+}
+
+path.q6-11 {
+  fill: #d1e5f0;
+}
+
+path.q7-11 {
+  fill: #92c5de;
+}
+
+path.q8-11 {
+  fill: #4393c3;
+}
+
+path.q9-11 {
+  fill: #2166ac;
+}
+
+path.q10-11 {
+  fill: #053061;
+}
+
+
+		
+/*
+path:not(:hover) {
+	fill: #c0c0c0;
+	fill-opacity: 0.3;
+	stroke: #000;
+	stroke-opacity: 0.8;
+}
+*/
+		
+.map-small {
+	stroke: #000;
+	stroke-width: .3px;
+	stroke-opacity: .4;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;	
+}
+
+.map-medium {
+	stroke: #252525;
+	stroke-width: 1px;
+	stroke-opacity: .7;
+	/*	stroke-dasharray: 1;*/
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: "#D9D9D9";
+	fill-opacity: 0.5;
+}
+		
+.map-large {
+	stroke: #000;
+	stroke-width: 2.5px;
+	stroke-opacity: 1;
+	fill: none;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+		
+.district {
+	fill: none;
+	stroke: #000;
+	stroke-width: 2.5px;
+	stroke-opacity: 1;
+	/*	stroke-dasharray: 1;*/
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+	
+.dotted {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 2.25px;
+	stroke-opacity: 1;
+/*	stroke-dasharray: 1,2,1;*/
+}
+			
+.svg-container {
+    display: inline-block;
+    position: relative;
+/*
+	padding-left: 10%;
+	padding-right: 10%;
+*/
+    width: 80%;
+    padding-bottom: 66%;
+    vertical-align: top;
+	align-content: center;
+    overflow: hidden;
+/*	background-image: linear-gradient(72deg, #595959, #262626);*/
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div.tooltip {
+  position: absolute;	
+  text-align:left;	
+  width: 130px;	
+/*  height: 50px;		*/
+  padding: 1px;	
+  padding-left: 2px;
+  font: 12px sans-serif;	
+/*  background: #7D7D7D;	*/
+  border: 1px;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  opacity: .7;
+  line-height: 1;
+  display: none;
+  background: white;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
+	}	
+
+.data-container {
+	left: 0;
+	top: 0;
+	position: absolute;
+	text-align: left;
+	margin-left: 20px;
+	margin-right: 140px;
+	margin-top: 90px;
+	border: solid;
+	border-color: #000000;
+	border-width: 2px;
+	-webkit-box-shadow: 5px 5px 13px -6px rgba(0,0,0,0.85);
+	-moz-box-shadow: 5px 5px 13px -6px rgba(0,0,0,0.85);
+	box-shadow: 5px 5px 13px -6px rgba(0,0,0,0.85);
+	width: 200px;
+	height: 400px;
+	display: none;
+	
+}		
+		
+.info {
+	width: 100%;
+	background: #000;
+	text-decoration-color: #fff;
+	padding: 10px;
+}
+</style>
+	
+	<div class="info">INFORMATION BOX </div>
+	<div id="palwv"><h4 class="loading">Loading...</h4></div>
+	
+	
+	
+<script>
+//Map dimensions (in pixels)
+var width = 960,
+	height = 600,
+	active = d3.select(null);
+	
+var aspect = width / height,
+    chart = d3.select('#chart');
+	
+d3.select(window)
+  .on("resize", function() {
+    var targetWidth = svg.node().getBoundingClientRect().width;
+    svg.attr("width", targetWidth);
+    svg.attr("height", targetWidth / aspect);
+  });
+	
+//Map projection
+var projection = d3.geoConicEqualArea()
+    .scale(11087.490584939113)
+    .center([-77.8004853439081,40.876791119507395]) //projection center
+    .parallels([39.719842948590106,42.24288756332322]) //parallels for conic projection
+    .rotate([77.8004853439081]) //rotation for conic projection
+    .translate([-9509.253406464926,-4418.309303094702]) //translate to center the map in view
+
+var path = d3.geoPath().projection(projection); 
+	
+//Create an SVG
+var svg = d3.selectAll("#palwv")
+	.append("div")
+	.classed("svg-container", true)
+	.append("svg")
+  		.attr("preserveAspectRatio", "xMidYMid meet")
+		.attr("viewBox", [0, 0, width, height])
+		.classed("svg-content-responsive", true)
+	.on("click", stopped, true);
+	
+//svg.append("filter")
+//    .attr("id", "glow")
+//  .append("feGaussianBlur")
+//    .attr("stdDeviation", 19);
+	
+//Group for the map features
+var features = svg.append("g")
+    .attr("class","features");
+
+//Create a tooltip, hidden at the start
+var tooltip = d3.select("body").append("div")
+	.attr("class","tooltip");
+
+svg.append("rect")
+    .attr("class", "background")
+    .attr("width", width)
+    .attr("height", height)
+    .on("click", reset);
+	
+var color = d3.scaleQuantize()
+    .domain([0,1])
+    .range(d3.range(11).map(function(i) { return "q" + i + "-11"; }));
+	
+var zoom = d3.zoom()
+    .scaleExtent([1, 8])
+    .on("zoom", zoomed);
+
+//svg.append("rect")
+//    .attr("class", "background")
+//    .attr("width", width)
+//    .attr("height", height)
+//    .on("click", reset);
+
+var g = svg.append("g");
+	
+//svg.call(zoom);
+//Container for the gradients
+var defs = svg.append("defs");
+
+//Filter for the outside glow
+var filter = defs.append("filter")
+    .attr("id","glow");
+filter.append("feGaussianBlur")
+    .attr("stdDeviation","3.5")
+    .attr("result","coloredBlur");
+var feMerge = filter.append("feMerge");
+feMerge.append("feMergeNode")
+    .attr("in","coloredBlur");
+feMerge.append("feMergeNode")
+    .attr("in","SourceGraphic");
+	
+	queue()
+		.defer(d3.json, "json/PA_LWV.json")
+		.defer(d3.csv, "pa_data.csv")
+			.await(ready);
+			   
+			   
+			   
+			   
+function ready(error, geodata, cities) {
+  if (error) return console.log(error); //unknown error, check the console
+//		 var blocks = topojson.feature(geodata, geodata.objects.blocks),
+//			 vtd = topojson.mesh(geodata, geodata.objects.vtd),
+//			 places = topojson.feature(geodata, geodata.objects.places);
+   
+// remove the loading text
+    d3.select('.loading').remove();
+	
+	
+	var court = {};
+	var enacted = {};
+	var joint = {};
+	var govwolf = {};
+	// Create empty object for holding dataset
+  cities.forEach(function(d) {
+    court[d.NAMELSAD] = +d.court;
+	joint[d.NAMELSAD] = +d.joint;
+	enacted[d.NAMELSAD] = +d.enacted;
+	govwolf[d.NAMELSAD] = +d.gov;// Create property for each ID, give it value from rate
+  });
+	
+	console.log(court);
+	console.log(enacted);
+	console.log(joint);
+	console.log(govwolf);
+	
+	
+  //Create a path for each map feature in the data
+  svg.append("g")
+	g.selectAll("path")
+    .data(topojson.feature(geodata,geodata.objects.vtd).features) //generate features from TopoJSON
+	  .enter().append("path")
+		.attr("d", path)
+		.attr("class", function(d) { return (typeof color(d.properties.dem) == "string" ? color(d.properties.dem) : ""); })
+      	.on("click", clicked)
+		.on("mouseover",showTooltip)
+		.on("mousemove",moveTooltip)
+		.on("mouseout",hideTooltip);
+//
+
+svg.append("path")
+      .datum(topojson.mesh(geodata, geodata.objects.PA_Counties, function(a, b) { return a !== b; }))
+      .attr("class", "mesh")
+      .attr("d", path);
+	
+svg.append("path")
+      .datum(topojson.mesh(geodata, geodata.objects.enacted, function(a, b) { return a !== b; }))
+      .attr("class", "district")
+	  .style("filter", "url(#glow)")
+      .attr("d", path);
+
+svg.append("path")
+      .datum(topojson.mesh(geodata, geodata.objects.enacted, function(a, b) { return a !== b; }))
+	  .attr("class", "dotted")
+      .attr("d", path);
+
+	
+svg.append("path")
+      .datum(topojson.mesh(geodata, geodata.objects.PA, function(a) { return a; }))
+      .attr("class", "map-large")
+    .style("filter", "url(#glow)")
+      .attr("d", path);
+
+
+
+	
+	};
+//	
+
+
+//https://bl.ocks.org/iamkevinv/0a24e9126cd2fa6b283c6f2d774b69a2
+// Zoom to feature on click
+
+function clicked(d) {
+  if (active.node() === this) return reset();
+  active.classed("active", false);
+  active = d3.select(this).classed("active", true);
+
+    var bounds = path.bounds(d),
+//    var bounds = geoPathGenerator.bounds(d)
+	  dx = bounds[1][0] - bounds[0][0],
+      dy = bounds[1][1] - bounds[0][1],
+      x = (bounds[0][0] + bounds[1][0]) / 2,
+      y = (bounds[0][1] + bounds[1][1]) / 2,
+      scale = Math.max(1, Math.min(8, 0.9 / Math.max(dx / width, dy / height))),
+      translate = [width / 2 - scale * x, height / 2 - scale * y];
+
+  svg.transition()
+      .duration(950)
+      // .call(zoom.translate(translate).scale(scale).event); // not in d3 v4
+      .call( zoom.transform, d3.zoomIdentity.translate(translate[0],translate[1]).scale(scale) ); // updated for d3 v4
+}
+
+function reset() {
+  active.classed("active", false);
+  active = d3.select(null);
+
+  svg.transition()
+      .duration(950)
+      // .call( zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1) ); // not in d3 v4
+      .call( zoom.transform, d3.zoomIdentity ); // updated for d3 v4
+}
+
+
+function zoomed() {
+  g.style("stroke-width", 1.5 / d3.event.transform.k + "px");
+  g.attr("transform", d3.event.transform); // updated for d3 v4
+}
+
+// If the drag behavior prevents the default click,
+// also stop propagation so we don’t click-to-zoom.
+function stopped() {
+  if (d3.event.defaultPrevented) d3.event.stopPropagation();
+}
+	
+//Position of the tooltip relative to the cursor
+var tooltipOffset = {x: 5, y: -65};
+var percentage = d3.format(".1%");
+var thousand = d3.format(",")
+//Create a tooltip, hidden at the start
+function showTooltip(d) {
+	moveTooltip();
+
+	tooltip.style("display","block")
+		.html("<a><b><center><u>" + d.properties.NAMELSAD + "</u></center></b></a><a><b>Total Votes: </b>" + thousand(+d.properties.T16PRESD + +d.properties.T16PRESR) + "</a><br><a><b>Trump '16: </b>" + percentage(1-d.properties.dem) + "</a><br><a><b>Clinton '16: </b>" + percentage(d.properties.dem) + "</a>");
+}
+
+//Move the tooltip to track the mouse
+function moveTooltip() {
+	tooltip.style("top",(d3.event.pageY+tooltipOffset.y)+"px")
+	  	.style("left",(d3.event.pageX+tooltipOffset.x)+"px");
+}
+
+//Create a tooltip, hidden at the start
+function hideTooltip() {
+	tooltip.style("display","none");  
+}	
+</script>
+
+	
+<!----------------------------------------------->
+	
+	
+</body>
+</html>
