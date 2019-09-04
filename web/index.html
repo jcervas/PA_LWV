@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <title>LWV v. Pennsylvania | Political Geography</title>
 <link href="css/palwv.css" rel="stylesheet" type="text/css">
+<link href="css/loader.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!--<script src="js/d3.v3.min.js"></script>-->
 <!--<script src="js/topojson.v1.min.js"></script>-->
-<script src="https://d3js.org/queue.v1.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <script src="https://d3js.org/d3.v4.min.js"></script> <!-- Inclusion of d3 v4 -->
+<script src="https://d3js.org/queue.v1.min.js"></script>
 <!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
 	
 	<style>
@@ -34,29 +35,58 @@ body {
   cursor: pointer;
 }
 		
+/*
 .feature.active, path:hover {
 	fill: #000;
-/*  fill-opacity: .7;*/
+  fill-opacity: .7;
 	stroke: #fff;
 	stroke-opacity: 0.8;
 }
+*/
 
-.mesh {
+.plan_mesh {
 	stroke: #252525;
-	stroke-width: 1px;
-	stroke-opacity: .7;
+	stroke-width: 1.5px;
+	stroke-opacity: 1;
 	/*	stroke-dasharray: 1;*/
 	stroke-linecap: round;
 	stroke-linejoin: round;
-	fill: "#D9D9D9";
+	fill: none;
 	fill-opacity: 0.5;
 }
+
+.outline {
+	fill: none;
+	stroke: #000;
+	stroke-width: 4.0px;
+	stroke-opacity: 1;
+	/*	stroke-dasharray: 1;*/
+	stroke-linecap: round;
+	stroke-linejoin: round;
+		}
 		
+.water {
+	fill: #3C4E73;
+	stroke: none;
+}
+		
+.states {
+	fill: #e5e5e5;
+	stroke: #fff;
+	stroke-width:1px;
+}
+.cities {
+	fill: #000;
+	opacity:0.7;
+}
+		
+/*
 path {
   stroke: none;
   fill: #999;
   cursor: pointer;
 }
+*/
 
 path.q0-11 {
   fill: #67001f;
@@ -145,20 +175,28 @@ path:not(:hover) {
 .district {
 	fill: none;
 	stroke: #000;
-	stroke-width: 2.5px;
+	stroke-width: 2.95px;
 	stroke-opacity: 1;
 	/*	stroke-dasharray: 1;*/
 	stroke-linecap: round;
 	stroke-linejoin: round;
 }
+
 	
 .dotted {
 	fill: none;
 	stroke: #fff;
-	stroke-width: 2.25px;
+	stroke-width: 2.05px;
 	stroke-opacity: 1;
 /*	stroke-dasharray: 1,2,1;*/
 }
+
+/*
+.dotted:hover {
+	fill: #fff;
+	fill-opacity: .5;
+}
+*/
 			
 .svg-container {
     display: inline-block;
@@ -226,10 +264,37 @@ div.tooltip {
 	text-decoration-color: #fff;
 	padding: 10px;
 }
-</style>
+		
+.districtnames {
+	font-family:  "Franklin Gothic Book", Arial;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font-size: 16px;
+	fill: #967b35;
+}
+
+	.land {
+  fill: #eee;
+}
+
+.border--counties {
+  fill: none;
+  stroke: #fff;
+}
+
+.land--counties {
+  fill-opacity: .2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
 	
-	<div class="info">INFORMATION BOX </div>
-	<div id="palwv"><h4 class="loading">Loading...</h4></div>
+	
+		</style>
+	
+	<div class="info">PENNSLYVANIA </div>
+	<div id="loader>"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+	<div id="palwv"></div>
 	
 	
 	
@@ -269,14 +334,6 @@ var svg = d3.selectAll("#palwv")
 		.classed("svg-content-responsive", true)
 	.on("click", stopped, true);
 	
-//svg.append("filter")
-//    .attr("id", "glow")
-//  .append("feGaussianBlur")
-//    .attr("stdDeviation", 19);
-	
-//Group for the map features
-var features = svg.append("g")
-    .attr("class","features");
 
 //Create a tooltip, hidden at the start
 var tooltip = d3.select("body").append("div")
@@ -295,16 +352,9 @@ var color = d3.scaleQuantize()
 var zoom = d3.zoom()
     .scaleExtent([1, 8])
     .on("zoom", zoomed);
-
-//svg.append("rect")
-//    .attr("class", "background")
-//    .attr("width", width)
-//    .attr("height", height)
-//    .on("click", reset);
-
-var g = svg.append("g");
 	
-//svg.call(zoom);
+var g = svg.append("g");
+
 //Container for the gradients
 var defs = svg.append("defs");
 
@@ -321,76 +371,170 @@ feMerge.append("feMergeNode")
     .attr("in","SourceGraphic");
 	
 	queue()
-		.defer(d3.json, "json/PA_LWV.json")
+		.defer(d3.json, "json/vtd.json")
 		.defer(d3.csv, "pa_data.csv")
+		.defer(d3.json, "json/cities.json")
+		.defer(d3.json, "json/enacted.json")
+		.defer(d3.json, "json/court.json")
+		.defer(d3.json, "json/joint.json")
+		.defer(d3.json, "json/govwolf.json")
+		.defer(d3.json, "json/PA.json")
 			.await(ready);
-			   
-			   
-			   
-			   
-function ready(error, geodata, cities) {
+// load data
+//var geodata = d3.json("json/PA_LWV.json");
+//var pa_data = d3.json("pa_data.csv");
+//var layer1 = svg.selectAll('path');
+//var layer2 = svg.selectAll('path');
+
+
+function ready(error, vtd, pa_data, cities, enacted, court, joint, govwolf, PA) {
   if (error) return console.log(error); //unknown error, check the console
-//		 var blocks = topojson.feature(geodata, geodata.objects.blocks),
-//			 vtd = topojson.mesh(geodata, geodata.objects.vtd),
-//			 places = topojson.feature(geodata, geodata.objects.places);
-   
+
 // remove the loading text
-    d3.select('.loading').remove();
-	
-	
-	var court = {};
-	var enacted = {};
-	var joint = {};
-	var govwolf = {};
-	// Create empty object for holding dataset
-  cities.forEach(function(d) {
-    court[d.NAMELSAD] = +d.court;
-	joint[d.NAMELSAD] = +d.joint;
-	enacted[d.NAMELSAD] = +d.enacted;
-	govwolf[d.NAMELSAD] = +d.gov;// Create property for each ID, give it value from rate
+    d3.select('#loader').remove();
+
+	// Create empty objects for holding dataset
+	var court_data = {};
+	var enacted_data = {};
+	var joint_data = {};
+	var govwolf_data = {};
+
+  pa_data.forEach(function(d) {
+    court_data[d.NAMELSAD] = +d.court;
+	joint_data[d.NAMELSAD] = +d.joint;
+	enacted_data[d.NAMELSAD] = +d.enacted;
+	govwolf_data[d.NAMELSAD] = +d.gov;// Create property for each ID, give it value from rate
   });
 	
-	console.log(court);
-	console.log(enacted);
-	console.log(joint);
-	console.log(govwolf);
+	console.log(court_data);
+	console.log(enacted_data);
+	console.log(joint_data);
+	console.log(govwolf_data);
+
+	
+//    d3.csv("pa_data.csv", function(error, csv) {
+//
+//        var world = topojson.feature(vtd,vtd.objects.vtd).features;
+//
+//        csv.forEach(function(d, i) {
+//            world.forEach(function(e, j) {
+//                if (d.NAMELSAD === e.NAMELSAD) {
+//                    e.enacted = d.enacted
+//                }
+//            })
+//        })	
+//};
 	
 	
   //Create a path for each map feature in the data
-  svg.append("g")
-	g.selectAll("path")
-    .data(topojson.feature(geodata,geodata.objects.vtd).features) //generate features from TopoJSON
-	  .enter().append("path")
-		.attr("d", path)
+//svg.append("g")
+//	.data(topojson.feature(PA, PA.objects.PA).features)
+//	.attr("d", path)
+//	.attr("class", "water");
+	
+ svg.append("path")
+	svg.selectAll("path")
+    .data(topojson.feature(vtd,vtd.objects.vtd).features) //generate features from TopoJSON
+//	  .enter().append("path")
 		.attr("class", function(d) { return (typeof color(d.properties.dem) == "string" ? color(d.properties.dem) : ""); })
-      	.on("click", clicked)
-		.on("mouseover",showTooltip)
-		.on("mousemove",moveTooltip)
-		.on("mouseout",hideTooltip);
+//	.attr("class", "land")
+		.attr("d", path)
+		.on("mouseover", showTooltip)
+		.on("mousemove", moveTooltip)
+		.on("mouseout", hideTooltip);
+
+//	
+//svg.append("path")
+//      .datum(topojson.mesh(enacted, enacted.objects.enacted, function(a, b) { return a !== b; }))
+//      .attr("class", "district")
+//	.style("filter", "url(#glow)")
+//      .attr("d", path);
+
+//svg.append("path")
+//      .datum(topojson.mesh(enacted, enacted.objects.enacted, function(a, b) { return a !== b; }))
+//      .attr("class", "dotted")
+////	.style("filter", "url(#glow)")
+//      .attr("d", path);
+
+//	
+//var g = svg.append("g")
+//        .datum(topojson.merge(vtd, vtd.objects.vtd.geometries.filter(function(d) { return d.properties.enacted == 12; })))
+//        .attr("class", "land--counties")
+//        .style("opacity", 1);
 //
-
-svg.append("path")
-      .datum(topojson.mesh(geodata, geodata.objects.PA_Counties, function(a, b) { return a !== b; }))
-      .attr("class", "mesh")
-      .attr("d", path);
-	
-svg.append("path")
-      .datum(topojson.mesh(geodata, geodata.objects.enacted, function(a, b) { return a !== b; }))
-      .attr("class", "district")
-	  .style("filter", "url(#glow)")
-      .attr("d", path);
-
-svg.append("path")
-      .datum(topojson.mesh(geodata, geodata.objects.enacted, function(a, b) { return a !== b; }))
-	  .attr("class", "dotted")
-      .attr("d", path);
+//    g.selectAll("path")
+//        .data(function(d) { return d.coordinates; })
+//      .enter().append("path")
+//        .datum(function(d) { return {type: "Polygon", coordinates: d}; })
+//        .style("fill", function(d, i) { return color(i); })
+//        .style("stroke", function(d, i) { return d3.lab(color(i)).darker(); })
+//        .attr("d", path);
 
 	
-svg.append("path")
-      .datum(topojson.mesh(geodata, geodata.objects.PA, function(a) { return a; }))
-      .attr("class", "map-large")
-    .style("filter", "url(#glow)")
-      .attr("d", path);
+// g.append("path")
+//	g.selectAll("path")
+//    .data(topojson.feature(enacted, enacted.objects.enacted).features) //generate features from TopoJSON
+//	  .enter().append("path")
+//		.attr("class", "dotted")
+//			  .on("click", clicked);
+
+	
+	
+	
+//////STATE BORDER
+  g.append("path")
+      .datum(topojson.merge(vtd, vtd.objects.vtd.geometries.filter(function(d) { return d.properties.NAMELSAD; })))
+      .attr("class", "outline")
+	.style("filter", "url(#glow)")
+      .attr("d", path);	
+	
+
+	
+	
+	
+//	THIS WORKS!	
+//svg.selectAll("text")
+//        .data(enacted_json.features)
+//        .enter().append("text")
+//		.text(function(d) {return d.properties.DISTRICT;})
+//		.attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+//	    .attr("dx", "-3em")
+//		.attr("dy", "0.5em")
+//		.attr("class","districtnames");
+
+	//g.append("path")
+//      .datum(topojson.feature(geodata, geodata.objects.enacted).features)
+//	  .attr("class", "dotted")
+//     .attr("d", path);
+	//
+//g.append("path")
+//      .datum(topojson.merge(geodata, geodata.objects.enacted.geometries.filter(function() { return cities.enacted; })))
+//	  .attr("class", "dotted")
+//     .attr("d", path);
+//
+//	
+//svg.selectAll('.cities')
+//	.data(cities.features)
+//	.enter()
+//	.append('path')
+//	.attr('d', path.pointRadius(5))
+//	.attr('class', 'cities');
+
+//svg.selectAll("text")
+//	.data(geodata.objects.PA_Counties)
+//	.enter()
+//	.append("text")
+//	.text(function(d){return d.properties.NAMELSAD;})
+//	.attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+//	.attr("dx", "-3em")
+//	.attr("dy", "0.5em");
+//	.attr("class","countrynames")
+	
+//g.append("path")
+//      .datum(topojson.mesh(PA, PA.objects.PA, function(a) { return a; }))
+//      .attr("class", "map-large")
+//    .style("filter", "url(#glow)")
+//      .attr("d", path);
 
 
 
@@ -432,7 +576,6 @@ function reset() {
       .call( zoom.transform, d3.zoomIdentity ); // updated for d3 v4
 }
 
-
 function zoomed() {
   g.style("stroke-width", 1.5 / d3.event.transform.k + "px");
   g.attr("transform", d3.event.transform); // updated for d3 v4
@@ -453,7 +596,10 @@ function showTooltip(d) {
 	moveTooltip();
 
 	tooltip.style("display","block")
-		.html("<a><b><center><u>" + d.properties.NAMELSAD + "</u></center></b></a><a><b>Total Votes: </b>" + thousand(+d.properties.T16PRESD + +d.properties.T16PRESR) + "</a><br><a><b>Trump '16: </b>" + percentage(1-d.properties.dem) + "</a><br><a><b>Clinton '16: </b>" + percentage(d.properties.dem) + "</a>");
+		.html("<a><b><center><u>" + d.properties.NAMELSAD + "</u></center></b></a><a><b>Total Persons: </b>" + thousand(+d.properties.TAPERSONS) + "</a><br><a><b>Trump '16: </b>" + percentage(1-d.properties.dem) + "</a><br><a><b>Clinton '16: </b>" + percentage(d.properties.dem) + "</a>");
+
+
+        d3.select("#info").text(d.properties.COUNTYNAME);
 }
 
 //Move the tooltip to track the mouse
@@ -464,13 +610,15 @@ function moveTooltip() {
 
 //Create a tooltip, hidden at the start
 function hideTooltip() {
-	tooltip.style("display","none");  
+	tooltip.style("display","none"); 
+	
+	
 }	
 </script>
 
 	
 <!----------------------------------------------->
 	
-	
+
 </body>
 </html>
