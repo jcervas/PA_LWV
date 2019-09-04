@@ -433,7 +433,7 @@ function ready(error, vtd, pa_data, cities, enacted, court, joint, govwolf, PA) 
 //	.attr("class", "water");
 	
  svg.append("path")
-	svg.selectAll("path")
+	svg.selectAll("g")
     .data(topojson.feature(vtd,vtd.objects.vtd).features) //generate features from TopoJSON
 //	  .enter().append("path")
 		.attr("class", function(d) { return (typeof color(d.properties.dem) == "string" ? color(d.properties.dem) : ""); })
