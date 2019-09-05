@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>LWV v. Pennsylvania | Political Geography</title>
-<link href="css/palwv.css" rel="stylesheet" type="text/css">
-<link href="css/loader.css" rel="stylesheet" type="text/css">
+<link href="css/palwv.css" rel="stylesheet" type="text/css"/>
+<link href="https://loading.io/css/loading.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <!--<script src="js/d3.v3.min.js"></script>-->
@@ -27,6 +27,23 @@ body {
   pointer-events: all;
 }
 
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 90%;
+    padding-bottom: 56%;
+    vertical-align: top;
+	align-content: center;
+    overflow: hidden;
+/*	background-image: linear-gradient(72deg, #595959, #262626);*/
+}
+.svg-content-responsive {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+		
 .feature {
   fill: none;
   fill-opacity: 0.3;
@@ -34,15 +51,54 @@ body {
 	stroke-opacity: 0;
   cursor: pointer;
 }
-		
-/*
-.feature.active, path:hover {
-	fill: #000;
-  fill-opacity: .7;
-	stroke: #fff;
-	stroke-opacity: 0.8;
+
+
+.main_title {
+	position: absolute;
+	color: #2d2d2d;
+    line-height: 1em;
+    font-weight: 700;
+    font-size: 70px;
+    font-family: avenir-lt-w01_85-heavy1475544,sans-serif;
+    opacity: 1;
+/*	margin-left: 200px;*/
+	letter-spacing: -8px;
+	padding-bottom: 4px;
+	padding-top: 100px;
 }
-*/
+
+.sub_title {
+	color: #2d2d2d;
+    line-height: 0.75em;
+    font-weight: 500;
+    font-size: 78px;
+    font-family: avenir-lt-w01_85-heavy1475544,sans-serif;
+    opacity: .85;
+	margin-left: 200px;
+	padding-top: 50px;
+	letter-spacing: -8px;
+}
+		
+.main_text {
+		margin-bottom:0.78125rem;
+		font-family:nyt-imperial,georgia,'times new roman',times,serif;
+		font-size:1.125rem;
+		line-height:1.5625rem;
+		margin-left:20px;
+		max-width:600px;
+	}
+	
+.main_text_indent {
+		margin-bottom:0.78125rem;
+		margin-top:0;
+		font-family:nyt-imperial,georgia,'times new roman',times,serif;
+		font-size:1rem;
+		line-height:1.5625rem;
+		margin-left:30px;
+		margin-right:20px;
+		width:calc(100% - 40px);
+		max-width:600px;
+	}
 
 .plan_mesh {
 	stroke: #252525;
@@ -77,16 +133,9 @@ body {
 }
 .cities {
 	fill: #000;
-	opacity:0.7;
+	opacity:1;
+	stroke: #fff;
 }
-		
-/*
-path {
-  stroke: none;
-  fill: #999;
-  cursor: pointer;
-}
-*/
 
 path.q0-11 {
   fill: #67001f;
@@ -131,46 +180,6 @@ path.q9-11 {
 path.q10-11 {
   fill: #053061;
 }
-
-
-		
-/*
-path:not(:hover) {
-	fill: #c0c0c0;
-	fill-opacity: 0.3;
-	stroke: #000;
-	stroke-opacity: 0.8;
-}
-*/
-		
-.map-small {
-	stroke: #000;
-	stroke-width: .3px;
-	stroke-opacity: .4;
-	fill: none;
-	stroke-linecap: round;
-	stroke-linejoin: round;	
-}
-
-.map-medium {
-	stroke: #252525;
-	stroke-width: 1px;
-	stroke-opacity: .7;
-	/*	stroke-dasharray: 1;*/
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	fill: "#D9D9D9";
-	fill-opacity: 0.5;
-}
-		
-.map-large {
-	stroke: #000;
-	stroke-width: 2.5px;
-	stroke-opacity: 1;
-	fill: none;
-	stroke-linecap: round;
-	stroke-linejoin: round;
-}
 		
 .district {
 	fill: none;
@@ -181,7 +190,6 @@ path:not(:hover) {
 	stroke-linecap: round;
 	stroke-linejoin: round;
 }
-
 	
 .dotted {
 	fill: none;
@@ -189,34 +197,6 @@ path:not(:hover) {
 	stroke-width: 2.05px;
 	stroke-opacity: 1;
 /*	stroke-dasharray: 1,2,1;*/
-}
-
-/*
-.dotted:hover {
-	fill: #fff;
-	fill-opacity: .5;
-}
-*/
-			
-.svg-container {
-    display: inline-block;
-    position: relative;
-/*
-	padding-left: 10%;
-	padding-right: 10%;
-*/
-    width: 80%;
-    padding-bottom: 66%;
-    vertical-align: top;
-	align-content: center;
-    overflow: hidden;
-/*	background-image: linear-gradient(72deg, #595959, #262626);*/
-}
-.svg-content-responsive {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 div.tooltip {
@@ -236,32 +216,12 @@ div.tooltip {
   display: none;
   background: white;
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.12);
-	}	
-
-.data-container {
-	left: 0;
-	top: 0;
-	position: absolute;
-	text-align: left;
-	margin-left: 20px;
-	margin-right: 140px;
-	margin-top: 90px;
-	border: solid;
-	border-color: #000000;
-	border-width: 2px;
-	-webkit-box-shadow: 5px 5px 13px -6px rgba(0,0,0,0.85);
-	-moz-box-shadow: 5px 5px 13px -6px rgba(0,0,0,0.85);
-	box-shadow: 5px 5px 13px -6px rgba(0,0,0,0.85);
-	width: 200px;
-	height: 400px;
-	display: none;
-	
-}		
+	}			
 		
 .info {
 	width: 100%;
-	background: #000;
-	text-decoration-color: #fff;
+	background: #fff;
+	text-decoration-color: #000;
 	padding: 10px;
 }
 		
@@ -274,7 +234,7 @@ div.tooltip {
 	fill: #967b35;
 }
 
-	.land {
+.land {
   fill: #eee;
 }
 
@@ -289,15 +249,14 @@ div.tooltip {
   stroke-linecap: round;
 }
 	
-	
-		</style>
-	
-	<div class="info">PENNSLYVANIA </div>
-	<div id="loader>"><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
-	<div id="palwv"></div>
-	
-	
-	
+.load {
+	position: relative;
+	display: none;
+}	
+</style>
+<!----------------------------------------------->	
+	<div id="palwv"><div id="loader" class="load"><div class="ld ld-hourglass ld-spin-fast" style="font-size:64px;color:#000"></div></div></div>
+<!----------------------------------------------->
 <script>
 //Map dimensions (in pixels)
 var width = 960,
@@ -334,6 +293,8 @@ var svg = d3.selectAll("#palwv")
 		.classed("svg-content-responsive", true)
 	.on("click", stopped, true);
 	
+var loader = d3.select('#loader')
+	.style("display", "block");
 
 //Create a tooltip, hidden at the start
 var tooltip = d3.select("body").append("div")
@@ -360,16 +321,23 @@ var defs = svg.append("defs");
 
 //Filter for the outside glow
 var filter = defs.append("filter")
-    .attr("id","glow");
-filter.append("feGaussianBlur")
-    .attr("stdDeviation","3.5")
-    .attr("result","coloredBlur");
+    	.attr("id","glow");
+	filter.append("feGaussianBlur")
+    	.attr("stdDeviation","3.5")
+    	.attr("result","coloredBlur");
 var feMerge = filter.append("feMerge");
-feMerge.append("feMergeNode")
-    .attr("in","coloredBlur");
-feMerge.append("feMergeNode")
-    .attr("in","SourceGraphic");
+	feMerge.append("feMergeNode")
+    	.attr("in","coloredBlur");
+	feMerge.append("feMergeNode")
+    	.attr("in","SourceGraphic");
 	
+svg.append("text")
+    .attr('class', 'main_title')
+    .attr('x', width/2)
+    .attr('y', 70)
+    .style('text-anchor', 'middle')
+    .text("Pennsylvania Enacted")
+<!----------------------------------------------->	
 	queue()
 		.defer(d3.json, "json/vtd.json")
 		.defer(d3.csv, "pa_data.csv")
@@ -380,12 +348,6 @@ feMerge.append("feMergeNode")
 		.defer(d3.json, "json/govwolf.json")
 		.defer(d3.json, "json/PA.json")
 			.await(ready);
-// load data
-//var geodata = d3.json("json/PA_LWV.json");
-//var pa_data = d3.json("pa_data.csv");
-//var layer1 = svg.selectAll('path');
-//var layer2 = svg.selectAll('path');
-
 
 function ready(error, vtd, pa_data, cities, enacted, court, joint, govwolf, PA) {
   if (error) return console.log(error); //unknown error, check the console
@@ -399,65 +361,32 @@ function ready(error, vtd, pa_data, cities, enacted, court, joint, govwolf, PA) 
 	var joint_data = {};
 	var govwolf_data = {};
 
-  pa_data.forEach(function(d) {
-    court_data[d.NAMELSAD] = +d.court;
-	joint_data[d.NAMELSAD] = +d.joint;
-	enacted_data[d.NAMELSAD] = +d.enacted;
-	govwolf_data[d.NAMELSAD] = +d.gov;// Create property for each ID, give it value from rate
-  });
-	
-	console.log(court_data);
-	console.log(enacted_data);
-	console.log(joint_data);
-	console.log(govwolf_data);
-
-	
-//    d3.csv("pa_data.csv", function(error, csv) {
-//
-//        var world = topojson.feature(vtd,vtd.objects.vtd).features;
-//
-//        csv.forEach(function(d, i) {
-//            world.forEach(function(e, j) {
-//                if (d.NAMELSAD === e.NAMELSAD) {
-//                    e.enacted = d.enacted
-//                }
-//            })
-//        })	
-//};
-	
-	
-  //Create a path for each map feature in the data
-//svg.append("g")
-//	.data(topojson.feature(PA, PA.objects.PA).features)
-//	.attr("d", path)
-//	.attr("class", "water");
-	
+//  Create a path for each map feature in the data	
  svg.append("path")
 	svg.selectAll("g")
-    .data(topojson.feature(vtd,vtd.objects.vtd).features) //generate features from TopoJSON
-//	  .enter().append("path")
+    .data(topojson.feature(vtd, vtd.objects.vtd).features) //generate features from TopoJSON
+	  .enter().append("path")
 		.attr("class", function(d) { return (typeof color(d.properties.dem) == "string" ? color(d.properties.dem) : ""); })
-//	.attr("class", "land")
 		.attr("d", path)
+//		.on("click", clicked)
 		.on("mouseover", showTooltip)
 		.on("mousemove", moveTooltip)
 		.on("mouseout", hideTooltip);
+	
+svg.append("path")
+      .datum(topojson.mesh(enacted, enacted.objects.enacted, function(a, b) { return a !== b; }))
+      .attr("class", "district")
+	.style("filter", "url(#glow)")
+      .attr("d", path);
 
-//	
-//svg.append("path")
-//      .datum(topojson.mesh(enacted, enacted.objects.enacted, function(a, b) { return a !== b; }))
-//      .attr("class", "district")
+svg.append("path")
+      .datum(topojson.mesh(enacted, enacted.objects.enacted, function(a, b) { return a !== b; }))
+      .attr("class", "dotted")
 //	.style("filter", "url(#glow)")
-//      .attr("d", path);
+      .attr("d", path);
 
-//svg.append("path")
-//      .datum(topojson.mesh(enacted, enacted.objects.enacted, function(a, b) { return a !== b; }))
-//      .attr("class", "dotted")
-////	.style("filter", "url(#glow)")
-//      .attr("d", path);
-
-//	
-//var g = svg.append("g")
+	
+var g = svg.append("g")
 //        .datum(topojson.merge(vtd, vtd.objects.vtd.geometries.filter(function(d) { return d.properties.enacted == 12; })))
 //        .attr("class", "land--counties")
 //        .style("opacity", 1);
@@ -469,83 +398,35 @@ function ready(error, vtd, pa_data, cities, enacted, court, joint, govwolf, PA) 
 //        .style("fill", function(d, i) { return color(i); })
 //        .style("stroke", function(d, i) { return d3.lab(color(i)).darker(); })
 //        .attr("d", path);
-
 	
-// g.append("path")
-//	g.selectAll("path")
-//    .data(topojson.feature(enacted, enacted.objects.enacted).features) //generate features from TopoJSON
-//	  .enter().append("path")
-//		.attr("class", "dotted")
-//			  .on("click", clicked);
-
-	
-	
-	
-//////STATE BORDER
+////STATE BORDER
   g.append("path")
       .datum(topojson.merge(vtd, vtd.objects.vtd.geometries.filter(function(d) { return d.properties.NAMELSAD; })))
       .attr("class", "outline")
 	.style("filter", "url(#glow)")
       .attr("d", path);	
-	
-
-	
-	
-	
-//	THIS WORKS!	
-//svg.selectAll("text")
-//        .data(enacted_json.features)
-//        .enter().append("text")
-//		.text(function(d) {return d.properties.DISTRICT;})
-//		.attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
-//	    .attr("dx", "-3em")
-//		.attr("dy", "0.5em")
-//		.attr("class","districtnames");
-
-	//g.append("path")
-//      .datum(topojson.feature(geodata, geodata.objects.enacted).features)
-//	  .attr("class", "dotted")
-//     .attr("d", path);
-	//
-//g.append("path")
-//      .datum(topojson.merge(geodata, geodata.objects.enacted.geometries.filter(function() { return cities.enacted; })))
-//	  .attr("class", "dotted")
-//     .attr("d", path);
-//
-//	
+<!----------------------------------------------->
 //svg.selectAll('.cities')
-//	.data(cities.features)
+//	.data(topojson.feature(cities, cities.objects.cities).features)
 //	.enter()
 //	.append('path')
-//	.attr('d', path.pointRadius(5))
+//	.style("filter", "url(#glow)")
+//	.attr('d', path.pointRadius(4))
 //	.attr('class', 'cities');
+console.log(topojson.feature(cities, cities.objects.cities).features)
+svg.selectAll("text")
+	.data(topojson.feature(cities, cities.objects.cities).features)
+	.enter()
+	.append("text")
+	.text(function(d){return d.properties.NAME10;})
+	.attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+	.attr("dx", "-3em")
+	.attr("dy", "0.5em");
 
-//svg.selectAll("text")
-//	.data(geodata.objects.PA_Counties)
-//	.enter()
-//	.append("text")
-//	.text(function(d){return d.properties.NAMELSAD;})
-//	.attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
-//	.attr("dx", "-3em")
-//	.attr("dy", "0.5em");
-//	.attr("class","countrynames")
-	
-//g.append("path")
-//      .datum(topojson.mesh(PA, PA.objects.PA, function(a) { return a; }))
-//      .attr("class", "map-large")
-//    .style("filter", "url(#glow)")
-//      .attr("d", path);
-
-
-
-	
-	};
-//	
-
-
-//https://bl.ocks.org/iamkevinv/0a24e9126cd2fa6b283c6f2d774b69a2
+	};	
+<!----------------------------------------------->
+// https://bl.ocks.org/iamkevinv/0a24e9126cd2fa6b283c6f2d774b69a2
 // Zoom to feature on click
-
 function clicked(d) {
   if (active.node() === this) return reset();
   active.classed("active", false);
@@ -565,7 +446,7 @@ function clicked(d) {
       // .call(zoom.translate(translate).scale(scale).event); // not in d3 v4
       .call( zoom.transform, d3.zoomIdentity.translate(translate[0],translate[1]).scale(scale) ); // updated for d3 v4
 }
-
+<!----------------------------------------------->
 function reset() {
   active.classed("active", false);
   active = d3.select(null);
@@ -575,10 +456,10 @@ function reset() {
       // .call( zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1) ); // not in d3 v4
       .call( zoom.transform, d3.zoomIdentity ); // updated for d3 v4
 }
-
+<!----------------------------------------------->
 function zoomed() {
-  g.style("stroke-width", 1.5 / d3.event.transform.k + "px");
-  g.attr("transform", d3.event.transform); // updated for d3 v4
+  svg.style("stroke-width", 1.5 / d3.event.transform.k + "px");
+  svg.attr("transform", d3.event.transform); // updated for d3 v4
 }
 
 // If the drag behavior prevents the default click,
@@ -586,7 +467,7 @@ function zoomed() {
 function stopped() {
   if (d3.event.defaultPrevented) d3.event.stopPropagation();
 }
-	
+<!----------------------------------------------->	
 //Position of the tooltip relative to the cursor
 var tooltipOffset = {x: 5, y: -65};
 var percentage = d3.format(".1%");
@@ -597,28 +478,18 @@ function showTooltip(d) {
 
 	tooltip.style("display","block")
 		.html("<a><b><center><u>" + d.properties.NAMELSAD + "</u></center></b></a><a><b>Total Persons: </b>" + thousand(+d.properties.TAPERSONS) + "</a><br><a><b>Trump '16: </b>" + percentage(1-d.properties.dem) + "</a><br><a><b>Clinton '16: </b>" + percentage(d.properties.dem) + "</a>");
-
-
-        d3.select("#info").text(d.properties.COUNTYNAME);
 }
-
 //Move the tooltip to track the mouse
 function moveTooltip() {
 	tooltip.style("top",(d3.event.pageY+tooltipOffset.y)+"px")
 	  	.style("left",(d3.event.pageX+tooltipOffset.x)+"px");
 }
-
+<!----------------------------------------------->
 //Create a tooltip, hidden at the start
 function hideTooltip() {
-	tooltip.style("display","none"); 
-	
-	
+	tooltip.style("display","none");	
 }	
 </script>
-
-	
-<!----------------------------------------------->
-	
-
+	<!----------------------------------------------->
 </body>
 </html>
