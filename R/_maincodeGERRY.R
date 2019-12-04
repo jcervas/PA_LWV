@@ -26,7 +26,7 @@
     options(scipen=999)     # Turn off Scientific Notation
     options(stringsAsFactors = FALSE)
     doInstall <- F
-setwd("/Users/cervas/Google Drive/Papers/Tools for Identifying a Partisan Gerrymander/PA_LWV")  # Main directory
+setwd("/Users/cervas/Google Drive/Papers/Tools for Identifying a Partisan Gerrymander/PA_LWV/R")  # Main directory
 source("R/license.R")    
 seed <- 66
 set.seed(seed)
@@ -56,7 +56,7 @@ set.seed(seed)
 # -- DATA -- -- DATA -- -- DATA -- -- DATA  -- -- DATA  -- -- DATA 
 # =================================================================
     source("R/PA_Congressional_Data.R")
-    pa.redist.dta <- read.csv("./_data/pa_redist_shp.csv")
+    pa.redist.dta <- read.csv("data/pa_redist_shp.csv")
     source("R/DataSetup.R") 
 # ================================================================= #
 # -- TOOLS FOR IDENTIFYING PARTISAN  GERRYMANDERING -- ANALYSIS -- -#
