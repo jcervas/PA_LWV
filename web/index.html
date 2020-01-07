@@ -2,12 +2,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LWV v. Pennsylvania | Cervas & Grofman, Political Geography (2019)</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link href="css/palwv.css" rel="stylesheet" type="text/css" />
-<link href="https://loading.io/css/loading.css" rel="stylesheet" type="text/css">
 <link href="css/map.css" rel="stylesheet" type="text/css" />
 </head>
-
+<!--
+// https://bl.ocks.org/iamkevinv/0a24e9126cd2fa6b283c6f2d774b69a2
+//zoom
+-->
 <body>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <!----------------------------------------------->
@@ -18,12 +23,10 @@
 			height: 100%;
 			/* text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff; */
 		}
-
 		.background {
 			fill: none;
 			pointer-events: all;
 		}
-
 		.svg-container {
 			max-width: 960px;
 			display: inline-block;
@@ -35,14 +38,12 @@
 			overflow: hidden;
 			/*	background-image: linear-gradient(72deg, #595959, #262626);*/
 		}
-
 		.svg-content-responsive {
 			display: inline-block;
 			position: absolute;
 			top: 0;
 			left: 0;
 		}
-
 		.load {
 			position: relative;
 			display: none;
@@ -51,8 +52,9 @@
 <!----------------------------------------------->
 <!-- LOADER -->
 <div id="loader" class="load">
-	<div class="ld ld-hourglass ld-spin-fast" style="font-size:64px;color:#000"></div>
+Loading...
 </div>
+	
 <!----------------------------------------------->
 <!-- HEADER SECTION -->
 <section class="#head-section"> <a id="enacted-state-pa" href="#enacted-state-pa"> </a>
@@ -63,18 +65,17 @@
 <!-- MAIN SECTION -->
 
 <section>
-<div id="#main-section" class="main-section" style="position: relative;">
-<div class="g-states-container">
+	<div id="#main-section" class="main-section" style="position: relative;">
 	<div class="g-state" data-id="#pa-enacted" style="height:100%">
-		<div class="g-state-header">
-			<div class="g-fixie">
-				<div class="scales">
+		
+<div class="g-fixie">
+				<div class="scales">		
 					<div class="button-label">Select a map:</div>
-					<div class="buttons">
-						<div class="button selected" data-type="enacted">Enacted</div>
-						<div class="button" data-type="court">Court Remedy</div>
-						<div class="button" data-type="joint">Joint</div>
-						<div class="button" data-type="govwolf">Gov. Wolf</div>
+					<div class="btn-group" role="group">
+						<div class="btn btn-secondary active" data-type="enacted">Enacted</div>
+						<div class="btn btn-secondary" data-type="court">Court Remedy</div>
+						<div class="btn btn-secondary" data-type="joint">Joint</div>
+						<div class="btn btn-secondary" data-type="govwolf">Gov. Wolf</div>
 					</div>
 				</div>
 				<div class="leg-res">
@@ -83,48 +84,43 @@
 					</div>
 				</div>
 			</div>
-		</div>
-
-			<div id="palwv"> </div>
-
+			<div class="map">
+				<div id="palwv"> </div>
+			</div>
 	</div>
-	</div></div>
+</div>
 </section>
 <script>
 
 	//Map dimensions (in pixels)
-var width = document.documentElement.clientWidth,
-         height = width / 1.75,
+var width = 960,
+      height = 600,
 	    aspect = width / height,
-	    active = d3.select(null),
 	    formatPercent = d3.format(".0%"),
 	    formatNumber = d3.format(".0f");
 
 	    //Create an SVG
 	    const map_svg = d3.select("#palwv")
-	    	.append("div")
-	    	.classed("svg-container", true)
 	    	.append("svg")
-	    	// .attr("preserveAspectRatio", "xMidYMid meet")
-	    	.attr("viewBox", [0, 0, width, height])
-	    	.classed("svg-content-responsive", true)
-	    	.on("click", stopped, true);
+	    	  .attr("width", width)
+  			.attr("height", height);
+	    	
 
-	    map_svg.append("rect")
-	    	.attr("class", "background")
-	    	.attr("width", width)
-	    	.attr("height", height)
-	    	.on("click", reset);
+//	    map_svg.append("rect")
+//	    	.attr("class", "background")
+//	    	.attr("width", width)
+//	    	.attr("height", height)
+//	    	.on("click", reset);
 
 	    var loader = d3.select('#loader')
 	    	.style("display", "block");
 
-		d3.select(window)
-		  .on("resize", function() {
-		    var targetWidth = map_svg.node().getBoundingClientRect().width;
-		    map_svg.attr("width", targetWidth);
-		    map_svg.attr("height", targetWidth / aspect);
-		  });
+//		d3.select(window)
+//		  .on("resize", function() {
+//		    var targetWidth = map_svg.node().getBoundingClientRect().width;
+//		    map_svg.attr("width", targetWidth);
+//		    map_svg.attr("height", targetWidth / aspect);
+//		  });
 //
 // var colorScale = d3.scaleThreshold()
 // 	.domain([0.35, 0.45, 0.5, 0.55, 0.65])
@@ -155,9 +151,6 @@ var path = d3.geoPath().projection(projection);
 var tooltip = d3.select("body").append("div")
 	.attr("class", "g-tooltip");
 
-var zoom = d3.zoom()
-	.scaleExtent([1, 8])
-	.on("zoom", zoomed);
 
 //Container for the gradients
 var defs = map_svg.append("defs");
@@ -174,7 +167,7 @@ feMerge.append("feMergeNode")
 feMerge.append("feMergeNode")
 	.attr("in", "SourceGraphic");
 
-document.querySelectorAll('.button').forEach(function (e) {
+document.querySelectorAll('.btn').forEach(function (e) {
 	e.addEventListener('click', onScaleChange);
 });
 
@@ -184,9 +177,9 @@ function onScaleChange() {
 
 	Array.prototype.filter.call(el.parentNode.children, function (child) {
 		if (child !== el) {
-			child.classList.remove('selected');
+			child.classList.remove('active');
 		} else {
-			child.classList.add('selected');
+			child.classList.add('active');
 		}
 	});
 };
@@ -208,6 +201,8 @@ var remove_plan = function remove_plan() {
 // ** Update data section (Called from the onclick)
 function drawEnacted() {
 	remove_plan();
+	d3.select('#loader')
+	 .style("display", "block");
 	var files = ["json/enacted.json"];
 	var promises = [];
 	files.forEach(function (url) {
@@ -507,42 +502,8 @@ function drawLegend({
 			.text(title));
 }
 
-// https://bl.ocks.org/iamkevinv/0a24e9126cd2fa6b283c6f2d774b69a2
-// Zoom to feature on click
-function clicked(d) {
-	if (active.node() === this) return reset();
-	active.classed("active", false);
-	active = d3.select(this).classed("active", true);
 
-	var bounds = path.bounds(d),
-		//    var bounds = geoPathGenerator.bounds(d)
-		dx = bounds[1][0] - bounds[0][0],
-		dy = bounds[1][1] - bounds[0][1],
-		x = (bounds[0][0] + bounds[1][0]) / 2,
-		y = (bounds[0][1] + bounds[1][1]) / 2,
-		scale = Math.max(1, Math.min(8, 0.9 / Math.max(dx / width, dy / height))),
-		translate = [width / 2 - scale * x, height / 2 - scale * y];
-
-	map_svg.transition()
-		.duration(950)
-		// .call(zoom.translate(translate).scale(scale).event); // not in d3 v4
-		.call(zoom.transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)); // updated for d3 v4
-}
 // <!----------------------------------------------->
-function reset() {
-	active.classed("active", false);
-	active = d3.select(null);
-
-	map_svg.transition()
-		.duration(950)
-		// .call( zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1) ); // not in d3 v4
-		.call(zoom.transform, d3.zoomIdentity); // updated for d3 v4
-}
-// <!----------------------------------------------->
-function zoomed() {
-	svg.style("stroke-width", 1.5 / d3.event.transform.k + "px");
-	svg.attr("transform", d3.event.transform); // updated for d3 v4
-}
 
 // If the drag behavior prevents the default click,
 // also stop propagation so we don’t click-to-zoom.
@@ -575,7 +536,7 @@ function hideTooltip() {
 }
 
 	</script>
-<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="https://d3js.org/queue.v1.min.js"></script>
 </body>
 </html>

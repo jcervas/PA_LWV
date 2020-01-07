@@ -12,11 +12,10 @@
 		}
 
 		.svg-container {
-			max-width: 960px;
 			display: inline-block;
 			position: relative;
 			width: 100%;
-			padding-bottom: 600px;
+/*			padding-bottom: 600px;*/
 			vertical-align: top;
 			align-content: center;
 			overflow: hidden;
