@@ -442,41 +442,54 @@ ptab <- function(x) {
 
 
 `circle.new` <- 
-  function(xorig, yorig, radius, add, ...){
+  function(xorig, yorig, radius, add=F, ...){
     x <- seq(-radius, radius, length.out = 1000)
   # Euclidian distance to the origin
   y <- sapply(x, function(z) sqrt(radius^2 - z^2))
   if(add == TRUE){
-    line(xorig + c(x, rev(x)), c(yorig + y, yorig + rev(-y)),
-          type = "l", add=T, ...)
+    plot(xorig + c(x, rev(x)), c(yorig + y, yorig + rev(-y)),
+      type = "l", add=T)
    } else {
    plot(xorig + c(x, rev(x)), c(yorig + y, yorig + rev(-y)),
-        type = "l",  
+    type = "l",  
     xlab="", 
     ylab="", 
     xaxt="n", 
     yaxt="n", 
-    bty="n", ...)
+    bty="n")
  
    }
 }
 
 `circle` <- 
-function (x, y, radius, nv = 100, border = NULL, col = NA, lty = 1, 
-    lwd = 1) {
+function (x, y, radius, nv = 1000, border = NULL, col = NA, lty = 1, main="", lwd = 1, add=F) {
     xylim <- par("usr")
     plotdim <- par("pin")
     ymult <- getYmult()
     angle.inc <- 2 * pi/nv
     angles <- seq(0, 2 * pi - angle.inc, by = angle.inc)
-    if (length(col) < length(radius)) 
-        col <- rep(col, length.out = length(radius))
-    for (circle in 1:length(radius)) {
-        xv <- cos(angles) * radius[circle] + x
-        yv <- sin(angles) * radius[circle] * ymult + y
-        polygon(xv, yv, border = border, col = col[circle], lty = lty, 
+
+        xv <- cos(angles) * radius + x
+        yv <- sin(angles) * radius * ymult + y
+        if (add==T) {
+          polygon(xv, yv, 
+            col = col, 
+            lty = lty, 
             lwd = lwd)
-    }
+        } else {
+          plot(xv, yv, 
+            type="l", 
+            border = border, 
+            col = col, 
+            lty = lty,
+            lwd = lwd,
+            xlab="", 
+            ylab="", 
+            xaxt="n", 
+            yaxt="n", 
+            bty="n",
+            main=main)
+      }
     invisible(list(x = xv, y = yv))
 }
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
@@ -514,7 +527,20 @@ poly.math <- function (x) {
 
 
 
-
+getYmult<-function() {
+ if(dev.cur() == 1) {
+  warning("No graphics device open.")
+  ymult<-1
+ }
+ else {
+  # get the plot aspect ratio
+  xyasp<-par("pin")
+  # get the plot coordinate ratio
+  xycr<-diff(par("usr"))[c(1,3)]
+  ymult<-xyasp[1]/xyasp[2]*xycr[2]/xycr[1]
+ }
+ return(ymult)
+}
 
 
 
