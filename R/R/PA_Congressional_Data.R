@@ -226,7 +226,7 @@ pahouse$unc_lag <- unc(pahouse$REP_lag)
 
  pahouse$REPUBLICAN_IMPUTED <- replace.unc(pahouse$VOTE,0.25,0.75,0.25,0.75, na.rm=F)
  pahouse$REPUBLICAN_LAG_IMPUTED <- replace.unc(pahouse$REP_lag,0.25,0.75,0.25,0.75, na.rm=F)
-write.csv(pahouse, "./_data/pa_USHOUSE.csv", row.names=F, na="NA")
+write.csv(pahouse, "./data/pa_USHOUSE.csv", row.names=F, na="NA")
 
 cat("
 •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••

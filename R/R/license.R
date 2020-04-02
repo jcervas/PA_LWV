@@ -20,7 +20,7 @@ cat("
 	")
 
 sink("/dev/null")
-        toInstall <- c("maptools", "rgdal", "ggplot2", "spatstat", "RColorBrewer", "maps", "stargazer", "astro")
+        toInstall <- c("maptools", "rgdal", "ggplot2", "spatstat", "RColorBrewer", "maps", "stargazer")
         if(doInstall){install.packages(toInstall, repos = "http=//cran.r-project.org")}
 
     lapply(toInstall, library, character.only = TRUE)

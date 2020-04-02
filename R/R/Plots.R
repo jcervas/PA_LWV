@@ -360,7 +360,7 @@ radius <- function(x) perimeter(x) / (2 * 3.1415926535)
 		colnames(rim) <- c("x", "y")
 		c <- rbind(rim,c, c[1,])
 		dev.off()
-svg(paste0("./Latex/Figures/fig_maps.svg"), 
+svg(paste0("../Latex/Figures/fig_maps.svg"), 
   	width=8, 
   	height=10)
 par(mar=c(0,0,0,0),

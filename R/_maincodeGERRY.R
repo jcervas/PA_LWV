@@ -25,12 +25,12 @@
     rm(list=ls(all=TRUE))   # Remove all objects just to be safe.
     options(scipen=999)     # Turn off Scientific Notation
     options(stringsAsFactors = FALSE)
-    doInstall <- F
+    doInstall <- F # Change to FALSE if you don't want packages installed.
 setwd("/Users/cervas/Google Drive/Papers/Tools for Identifying a Partisan Gerrymander/PA_LWV/R")  # Main directory
 source("R/license.R")    
 seed <- 66
 set.seed(seed)
-              # Change to FALSE if you don't want packages installed.
+              
   projection <- "+proj=lcc +lat_1=40.96666666666667 +lat_2=39.93333333333333 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs"
 # https://spatialreference.org/ref/epsg/nad83-pennsylvania-south-ftus/
   projection <- "+init=epsg:4269"
@@ -38,20 +38,20 @@ set.seed(seed)
   plan_names <- 
     c(
       "2011 Enacted",
+      "2018 Court Remedial",
       "Joint Legislative",
-      "Gov. Wolf",
-      "2018 Court Remedial")
+      "Gov. Wolf")
 	plans <- 
-		c("enacted2011", 
+		c("enacted2011",
+        "court", 
         "joint", 
-        "govwolf",
-        "court")
+        "govwolf")
 # •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 # =================================================================
 # -- FUNCTIONS -- -- FUNCTIONS -- -- FUNCTIONS -- -- FUNCTIONS  -- 
 # =================================================================
     source("R/GERRYfunctions.R")
-    source("/Users/cervas/Google Drive/School/UCI/R Functions/seatsvotes.R")
+    source("/Users/cervas/Google Drive/GitHub/R Functions/seatsvotes.R")
 # =================================================================
 # -- DATA -- -- DATA -- -- DATA -- -- DATA  -- -- DATA  -- -- DATA 
 # =================================================================
